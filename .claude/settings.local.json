@@ -1,0 +1,30 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(ls \"C:\\\\Users\\\\Zeyyad\\\\.claude\\\\skills\" 2>&1 | head -20)",
+      "Bash(git clone *)",
+      "PowerShell(python --version)",
+      "PowerShell(claude mcp add magic --scope user --env API_KEY=ee4f0a3463991628f72bb456e5b39f4c6def70d1bf83ad2b388f9413e18dd76f --% -- npx -y @21st-dev/magic@latest)",
+      "WebFetch(domain:ca.linkedin.com)",
+      "WebFetch(domain:www.acfas.ca)",
+      "WebFetch(domain:pluriel.fuce.eu)",
+      "WebFetch(domain:trendsresearch.org)",
+      "WebFetch(domain:dandurand.uqam.ca)",
+      "Bash(python -c \"from pypdf import PdfReader; r = PdfReader\\('Wael Saleh_CV_2024.pdf'\\); print\\(f'Pages: {len\\(r.pages\\)}'\\); print\\('---PAGE 1---'\\); print\\(r.pages[0].extract_text\\(\\)\\)\")",
+      "Bash(pip install *)",
+      "Bash(python -m pip install pypdf --quiet)",
+      "Bash(python -c ' *)",
+      "Bash(python .claude/skills/ui-ux-pro-max/scripts/search.py \"academic researcher professor portfolio political-science islamic-studies elegant editorial scholarly\" --design-system -p \"Wael Saleh - Ph.D.\")",
+      "Bash(python .claude/skills/ui-ux-pro-max/scripts/search.py \"elegant editorial serif scholarly\" --domain typography -n 3)",
+      "PowerShell($root = 'C:\\\\Users\\\\Zeyyad\\\\Downloads\\\\Wael Saleh - Website'; New-Item -ItemType Directory -Path \"$root\\\\assets\" -Force | Out-Null; New-Item -ItemType Directory -Path \"$root\\\\assets\\\\images\" -Force | Out-Null; New-Item -ItemType Directory -Path \"$root\\\\assets\\\\images\\\\logos\" -Force | Out-Null; 'Folders ready')",
+      "mcp__Claude_Preview__preview_start",
+      "PowerShell(Get-ChildItem \"$env:USERPROFILE\\\\AppData\\\\Roaming\\\\Claude\" -Recurse -ErrorAction SilentlyContinue -File | Where-Object { $_.LastWriteTime -gt \\(Get-Date\\).AddMinutes\\(-30\\) -and \\($_.Extension -in '.jpg','.jpeg','.png','.webp'\\) } | Sort-Object LastWriteTime -Descending | Select-Object -First 10 LastWriteTime, Length, FullName | Format-List)",
+      "WebFetch(domain:www.google.com)",
+      "PowerShell($out = 'C:\\\\Users\\\\Zeyyad\\\\Downloads\\\\Wael Saleh - Website\\\\assets\\\\images\\\\wael.jpg'; try { Invoke-WebRequest -Uri 'https://trendsresearch.org/wp-content/uploads/2024/01/Dr.-Wael-Saleh.png' -OutFile $out -UseBasicParsing -TimeoutSec 30; if \\(\\(Test-Path $out\\) -and \\(Get-Item $out\\).Length -gt 5000\\) { \"OK: $\\(\\(Get-Item $out\\).Length\\) bytes\" } else { 'FAILED' } } catch { \"ERR: $_\" })",
+      "WebFetch(domain:www.editions-harmattan.fr)",
+      "WebSearch",
+      "WebFetch(domain:commons.wikimedia.org)",
+      "WebFetch(domain:ipra.eu)"
+    ]
+  }
+}

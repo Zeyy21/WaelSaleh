@@ -1,0 +1,1699 @@
+<!doctype html>
+<html lang="en" dir="ltr" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Dr. Wael Saleh, Ph.D. in Applied Human Sciences (Islamic Studies and Political Science). Researcher, author, and advisor on political Islam, post-Arab-Spring studies, and the geopolitics of religion." />
+  <meta name="author" content="Wael Saleh" />
+  <meta property="og:title" content="Dr. Wael Saleh, Researcher and Scholar of Political Islam" />
+  <meta property="og:description" content="Ph.D. researcher, author, and advisor working at the intersection of Islamic studies, political science, and Middle East geopolitics." />
+  <meta property="og:type" content="profile" />
+  <meta property="og:image" content="assets/images/wael.jpg" />
+  <link rel="icon" type="image/jpeg" href="assets/images/wael.jpg" />
+  <title>Dr. Wael Saleh, Researcher of Political Islam and Middle East Affairs</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Inter:wght@300;400;500;600;700&family=Amiri:wght@400;700&family=Noto+Naskh+Arabic:wght@400;500;600;700&display=swap" rel="stylesheet" />
+
+  <!-- Apply saved theme before paint to avoid FOUC -->
+  <script>
+    (function(){
+      try {
+        var t = localStorage.getItem('ws_theme');
+        if (!t) t = (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) ? 'dark' : 'light';
+        if (t === 'dark') document.documentElement.setAttribute('data-theme','dark');
+      } catch(e){}
+    })();
+  </script>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            serif:  ['"Cormorant Garamond"', 'Georgia', 'serif'],
+            sans:   ['Inter', 'ui-sans-serif', 'system-ui', 'sans-serif'],
+            arabic: ['"Noto Naskh Arabic"', 'Amiri', 'serif'],
+          },
+          colors: {
+            cream:    'rgb(var(--c-cream) / <alpha-value>)',
+            ivory:    'rgb(var(--c-ivory) / <alpha-value>)',
+            charcoal: 'rgb(var(--c-charcoal) / <alpha-value>)',
+            ink:      'rgb(var(--c-ink) / <alpha-value>)',
+            muted:    'rgb(var(--c-muted) / <alpha-value>)',
+            line:     'rgb(var(--c-line) / <alpha-value>)',
+            coral: {
+              50:'#FFF1EC',100:'#FFDDD0',200:'#FFB89E',300:'#FF8E6A',
+              400:'#FF6F44',500:'#F25A30',600:'#D94518',700:'#A8330F',
+            },
+            sage:'#7A8F75',
+            sand:'#D9C7AE',
+          },
+          boxShadow: {
+            soft:'0 1px 2px rgba(31,27,22,.04),0 8px 24px -12px rgba(31,27,22,.08)',
+            lifted:'0 2px 4px rgba(31,27,22,.05),0 24px 48px -20px rgba(31,27,22,.18)',
+            coral:'0 12px 30px -12px rgba(242,90,48,.55)',
+          },
+          letterSpacing:{ wider2:'.18em' },
+          animation:{
+            'float-slow':'floatSlow 12s ease-in-out infinite',
+            'shimmer':'shimmer 4s linear infinite',
+          },
+          keyframes:{
+            floatSlow:{ '0%,100%':{ transform:'translateY(0px) rotate(0deg)'}, '50%':{ transform:'translateY(-12px) rotate(2deg)'} },
+            shimmer:{ '0%':{ backgroundPosition:'-200% 0'}, '100%':{ backgroundPosition:'200% 0'} },
+          },
+        },
+      },
+    };
+  </script>
+
+  <style>
+    /* ============================================================
+       THEME TOKENS — values are space-separated RGB triplets so they
+       can drive Tailwind's <alpha-value> syntax.
+       ============================================================ */
+    :root {
+      color-scheme: light;
+      --c-cream:    251 246 241;   /* page background */
+      --c-ivory:    255 251 247;   /* surface */
+      --c-charcoal:  31  27  22;   /* primary text */
+      --c-ink:       45  40  32;   /* secondary text */
+      --c-muted:    107  98  86;   /* muted text */
+      --c-line:     232 223 211;   /* hairlines */
+      --paper-grain: rgba(31,27,22,.025);
+      --footer-bg:  #1F1B16;
+      --footer-fg:  #FBF6F1;
+    }
+    [data-theme="dark"] {
+      color-scheme: dark;
+      --c-cream:     20  16  14;   /* deep ink page */
+      --c-ivory:     32  26  22;   /* slightly lifted surface */
+      --c-charcoal: 248 240 230;   /* warm bone text */
+      --c-ink:      230 220 208;   /* secondary */
+      --c-muted:    160 145 128;   /* muted on dark */
+      --c-line:      54  44  36;   /* warm-dark hairline */
+      --paper-grain: rgba(255,236,210,.03);
+      --footer-bg:    8   6   5;
+      --footer-fg:  248 240 230;
+    }
+
+    html, body { background: rgb(var(--c-cream)); }
+    body { font-family:'Inter', system-ui, sans-serif; color: rgb(var(--c-charcoal)); overflow-x:hidden; transition: background-color .35s ease, color .35s ease; }
+    [lang="ar"] body, html[dir="rtl"] body { font-family:'Noto Naskh Arabic', Amiri, serif; }
+    html[dir="rtl"] .font-display { font-family:'Amiri', 'Noto Naskh Arabic', serif; font-weight:700; }
+    .font-display { font-family:'Cormorant Garamond', Georgia, serif; font-feature-settings:"liga","dlig"; }
+
+    /* Decorative dot grids */
+    .dot-grid {
+      background-image: radial-gradient(rgba(242,90,48,.55) 1px, transparent 1.2px);
+      background-size: 14px 14px;
+      mask-image: linear-gradient(to bottom, transparent, black 30%, black 70%, transparent);
+      -webkit-mask-image: linear-gradient(to bottom, transparent, black 30%, black 70%, transparent);
+    }
+    .dot-grid-soft {
+      background-image: radial-gradient(rgba(242,90,48,.35) 1px, transparent 1.2px);
+      background-size: 18px 18px;
+    }
+    .paper {
+      background-image:
+        radial-gradient(var(--paper-grain) 1px, transparent 1.5px),
+        linear-gradient(180deg, rgb(var(--c-cream)), rgb(var(--c-cream)));
+      background-size: 6px 6px, 100% 100%;
+    }
+
+    /* Animated noise/grain via SVG (subtle) */
+    .grain::before{
+      content:""; position:absolute; inset:0; pointer-events:none; opacity:.06; mix-blend-mode:multiply;
+      background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='160' height='160'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.85' numOctaves='2' stitchTiles='stitch'/></filter><rect width='100%25' height='100%25' filter='url(%23n)' opacity='.7'/></svg>");
+    }
+
+    /* Reveal-on-scroll variants */
+    .reveal,.reveal-up,.reveal-left,.reveal-right,.reveal-fade { opacity:0; transition:opacity .9s cubic-bezier(.22,1,.36,1), transform .9s cubic-bezier(.22,1,.36,1); will-change:opacity, transform; }
+    .reveal,.reveal-up { transform: translateY(24px); }
+    .reveal-left  { transform: translateX(-28px); }
+    .reveal-right { transform: translateX(28px); }
+    .reveal.in,.reveal-up.in,.reveal-left.in,.reveal-right.in,.reveal-fade.in { opacity:1; transform:none; }
+    .reveal-stagger > * { opacity:0; transform:translateY(18px); transition:opacity .8s cubic-bezier(.22,1,.36,1), transform .8s cubic-bezier(.22,1,.36,1); }
+    .reveal-stagger.in > *  { opacity:1; transform:none; }
+    .reveal-stagger.in > *:nth-child(1){ transition-delay:.05s }
+    .reveal-stagger.in > *:nth-child(2){ transition-delay:.12s }
+    .reveal-stagger.in > *:nth-child(3){ transition-delay:.19s }
+    .reveal-stagger.in > *:nth-child(4){ transition-delay:.26s }
+    .reveal-stagger.in > *:nth-child(5){ transition-delay:.33s }
+    .reveal-stagger.in > *:nth-child(6){ transition-delay:.40s }
+    .reveal-stagger.in > *:nth-child(7){ transition-delay:.47s }
+    .reveal-stagger.in > *:nth-child(8){ transition-delay:.54s }
+    .reveal-stagger.in > *:nth-child(9){ transition-delay:.61s }
+    .reveal-stagger.in > *:nth-child(10){ transition-delay:.68s }
+
+    /* Heading word-by-word reveal */
+    .word { display:inline-block; opacity:0; transform:translateY(.5em) rotate(2deg); transition:opacity .9s cubic-bezier(.22,1,.36,1), transform .9s cubic-bezier(.22,1,.36,1); }
+    .word.in { opacity:1; transform:none; }
+
+    @media (prefers-reduced-motion: reduce) {
+      .reveal,.reveal-up,.reveal-left,.reveal-right,.reveal-fade,.reveal-stagger > *,.word { opacity:1 !important; transform:none !important; transition:none !important; }
+      .animate-float-slow, .animate-shimmer { animation:none !important; }
+      html { scroll-behavior:auto; }
+    }
+
+    .hairline { border-top:1px solid #E8DFD3; }
+    .btn-coral {
+      background: linear-gradient(180deg,#FF8E6A 0%,#F25A30 100%);
+      color:white;
+      box-shadow:0 12px 30px -12px rgba(242,90,48,.55), inset 0 1px 0 rgba(255,255,255,.35);
+      transition: filter .25s ease, transform .25s ease, box-shadow .25s ease;
+    }
+    .btn-coral:hover { filter: brightness(1.04); transform: translateY(-1px); box-shadow:0 18px 36px -14px rgba(242,90,48,.65), inset 0 1px 0 rgba(255,255,255,.35); }
+    .btn-coral:active { transform: translateY(0); }
+
+    .pill {
+      background: rgb(var(--c-ivory) / .78);
+      backdrop-filter: saturate(140%) blur(10px);
+      -webkit-backdrop-filter: saturate(140%) blur(10px);
+      border: 1px solid rgb(var(--c-line));
+      transition: background-color .35s ease, border-color .35s ease;
+    }
+    [data-theme="dark"] .pill { background: rgb(var(--c-ivory) / .85); }
+    .ul-link { background-image: linear-gradient(transparent calc(100% - 1px), currentColor 1px); background-size:0 100%; background-repeat:no-repeat; transition: background-size .35s ease; }
+    .ul-link:hover { background-size:100% 100%; }
+
+    .chip { border:1px solid rgb(var(--c-line)); background: rgb(var(--c-ivory)); color: rgb(var(--c-ink)); transition:border-color .25s, color .25s, transform .25s, background-color .25s; position:relative; cursor:default; }
+    .chip:hover { border-color:#FF8E6A; color:#A8330F; transform: translateY(-1px); }
+    [data-theme="dark"] .chip:hover { color:#FFB89E; }
+
+    /* Chip tooltips */
+    .chip-tooltip {
+      position:fixed; z-index:9999; pointer-events:none;
+      max-width:380px; padding:14px 18px;
+      background: rgb(var(--c-ivory)); color: rgb(var(--c-ink));
+      border:1px solid rgb(var(--c-line)); border-radius:14px;
+      box-shadow: 0 12px 40px -10px rgba(31,27,22,.18), 0 2px 6px rgba(31,27,22,.06);
+      font-size:12.5px; line-height:1.6; letter-spacing:.01em;
+      opacity:0; transform: translateY(6px);
+      transition: opacity .22s ease, transform .22s ease;
+    }
+    .chip-tooltip.visible { opacity:1; transform: translateY(0); pointer-events:auto; }
+    .chip-tooltip .tt-title {
+      display:block; font-family:'Cormorant Garamond', Georgia, serif;
+      font-size:14.5px; font-weight:600; color: rgb(var(--c-charcoal));
+      margin-bottom:5px; line-height:1.35;
+    }
+    .chip-tooltip .tt-ref {
+      display:block; margin-top:8px; font-size:11px; color:#D94518;
+      font-style:italic; line-height:1.45;
+    }
+    [data-theme="dark"] .chip-tooltip {
+      box-shadow: 0 12px 40px -10px rgba(0,0,0,.45), 0 2px 6px rgba(0,0,0,.2);
+    }
+    [data-theme="dark"] .chip-tooltip .tt-ref { color:#FFB89E; }
+
+    /* Logo plate */
+    .logo-plate {
+      display:flex; align-items:center; gap:.7rem;
+      padding:.6rem .95rem; border-radius:9999px; background: rgb(var(--c-ivory)); border:1px solid rgb(var(--c-line));
+      transition: border-color .25s, transform .25s, box-shadow .25s, background-color .25s;
+    }
+    .logo-plate:hover { border-color:#FFB89E; box-shadow:0 8px 20px -12px rgba(242,90,48,.45); transform: translateY(-2px); }
+    .logo-plate img { height:24px; width:auto; max-width:120px; object-fit:contain; }
+    .logo-plate .logo-pluriel { filter: invert(20%) sepia(8%) saturate(700%) hue-rotate(2deg) brightness(.6); }
+    [data-theme="dark"] .logo-plate img { filter: brightness(0) invert(.92); }
+    [data-theme="dark"] .logo-plate .logo-pluriel { filter: brightness(0) invert(.92); }
+
+    /* Marquee */
+    @keyframes slide-x { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+    .marquee { mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent); -webkit-mask-image: linear-gradient(to right, transparent, black 8%, black 92%, transparent); }
+    .marquee-track { animation: slide-x 50s linear infinite; }
+    .marquee:hover .marquee-track { animation-play-state: paused; }
+    @media (prefers-reduced-motion: reduce) { .marquee-track { animation:none; } }
+
+    /* Ornamental rule */
+    .ornament::before, .ornament::after {
+      content:""; display:inline-block; width:36px; height:1px; background:#D6C8B3; vertical-align:middle; margin:0 .75rem;
+    }
+
+    /* Cover card hover lift + shine */
+    .cover-card { transition: transform .35s cubic-bezier(.22,1,.36,1), box-shadow .35s ease; will-change:transform; }
+    .cover-card:hover { transform: translateY(-6px); box-shadow:0 24px 48px -22px rgba(31,27,22,.25); }
+    .cover-img { transition: transform .5s ease; }
+    .cover-card:hover .cover-img { transform: scale(1.03); }
+    .cover-shine {
+      position:absolute; inset:0; pointer-events:none; opacity:0; transition:opacity .4s ease;
+      background: linear-gradient(120deg, transparent 30%, rgba(255,255,255,.45) 50%, transparent 70%);
+      background-size: 200% 100%; mix-blend-mode: overlay;
+    }
+    .cover-card:hover .cover-shine { opacity:1; animation: shimmer 1.6s linear; }
+    @media (prefers-reduced-motion: reduce){ .cover-card:hover{ transform:none } .cover-card:hover .cover-img{ transform:none } .cover-card:hover .cover-shine{ animation:none } }
+
+    /* Timeline rail dot pulse */
+    .pulse-dot { box-shadow: 0 0 0 0 rgba(242,90,48,.55); animation: pulseDot 2.4s ease-out infinite; }
+    @keyframes pulseDot {
+      0% { box-shadow:0 0 0 0 rgba(242,90,48,.55) }
+      100% { box-shadow:0 0 0 16px rgba(242,90,48,0) }
+    }
+    @media (prefers-reduced-motion: reduce){ .pulse-dot { animation:none } }
+
+    /* Floating decorative blob */
+    .blob {
+      position:absolute; border-radius:50%; filter:blur(50px); opacity:.45; pointer-events:none;
+    }
+
+    /* RTL adjustments */
+    html[dir="rtl"] .timeline-rail { border-left:0; border-right:1px solid #E8DFD3; padding-left:0; padding-right:1.5rem; }
+    html[dir="rtl"] .timeline-dot  { left:auto; right:-7px; }
+    html[dir="rtl"] .ar-flip-x { transform: scaleX(-1); }
+
+    /* Lang switcher */
+    .lang-btn { transition: background-color .2s, color .2s; }
+    .lang-btn[aria-pressed="true"] { background: rgb(var(--c-charcoal)); color: rgb(var(--c-cream)); }
+
+    /* Footer always reads dark, warm and rich */
+    .site-footer { background: var(--footer-bg); color: rgb(248 240 230 / .8); transition: background-color .35s ease; }
+    .site-footer .text-cream\/55 { color: rgb(248 240 230 / .55); }
+    .site-footer .text-cream\/70 { color: rgb(248 240 230 / .7); }
+    .site-footer .text-cream    { color: rgb(248 240 230); }
+    .site-footer .text-cream\/50 { color: rgb(248 240 230 / .5); }
+
+    /* Dark-mode tweak: cover-card book covers a touch more luminous */
+    [data-theme="dark"] .cover-card { border-color: rgb(var(--c-line)); }
+    [data-theme="dark"] .cover-card:hover { box-shadow: 0 24px 48px -22px rgba(255,160,120,.18); }
+
+    /* Theme toggle button */
+    .theme-btn { transition: background-color .25s, color .25s, transform .25s; }
+    .theme-btn .icon-sun  { display: none; }
+    .theme-btn .icon-moon { display: block; }
+    [data-theme="dark"] .theme-btn .icon-sun  { display: block; }
+    [data-theme="dark"] .theme-btn .icon-moon { display: none; }
+
+    /* Cursor blink at end of headline */
+    .caret { display:inline-block; width:.55ch; background: currentColor; animation: blink 1.05s step-start infinite; margin-inline-start: .15ch; }
+    @keyframes blink { 50% { opacity:0 } }
+    @media (prefers-reduced-motion: reduce){ .caret{ animation:none } }
+  </style>
+</head>
+
+<body class="paper antialiased">
+  <a href="#main" class="sr-only focus:not-sr-only focus:fixed focus:top-3 focus:left-3 focus:z-[60] focus:bg-charcoal focus:text-cream focus:px-3 focus:py-2 focus:rounded" data-i18n="skip">Skip to content</a>
+
+  <!-- ===== HEADER ===== -->
+  <header class="fixed top-0 inset-x-0 z-50 px-3 sm:px-5 pt-3">
+    <div class="max-w-7xl mx-auto pill rounded-full px-3 sm:px-4 py-2 flex items-center justify-between gap-3 shadow-soft">
+      <a href="#top" class="flex items-center gap-3 group" aria-label="Wael Saleh, Ph.D., back to top">
+        <span class="relative w-9 h-9 rounded-full overflow-hidden ring-1 ring-line bg-cream">
+          <img src="assets/images/wael.jpg" alt="Portrait of Dr. Wael Saleh" class="w-full h-full object-cover" loading="eager" />
+        </span>
+        <span class="hidden sm:flex items-baseline gap-1.5">
+          <span class="font-display text-[17px] leading-none text-charcoal">Wael Saleh</span>
+          <span class="text-[11px] tracking-wider2 uppercase text-muted">Ph.D.</span>
+        </span>
+      </a>
+
+      <nav class="hidden lg:flex items-center gap-1 text-[14px] text-charcoal/85" aria-label="Primary">
+        <a class="px-3 py-2 rounded-full hover:bg-cream transition-colors" href="#about" data-i18n="nav.about">About</a>
+        <a class="px-3 py-2 rounded-full hover:bg-cream transition-colors" href="#expertise" data-i18n="nav.expertise">Expertise</a>
+        <a class="px-3 py-2 rounded-full hover:bg-cream transition-colors" href="#experience" data-i18n="nav.experience">Experience</a>
+        <a class="px-3 py-2 rounded-full hover:bg-cream transition-colors" href="#publications" data-i18n="nav.publications">Publications</a>
+        <a class="px-3 py-2 rounded-full hover:bg-cream transition-colors" href="#speaking" data-i18n="nav.speaking">Speaking</a>
+        <a class="px-3 py-2 rounded-full hover:bg-cream transition-colors" href="#contact" data-i18n="nav.contact">Contact</a>
+      </nav>
+
+      <div class="flex items-center gap-1.5">
+        <!-- Theme toggle -->
+        <button id="themeBtn" type="button"
+                class="theme-btn inline-flex items-center justify-center w-9 h-9 rounded-full border border-line bg-ivory hover:bg-cream text-charcoal/85"
+                aria-label="Toggle dark mode" title="Toggle theme">
+          <!-- moon (shown in light) -->
+          <svg class="icon-moon w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
+          <!-- sun (shown in dark) -->
+          <svg class="icon-sun w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
+        </button>
+
+        <!-- Language switcher -->
+        <div class="hidden sm:flex items-center gap-0.5 rounded-full border border-line bg-ivory p-0.5 text-[12px]" role="group" aria-label="Language">
+          <button class="lang-btn px-2.5 py-1.5 rounded-full" aria-pressed="true"  data-lang="en">EN</button>
+          <button class="lang-btn px-2.5 py-1.5 rounded-full" aria-pressed="false" data-lang="fr">FR</button>
+          <button class="lang-btn px-2.5 py-1.5 rounded-full font-arabic" aria-pressed="false" data-lang="ar">عر</button>
+        </div>
+
+        <a href="assets/Wael-Saleh-CV.pdf" target="_blank" rel="noopener"
+           class="hidden md:inline-flex items-center gap-1.5 text-[13px] px-3 py-2 rounded-full hover:bg-cream transition-colors text-charcoal/85">
+          <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 3v12m0 0l-4-4m4 4l4-4M5 21h14"/></svg>
+          <span data-i18n="cta.resume">Resume</span>
+        </a>
+        <a href="https://ca.linkedin.com/in/wael-saleh-ph-d-593587130" target="_blank" rel="noopener noreferrer"
+           class="hidden md:inline-flex items-center gap-1.5 text-[13px] px-3 py-2 rounded-full hover:bg-cream transition-colors text-charcoal/85">
+          <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.05-1.86-3.05-1.86 0-2.14 1.45-2.14 2.95v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.86 3.38-1.86 3.62 0 4.29 2.38 4.29 5.48v6.27zM5.34 7.43a2.06 2.06 0 11.01-4.13 2.06 2.06 0 01-.01 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.23 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.46c.98 0 1.77-.77 1.77-1.72V1.72C24 .77 23.21 0 22.23 0z"/></svg>
+          LinkedIn
+        </a>
+        <a href="mailto:wael_saleh@hotmail.com"
+           class="hidden md:inline-flex items-center gap-1.5 text-[13px] px-3 py-2 rounded-full hover:bg-cream transition-colors text-charcoal/85">
+          <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 7l9 6 9-6M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+          <span data-i18n="cta.email">Email</span>
+        </a>
+        <button id="menuBtn" aria-label="Open menu" aria-expanded="false" aria-controls="mobileMenu"
+                class="inline-flex items-center justify-center w-10 h-10 rounded-full bg-charcoal text-cream hover:bg-ink transition-colors lg:ml-1">
+          <svg class="w-5 h-5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path id="mIcon" d="M4 7h16M4 12h16M4 17h16"/></svg>
+        </button>
+      </div>
+    </div>
+
+    <!-- Mobile / overflow menu -->
+    <div id="mobileMenu" hidden class="max-w-7xl mx-auto mt-2 pill rounded-3xl p-4 shadow-lifted">
+      <nav class="grid grid-cols-2 gap-2 text-[15px] text-charcoal" aria-label="Mobile">
+        <a class="px-3 py-2.5 rounded-xl hover:bg-cream" href="#about"        data-i18n="nav.about">About</a>
+        <a class="px-3 py-2.5 rounded-xl hover:bg-cream" href="#expertise"    data-i18n="nav.expertise">Expertise</a>
+        <a class="px-3 py-2.5 rounded-xl hover:bg-cream" href="#experience"   data-i18n="nav.experience">Experience</a>
+        <a class="px-3 py-2.5 rounded-xl hover:bg-cream" href="#education"    data-i18n="nav.education">Education</a>
+        <a class="px-3 py-2.5 rounded-xl hover:bg-cream" href="#publications" data-i18n="nav.publications">Publications</a>
+        <a class="px-3 py-2.5 rounded-xl hover:bg-cream" href="#speaking"     data-i18n="nav.speaking">Speaking</a>
+        <a class="px-3 py-2.5 rounded-xl hover:bg-cream" href="#memberships"  data-i18n="nav.memberships">Memberships</a>
+        <a class="px-3 py-2.5 rounded-xl hover:bg-cream" href="#contact"      data-i18n="nav.contact">Contact</a>
+      </nav>
+      <div class="hairline mt-3 pt-3 grid grid-cols-3 gap-2 text-[13px]">
+        <button class="lang-btn flex items-center justify-center py-2 rounded-xl bg-cream" aria-pressed="true"  data-lang="en">English</button>
+        <button class="lang-btn flex items-center justify-center py-2 rounded-xl bg-cream" aria-pressed="false" data-lang="fr">Français</button>
+        <button class="lang-btn flex items-center justify-center py-2 rounded-xl bg-cream font-arabic" aria-pressed="false" data-lang="ar">العربية</button>
+      </div>
+    </div>
+  </header>
+
+  <main id="main">
+
+    <!-- ===== HERO ===== -->
+    <section id="top" class="relative pt-32 sm:pt-36 md:pt-40 pb-20 md:pb-28 overflow-x-clip">
+      <!-- Floating coral blobs -->
+      <div class="blob bg-coral-200/40 w-[400px] h-[400px] -top-32 -right-32 animate-float-slow" aria-hidden="true"></div>
+      <div class="blob bg-sand/40 w-[320px] h-[320px] -bottom-40 -left-24 animate-float-slow" style="animation-delay:-4s" aria-hidden="true"></div>
+
+      <!-- Decorative diagonal hairlines -->
+      <svg aria-hidden="true" class="pointer-events-none absolute inset-0 w-full h-full text-line/70" preserveAspectRatio="none">
+        <line x1="0%" y1="20%" x2="100%" y2="0%"  stroke="currentColor" stroke-width="1"/>
+        <line x1="0%" y1="100%" x2="100%" y2="35%" stroke="currentColor" stroke-width="1"/>
+        <line x1="60%" y1="0%" x2="100%" y2="60%" stroke="currentColor" stroke-width="1"/>
+      </svg>
+      <div aria-hidden="true" class="hidden md:block absolute top-24 right-8 w-24 h-72 dot-grid opacity-70"></div>
+
+      <div class="relative max-w-5xl mx-auto px-5 text-center flex flex-col items-center w-full">
+        <!-- Portrait disc -->
+        <div class="reveal-fade mb-7 relative">
+          <span class="absolute -inset-3 rounded-full bg-coral-100 blur-2xl opacity-70" aria-hidden="true"></span>
+          <span class="relative block w-28 h-28 rounded-full overflow-hidden ring-1 ring-line shadow-soft">
+            <img src="assets/images/wael.jpg" alt="Portrait of Dr. Wael Saleh" class="w-full h-full object-cover" />
+          </span>
+        </div>
+
+        <div class="reveal flex items-center justify-center gap-2 text-[12px] tracking-wider2 uppercase text-muted">
+          <span class="inline-block w-2 h-2 rounded-full bg-coral-400 pulse-dot"></span>
+          <span data-i18n="hero.eyebrow">Researcher · Author · Advisor</span>
+        </div>
+
+        <h1 id="heroName" class="mt-5 font-display text-[40px] leading-[1.05] sm:text-6xl md:text-7xl text-charcoal tracking-tight" aria-label="Wael Saleh">
+          <span class="inline-flex flex-wrap justify-center gap-x-[0.28em]"></span>
+        </h1>
+        <p class="reveal mt-3 font-display text-[22px] sm:text-[26px] md:text-[30px] text-charcoal/85 leading-snug max-w-3xl mx-auto" data-i18n-html="hero.subtitle">
+          Ph.D. in Applied Human Sciences <span class="text-coral-600">·</span> Islamic Studies and Political Science
+        </p>
+        <p class="reveal mt-5 max-w-2xl mx-auto text-[15.5px] sm:text-[16px] leading-relaxed text-muted" data-i18n="hero.intro">
+          Two decades of scholarship at the intersection of political Islam, post-Arab-Spring transformations, and the geopolitics of religion, translated into books, peer-reviewed studies, and advisory work for universities and international research institutes.
+        </p>
+
+        <div class="reveal mt-9 flex flex-wrap items-center justify-center gap-3">
+          <a href="#about" class="btn-coral inline-flex items-center gap-2 px-6 py-3 rounded-full text-[15px] font-medium">
+            <span data-i18n="hero.cta1">Know more about me</span>
+            <svg class="w-4 h-4 ar-flip-x" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M5 12h14M13 5l7 7-7 7"/></svg>
+          </a>
+          <a href="#publications" class="inline-flex items-center gap-2 px-5 py-3 rounded-full border border-line bg-ivory hover:bg-cream text-[15px] text-charcoal transition-colors" data-i18n="hero.cta2">
+            Selected publications
+          </a>
+        </div>
+
+        <!-- Affiliations marquee with REAL logos -->
+        <div class="reveal mt-14 w-full">
+          <p class="text-[12px] tracking-wider2 uppercase text-muted text-center" data-i18n="hero.affil">Research Centers and Academic Memberships</p>
+          <div class="marquee mt-6 overflow-hidden">
+            <div class="marquee-track flex items-center gap-3 w-max">
+              <!-- group 1 -->
+              <a class="logo-plate" href="https://www.acfas.ca/communaute/profil/wael-saleh" target="_blank" rel="noopener noreferrer" aria-label="Acfas, Association francophone pour le savoir">
+                <img src="assets/images/logos/acfas.svg" alt="" class="h-7" />
+                <span class="text-[12.5px] font-medium text-charcoal/80">Acfas</span>
+              </a>
+              <a class="logo-plate" href="http://ipra.eu/fr/linstitut/presentation-de-lequipe/" target="_blank" rel="noopener noreferrer" aria-label="Institut du Pluralisme Religieux">
+                <span class="inline-flex items-center justify-center w-7 h-7 rounded-full border border-charcoal/30 text-charcoal text-[10px] font-bold tracking-wider">IPRA</span>
+                <span class="text-[12.5px] font-medium text-charcoal/80">Institut du Pluralisme Religieux</span>
+              </a>
+              <a class="logo-plate" href="https://pluriel.fuce.eu/chercheur/saleh-wael/" target="_blank" rel="noopener noreferrer" aria-label="PLURIEL University Research Platform on Islam">
+                <img src="assets/images/logos/pluriel.png" alt="" class="logo-pluriel h-7" />
+                <span class="text-[12.5px] font-medium text-charcoal/80">PLURIEL</span>
+              </a>
+              <a class="logo-plate" href="https://trendsresearch.org/expert/dr-wael-saleh/" target="_blank" rel="noopener noreferrer" aria-label="TRENDS Research and Advisory">
+                <img src="assets/images/logos/trends.png" alt="" class="h-6" />
+              </a>
+              <a class="logo-plate" href="https://cerium.umontreal.ca/communaute/repertoire-departement/vue/wael-saleh/" target="_blank" rel="noopener noreferrer" aria-label="Université de Montréal">
+                <img src="assets/images/logos/udem.svg" alt="" class="h-7" />
+              </a>
+              <a class="logo-plate" href="https://dandurand.uqam.ca/chercheur/saleh-wael/" target="_blank" rel="noopener noreferrer" aria-label="Université du Québec à Montréal">
+                <img src="assets/images/logos/uqam.svg" alt="" class="h-7" />
+              </a>
+              <!-- group 2 (duplicate for seamless marquee) -->
+              <a class="logo-plate" href="https://www.acfas.ca/communaute/profil/wael-saleh" target="_blank" rel="noopener noreferrer" aria-hidden="true" tabindex="-1">
+                <img src="assets/images/logos/acfas.svg" alt="" class="h-7" />
+                <span class="text-[12.5px] font-medium text-charcoal/80">Acfas</span>
+              </a>
+              <a class="logo-plate" href="http://ipra.eu/fr/linstitut/presentation-de-lequipe/" target="_blank" rel="noopener noreferrer" aria-hidden="true" tabindex="-1">
+                <span class="inline-flex items-center justify-center w-7 h-7 rounded-full border border-charcoal/30 text-charcoal text-[10px] font-bold tracking-wider">IPRA</span>
+                <span class="text-[12.5px] font-medium text-charcoal/80">Institut du Pluralisme Religieux</span>
+              </a>
+              <a class="logo-plate" href="https://pluriel.fuce.eu/chercheur/saleh-wael/" target="_blank" rel="noopener noreferrer" aria-hidden="true" tabindex="-1">
+                <img src="assets/images/logos/pluriel.png" alt="" class="logo-pluriel h-7" />
+                <span class="text-[12.5px] font-medium text-charcoal/80">PLURIEL</span>
+              </a>
+              <a class="logo-plate" href="https://trendsresearch.org/expert/dr-wael-saleh/" target="_blank" rel="noopener noreferrer" aria-hidden="true" tabindex="-1">
+                <img src="assets/images/logos/trends.png" alt="" class="h-6" />
+              </a>
+              <a class="logo-plate" href="https://cerium.umontreal.ca/communaute/repertoire-departement/vue/wael-saleh/" target="_blank" rel="noopener noreferrer" aria-hidden="true" tabindex="-1">
+                <img src="assets/images/logos/udem.svg" alt="" class="h-7" />
+              </a>
+              <a class="logo-plate" href="https://dandurand.uqam.ca/chercheur/saleh-wael/" target="_blank" rel="noopener noreferrer" aria-hidden="true" tabindex="-1">
+                <img src="assets/images/logos/uqam.svg" alt="" class="h-7" />
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div aria-hidden="true" class="absolute bottom-0 inset-x-0 h-32 dot-grid-soft opacity-70"></div>
+    </section>
+
+    <!-- ===== ABOUT ===== -->
+    <section id="about" class="relative py-20 md:py-24 bg-ivory border-y border-line/70">
+      <div class="max-w-6xl mx-auto px-5 grid md:grid-cols-12 gap-10">
+        <div class="md:col-span-4 reveal-left">
+          <p class="text-[12px] tracking-wider2 uppercase text-coral-600 mb-3" data-i18n="about.kicker">About</p>
+          <h2 class="font-display text-4xl md:text-5xl leading-[1.1] text-charcoal" data-i18n="about.title">A scholar of ideas, and the politics that move them.</h2>
+        </div>
+        <div class="md:col-span-7 md:col-start-6 reveal-right space-y-5 text-[16.5px] leading-[1.75] text-ink">
+          <p data-i18n="about.p1">
+            Dr. Wael Saleh is an associate professor at the Institut d’études internationales de Montréal (IEIM, UQAM), and Political Islam Affairs Advisor at TRENDS Research &amp; Advisory, where he also directs the organization’s offices in Canada and France.
+          </p>
+          <p data-i18n="about.p2">
+            His research traces the religio-political imagination of the contemporary Arab world: the conception of the state, the place of religiosity in public life, and the long shadow of Islamist movements before and after the Arab Spring. He is the co-founder of the Institute of Post-Arab Spring Studies and head of PLURIEL’s research group on the epistemological and methodological challenges of studying violence in the name of Islam.
+          </p>
+          <p data-i18n="about.p3">
+            Across five monographs, dozens of peer-reviewed chapters and articles, and frequent international media commentary, his work seeks one thing: to make the study of political Islam more rigorous, more humane, and more legible across linguistic and cultural divides.
+          </p>
+
+          <ul class="mt-8 grid grid-cols-3 gap-4 text-center reveal-stagger">
+            <li class="rounded-2xl bg-cream border border-line py-5 px-3">
+              <div class="font-display text-3xl text-charcoal">10+</div>
+              <div class="mt-1 text-[12px] tracking-wider2 uppercase text-muted" data-i18n="about.stat1">Books authored</div>
+            </li>
+            <li class="rounded-2xl bg-cream border border-line py-5 px-3">
+              <div class="font-display text-3xl text-charcoal">15+</div>
+              <div class="mt-1 text-[12px] tracking-wider2 uppercase text-muted" data-i18n="about.stat2">Years of research</div>
+            </li>
+            <li class="rounded-2xl bg-cream border border-line py-5 px-3">
+              <div class="font-display text-3xl text-charcoal">3</div>
+              <div class="mt-1 text-[12px] tracking-wider2 uppercase text-muted" data-i18n="about.stat3">Working languages</div>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== EXPERTISE ===== -->
+    <section id="expertise" class="relative py-20 md:py-24">
+      <div class="max-w-6xl mx-auto px-5">
+        <div class="reveal-up text-center max-w-3xl mx-auto">
+          <p class="text-[12px] tracking-wider2 uppercase text-coral-600" data-i18n="exp.kicker">Areas of Specialization</p>
+          <h2 class="mt-3 font-display text-4xl md:text-5xl text-charcoal" data-i18n="exp.title">Where the work concentrates</h2>
+          <p class="mt-4 text-muted" data-i18n="exp.intro">Four interlocking fields of inquiry, applied across academia, advisory practice, and public discourse.</p>
+        </div>
+
+        <div class="mt-12 grid sm:grid-cols-2 lg:grid-cols-4 gap-5 reveal-stagger">
+          <article class="group rounded-2xl bg-ivory border border-line p-6 hover:border-coral-300 hover:shadow-soft hover:-translate-y-1 transition-all">
+            <div class="w-11 h-11 rounded-xl bg-coral-50 text-coral-600 flex items-center justify-center group-hover:scale-110 transition-transform">
+              <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M4 19V6a2 2 0 012-2h10l4 4v11a2 2 0 01-2 2H6a2 2 0 01-2-2z"/><path d="M14 4v5h5"/><path d="M8 13h8M8 17h6"/></svg>
+            </div>
+            <h3 class="mt-5 font-display text-2xl text-charcoal" data-i18n="exp.card1.t">Islamic Studies</h3>
+            <p class="mt-2 text-[14.5px] leading-relaxed text-muted" data-i18n="exp.card1.d">Discourse analysis, hermeneutics, and comparative reading of contemporary Arab-Muslim thought.</p>
+          </article>
+
+          <article class="group rounded-2xl bg-ivory border border-line p-6 hover:border-coral-300 hover:shadow-soft hover:-translate-y-1 transition-all">
+            <div class="w-11 h-11 rounded-xl bg-coral-50 text-coral-600 flex items-center justify-center group-hover:scale-110 transition-transform">
+              <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3a14 14 0 010 18M12 3a14 14 0 000 18"/></svg>
+            </div>
+            <h3 class="mt-5 font-display text-2xl text-charcoal" data-i18n="exp.card2.t">Geopolitics of Ideas</h3>
+            <p class="mt-2 text-[14.5px] leading-relaxed text-muted" data-i18n="exp.card2.d">How religio-political ideas circulate, mutate, and contend across the Arab world and its diasporas.</p>
+          </article>
+
+          <article class="group rounded-2xl bg-ivory border border-line p-6 hover:border-coral-300 hover:shadow-soft hover:-translate-y-1 transition-all">
+            <div class="w-11 h-11 rounded-xl bg-coral-50 text-coral-600 flex items-center justify-center group-hover:scale-110 transition-transform">
+              <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M3 21V9l9-6 9 6v12"/><path d="M9 21v-7h6v7"/></svg>
+            </div>
+            <h3 class="mt-5 font-display text-2xl text-charcoal" data-i18n="exp.card3.t">Political Islam</h3>
+            <p class="mt-2 text-[14.5px] leading-relaxed text-muted" data-i18n="exp.card3.d">Islamism, post-Islamism, the Muslim Brotherhood’s international dynamics, and pathways of radicalization.</p>
+          </article>
+
+          <article class="group rounded-2xl bg-ivory border border-line p-6 hover:border-coral-300 hover:shadow-soft hover:-translate-y-1 transition-all">
+            <div class="w-11 h-11 rounded-xl bg-coral-50 text-coral-600 flex items-center justify-center group-hover:scale-110 transition-transform">
+              <svg class="w-6 h-6" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 2v20M2 12h20"/><circle cx="12" cy="12" r="9"/></svg>
+            </div>
+            <h3 class="mt-5 font-display text-2xl text-charcoal" data-i18n="exp.card4.t">Religion and Globalization</h3>
+            <p class="mt-2 text-[14.5px] leading-relaxed text-muted" data-i18n="exp.card4.d">Pluralism, interreligious dialogue, and the place of faith in late-modern public spheres.</p>
+          </article>
+        </div>
+
+        <div class="reveal-up mt-12">
+          <p class="text-center text-[12px] tracking-wider2 uppercase text-muted" data-i18n="exp.methods">Methods and recurring themes</p>
+          <div class="mt-5 flex flex-wrap justify-center gap-2 reveal-stagger" id="chipRow">
+            <span class="chip rounded-full px-3 py-1.5 text-[13px]" data-i18n="chip.1"
+              data-tooltip-title="Discourse Analysis"
+              data-tooltip="Saleh employs critical discourse analysis to deconstruct the ideological narratives of Islamist movements, examining how language constructs political legitimacy and delegitimizes opponents within Sunni Islamist texts."
+              data-tooltip-ref="Étudier l'islamisme entre crise du savoir et fausse représentation (TRENDS, 2024); Représentations des musulmans non islamistes dans le discours islamiste sunnite (PLURIEL, 2022)">Discourse analysis</span>
+            <span class="chip rounded-full px-3 py-1.5 text-[13px]" data-i18n="chip.2"
+              data-tooltip-title="Hermeneutics"
+              data-tooltip="Through hermeneutical methods, Saleh interrogates how foundational Islamic texts are reinterpreted by both Islamist ideologues and contemporary reformist thinkers, revealing the gap between traditional exegesis and modern political instrumentalization of religion."
+              data-tooltip-ref="De l'islamologie appliquée à l'islamismologie appliquée (with P. Brodeur, UCLy, 2021); Applied Islamismology (TRENDS, 2021)">Hermeneutics</span>
+            <span class="chip rounded-full px-3 py-1.5 text-[13px]" data-i18n="chip.3"
+              data-tooltip-title="Comparative Studies"
+              data-tooltip="Saleh's comparative approach juxtaposes different intellectual currents in modern Arab-Muslim thought — examining how Egyptian, Levantine, and North African thinkers have conceptualized the relationship between the religious and the political across distinct historical contexts."
+              data-tooltip-ref="Le concept de l'État dans la pensée égyptienne moderne et contemporaine (PhD thesis, UdeM, 2017); À la recherche d'un aggiornamento de l'islam (L'Harmattan, 2018)">Comparative studies</span>
+            <span class="chip rounded-full px-3 py-1.5 text-[13px]" data-i18n="chip.4"
+              data-tooltip-title="State and Nation"
+              data-tooltip="A central pillar of Saleh's doctoral research, this theme traces the continuities, evolutions, and ruptures in the conception of the State within modern and contemporary Egyptian thought, particularly at the intersection of religious authority and political sovereignty."
+              data-tooltip-ref="Le concept de l'État dans la pensée égyptienne moderne et contemporaine: continuités, évolutions et ruptures (PhD thesis, Université de Montréal, 2017)">State and nation</span>
+            <span class="chip rounded-full px-3 py-1.5 text-[13px]" data-i18n="chip.5"
+              data-tooltip-title="Civil Society"
+              data-tooltip="Saleh investigates the contested space of civil society in Arab-Muslim contexts, analyzing how Islamist movements navigate, co-opt, or undermine civic institutions and how secular-religious tensions shape the public sphere in post-revolutionary settings."
+              data-tooltip-ref="L'islam politique à l'ère du post-printemps arabe (with P. Brodeur, L'Harmattan, 2017); Déconstruire des idées reçues sur l'islamisme frériste égyptien (TRENDS, 2023)">Civil society</span>
+            <span class="chip rounded-full px-3 py-1.5 text-[13px]" data-i18n="chip.6"
+              data-tooltip-title="Religious Freedom"
+              data-tooltip="Saleh examines how the notion of religious freedom is theorized and practiced in Muslim-majority contexts, including the tensions between full citizenship, minority rights, and the Document on Human Fraternity's vision of pluralism as divine wisdom."
+              data-tooltip-ref="Conférence: Appartenance(s) et territoire(s) au prisme de la religiosité (al-tadayyun) dans la pensée arabo-musulmane actuelle (PLURIEL Congress, Rome, 2018)">Religious freedom</span>
+            <span class="chip rounded-full px-3 py-1.5 text-[13px]" data-i18n="chip.7"
+              data-tooltip-title="Radicalization"
+              data-tooltip="Saleh maps the theoretical actors and epistemological stakes in studies on radicalization leading to violence in the name of Islam, questioning whether existing conceptual tools are adequate to decipher the complex discourses and practices involved."
+              data-tooltip-ref="Les études de la radicalisation menant à la violence au nom de l'islam: cartographier les acteurs théoriques (PLURIEL, 2021); Co-founder, Research Group on Epistemological and Methodological Issues (PLURIEL/UdeM)">Radicalization</span>
+            <span class="chip rounded-full px-3 py-1.5 text-[13px]" data-i18n="chip.8"
+              data-tooltip-title="Religion and Violence"
+              data-tooltip="This theme addresses the ideological and theological legitimation of violence within Islamist movements, asking whether inciting or justifying violence can itself be considered a violent act — a question central to Saleh's analytical framework."
+              data-tooltip-ref="Les études de la radicalisation menant à la violence au nom de l'islam (PLURIEL, 2021); Enjeux épistémologiques et méthodologiques des études sur la violence au nom de l'islam (PLURIEL Research Group)">Religion and violence</span>
+            <span class="chip rounded-full px-3 py-1.5 text-[13px]" data-i18n="chip.9"
+              data-tooltip-title="Post-Arab Spring"
+              data-tooltip="Saleh co-founded the Institute of Post-Arab Spring Studies (IEPPA) and co-authored a key volume asking whether the post-2011 era marks a 'necro-Islamism' — a phase where Islamist movements increasingly radicalize or de-Islamize in the face of popular contestation."
+              data-tooltip-ref="L'islam politique à l'ère du post-printemps arabe: sommes-nous entrés dans l'ère du nécro-islamisme? (with P. Brodeur, L'Harmattan, 2017)">Post-Arab Spring</span>
+            <span class="chip rounded-full px-3 py-1.5 text-[13px]" data-i18n="chip.10"
+              data-tooltip-title="Muslim Brotherhood"
+              data-tooltip="Saleh's extensive work on the Muslim Brotherhood deconstructs received ideas about Egyptian Brotherhoodism, analyzes their international power structures, and critically examines their intra-religious representations of non-Islamist Muslims as an internal 'Other.'"
+              data-tooltip-ref="Déconstruire des idées reçues sur l'islamisme frériste égyptien (TRENDS, 2023); Muslim Brotherhood: Side Glances (TRENDS, 2022); The Muslim Brotherhood's International Power Index 2022–2023 (TRENDS, 2024)">Muslim Brotherhood</span>
+            <span class="chip rounded-full px-3 py-1.5 text-[13px]" data-i18n="chip.11"
+              data-tooltip-title="Interreligious Dialogue"
+              data-tooltip="As a member of PLURIEL's research group on AI-assisted interreligious dialogue and an active contributor to the Human Fraternity Document's intellectual milieu, Saleh explores how deconstruction of extremist ideas and support for a religiosity compatible with peaceful coexistence can strengthen Muslim-Christian relations."
+              data-tooltip-ref="PLURIEL Congress contributions (Abu Dhabi 2024, Beirut 2022, Rome 2018); Research Group: Dialogue interreligieux assisté par l'intelligence artificielle (PLURIEL)">Interreligious dialogue</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== EXPERIENCE & EDUCATION ===== -->
+    <section id="experience" class="relative py-20 md:py-24 bg-ivory border-y border-line/70">
+      <div class="max-w-6xl mx-auto px-5 grid lg:grid-cols-12 gap-12">
+        <div class="lg:col-span-7 reveal-left">
+          <p class="text-[12px] tracking-wider2 uppercase text-coral-600" data-i18n="xp.kicker">Experience and Employment</p>
+          <h2 class="mt-3 font-display text-4xl md:text-5xl text-charcoal" data-i18n="xp.title">A trajectory across institutions</h2>
+          <p class="mt-4 text-muted max-w-xl" data-i18n="xp.intro">From Montreal classrooms to international advisory work, bridging academic research and applied policy analysis.</p>
+
+          <ol class="mt-10 relative timeline-rail border-l border-line pl-6 space-y-8 reveal-stagger">
+            <li>
+              <span class="absolute timeline-dot -left-[7px] mt-1.5 w-3 h-3 rounded-full bg-coral-400 ring-4 ring-coral-50 pulse-dot"></span>
+              <div class="flex flex-wrap items-baseline justify-between gap-2">
+                <h3 class="font-display text-2xl text-charcoal" data-i18n="xp.j1.org">TRENDS Research &amp; Advisory</h3>
+                <span class="text-[13px] tracking-wider2 uppercase text-muted"><span data-i18n="xp.j1.year">2021, Present</span></span>
+              </div>
+              <p class="text-[14px] text-coral-700 mt-1" data-i18n="xp.j1.role">Political Islam Affairs Advisor; Director, Canada and France Offices</p>
+              <p class="mt-2 text-[15px] leading-relaxed text-ink/85" data-i18n="xp.j1.body">Leading flagship publications including the <em>Muslim Brotherhood International Power Index (MBIPI)</em>, and overseeing TRENDS’ research presence in Canada and France.</p>
+            </li>
+            <li>
+              <span class="absolute timeline-dot -left-[7px] mt-1.5 w-3 h-3 rounded-full bg-charcoal ring-4 ring-line/60"></span>
+              <div class="flex flex-wrap items-baseline justify-between gap-2">
+                <h3 class="font-display text-2xl text-charcoal" data-i18n="xp.j2.org">Université du Québec à Montréal (UQAM)</h3>
+                <span class="text-[13px] tracking-wider2 uppercase text-muted" data-i18n="xp.j2.year">2019, 2022</span>
+              </div>
+              <p class="text-[14px] text-coral-700 mt-1" data-i18n="xp.j2.role">Associate Professor, Institut d’études internationales de Montréal (IEIM)</p>
+              <p class="mt-2 text-[15px] leading-relaxed text-ink/85" data-i18n="xp.j2.body">Teaching geopolitics of religion, post-2011 Arab worlds, and Islam and modernity.</p>
+            </li>
+            <li>
+              <span class="absolute timeline-dot -left-[7px] mt-1.5 w-3 h-3 rounded-full bg-charcoal ring-4 ring-line/60"></span>
+              <div class="flex flex-wrap items-baseline justify-between gap-2">
+                <h3 class="font-display text-2xl text-charcoal" data-i18n="xp.j3.org">Université de Montréal</h3>
+                <span class="text-[13px] tracking-wider2 uppercase text-muted" data-i18n="xp.j3.year">2017, 2022</span>
+              </div>
+              <p class="text-[14px] text-coral-700 mt-1" data-i18n="xp.j3.role">Researcher and Teaching Assistant, Institute of Religious Studies (IER)</p>
+              <p class="mt-2 text-[15px] leading-relaxed text-ink/85" data-i18n="xp.j3.body">Senior research advisor on political Islam, post-Arab Spring trajectories, and contemporary Arab thought.</p>
+            </li>
+            <li>
+              <span class="absolute timeline-dot -left-[7px] mt-1.5 w-3 h-3 rounded-full bg-charcoal ring-4 ring-line/60"></span>
+              <div class="flex flex-wrap items-baseline justify-between gap-2">
+                <h3 class="font-display text-2xl text-charcoal" data-i18n="xp.j4.org">Raoul-Dandurand Chair, UQAM</h3>
+                <span class="text-[13px] tracking-wider2 uppercase text-muted"><span data-i18n="xp.j4.year">2013, Present</span></span>
+              </div>
+              <p class="text-[14px] text-coral-700 mt-1" data-i18n="xp.j4.role">Associate Researcher, Observatory on the Middle East and North Africa</p>
+              <p class="mt-2 text-[15px] leading-relaxed text-ink/85" data-i18n="xp.j4.body">Long-running affiliation with one of Canada’s premier strategic-studies chairs.</p>
+            </li>
+            <li>
+              <span class="absolute timeline-dot -left-[7px] mt-1.5 w-3 h-3 rounded-full bg-charcoal ring-4 ring-line/60"></span>
+              <div class="flex flex-wrap items-baseline justify-between gap-2">
+                <h3 class="font-display text-2xl text-charcoal" data-i18n="xp.j5.org">Institute of Post-Arab Spring Studies (IEPPA)</h3>
+                <span class="text-[13px] tracking-wider2 uppercase text-muted"><span data-i18n="xp.j5.year">2017, Present</span></span>
+              </div>
+              <p class="text-[14px] text-coral-700 mt-1" data-i18n="xp.j5.role">Co-founder and Director</p>
+            </li>
+          </ol>
+        </div>
+
+        <aside class="lg:col-span-5 space-y-6 reveal-right">
+          <div id="education" class="rounded-3xl bg-cream border border-line p-7 shadow-soft">
+            <p class="text-[12px] tracking-wider2 uppercase text-coral-600" data-i18n="edu.kicker">Education</p>
+            <ul class="mt-5 space-y-6">
+              <li>
+                <div class="flex items-baseline justify-between gap-3">
+                  <h3 class="font-display text-2xl text-charcoal" data-i18n="edu.s1.org">Université de Montréal</h3>
+                  <span class="text-[13px] tracking-wider2 uppercase text-muted">2017</span>
+                </div>
+                <p class="text-[14px] text-coral-700 mt-1" data-i18n="edu.s1.deg">Ph.D., Applied Human Sciences (Islamic Studies and Political Science)</p>
+                <p class="mt-2 text-[14.5px] leading-relaxed text-ink/85" data-i18n-html="edu.s1.body">
+                  Thesis: <em>The State’s Conception Through the Prism of the Relationship Between Religion and Politics in Modern and Contemporary Egyptian Thought (2011, 2015): Continuities, Evolutions and Ruptures.</em>
+                </p>
+                <a href="https://papyrus.bib.umontreal.ca/xmlui/handle/1866/18423" target="_blank" rel="noopener noreferrer"
+                   class="mt-2 inline-flex items-center gap-1 text-[13px] text-coral-700 ul-link">
+                  <span data-i18n="edu.s1.link">Read on Papyrus</span>
+                  <svg class="w-3.5 h-3.5" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M9 7h8v8"/></svg>
+                </a>
+              </li>
+              <li>
+                <div class="flex items-baseline justify-between gap-3">
+                  <h3 class="font-display text-2xl text-charcoal" data-i18n="edu.s2.org">Université de Sherbrooke</h3>
+                  <span class="text-[13px] tracking-wider2 uppercase text-muted">2011</span>
+                </div>
+                <p class="text-[14px] text-coral-700 mt-1" data-i18n="edu.s2.deg">M.A., Applied Political Science (Islamic Studies)</p>
+              </li>
+            </ul>
+          </div>
+
+          <div class="rounded-3xl bg-cream border border-line p-7 shadow-soft">
+            <p class="text-[12px] tracking-wider2 uppercase text-coral-600" data-i18n="awards.kicker">Fellowships and Awards</p>
+            <ul class="mt-5 space-y-4 text-[14.5px]">
+              <li class="flex gap-3"><span class="mt-1 w-1.5 h-1.5 rounded-full bg-coral-400 shrink-0"></span><span data-i18n-html="awards.a1"><strong class="font-medium">Postdoctoral Fellow</strong>, Institute of Religious Studies (IER) and CÉRIUM, Université de Montréal · 2018</span></li>
+              <li class="flex gap-3"><span class="mt-1 w-1.5 h-1.5 rounded-full bg-coral-400 shrink-0"></span><span data-i18n-html="awards.a2"><strong class="font-medium">Dean’s Honor List</strong>, Faculty of Arts and Science, Université de Montréal · 2017</span></li>
+              <li class="flex gap-3"><span class="mt-1 w-1.5 h-1.5 rounded-full bg-coral-400 shrink-0"></span><span data-i18n-html="awards.a3"><strong class="font-medium">Excellence Award for Mobility</strong>, Ph.D. in Applied Humanities, Université de Montréal · 2015 to 2016</span></li>
+            </ul>
+          </div>
+
+          <div class="rounded-3xl bg-cream border border-line p-7 shadow-soft">
+            <p class="text-[12px] tracking-wider2 uppercase text-coral-600" data-i18n="lang.kicker">Languages</p>
+            <ul class="mt-5 grid grid-cols-3 gap-4">
+              <li><div class="font-display text-xl text-charcoal" data-i18n="lang.ar.t">Arabic</div><div class="text-[12px] tracking-wider2 uppercase text-muted" data-i18n="lang.ar.l">Native</div></li>
+              <li><div class="font-display text-xl text-charcoal" data-i18n="lang.fr.t">French</div><div class="text-[12px] tracking-wider2 uppercase text-muted" data-i18n="lang.fr.l">Fluent</div></li>
+              <li><div class="font-display text-xl text-charcoal" data-i18n="lang.en.t">English</div><div class="text-[12px] tracking-wider2 uppercase text-muted" data-i18n="lang.en.l">Working</div></li>
+            </ul>
+          </div>
+        </aside>
+      </div>
+    </section>
+
+    <!-- ===== PUBLICATIONS ===== -->
+    <section id="publications" class="relative py-20 md:py-24">
+      <div class="max-w-6xl mx-auto px-5">
+        <div class="flex flex-wrap items-end justify-between gap-6 reveal-up">
+          <div>
+            <p class="text-[12px] tracking-wider2 uppercase text-coral-600" data-i18n="pub.kicker">Selected Publications</p>
+            <h2 class="mt-3 font-display text-4xl md:text-5xl text-charcoal" data-i18n="pub.title">Books, monographs, and reports</h2>
+          </div>
+          <p class="max-w-md text-muted" data-i18n="pub.intro">A selection from a body of work spanning monographs at L’Harmattan, peer-reviewed chapters and articles, and TRENDS research publications, in English, French, and Arabic.</p>
+        </div>
+
+        <div class="mt-12 grid sm:grid-cols-2 lg:grid-cols-3 gap-6 reveal-stagger">
+
+          <a class="cover-card group block rounded-2xl border border-line bg-ivory p-5 hover:bg-white transition-colors"
+             href="https://www.editions-harmattan.fr/livre-a_la_recherche_d_un_aggiornamento_de_l_islam_des_voies_contemporaines_wael_saleh-9782343148304-60259.html"
+             target="_blank" rel="noopener noreferrer">
+            <div class="relative aspect-[3/4] rounded-xl overflow-hidden bg-cream mb-4">
+              <img class="cover-img w-full h-full object-cover" src="assets/images/covers/9782343148304r.jpg" alt="" loading="lazy" />
+              <div class="cover-shine"></div>
+            </div>
+            <p class="text-[11px] tracking-wider2 uppercase text-muted">L’Harmattan · 2018</p>
+            <h3 class="mt-1 font-display text-xl leading-snug text-charcoal group-hover:text-coral-700 transition-colors">À la recherche d’un aggiornamento de l’islam</h3>
+            <p class="mt-1 text-[13px] text-muted">Des voies arabes contemporaines · ISBN 978-2-343-14830-4</p>
+          </a>
+
+          <a class="cover-card group block rounded-2xl border border-line bg-ivory p-5 hover:bg-white transition-colors"
+             href="https://www.editions-harmattan.fr/livre-l_islam_politique_a_l_ere_du_post_printemps_arabe_sommes_nous_entres_dans_l_ere_du_necro_islamisme_wael_saleh_patrice_brodeur-9782343136691-58269.html"
+             target="_blank" rel="noopener noreferrer">
+            <div class="relative aspect-[3/4] rounded-xl overflow-hidden bg-cream mb-4">
+              <img class="cover-img w-full h-full object-cover" src="assets/images/covers/9782343136691r.jpg" alt="" loading="lazy" />
+              <div class="cover-shine"></div>
+            </div>
+            <p class="text-[11px] tracking-wider2 uppercase text-muted">L’Harmattan · 2017</p>
+            <h3 class="mt-1 font-display text-xl leading-snug text-charcoal group-hover:text-coral-700 transition-colors">L’islam politique à l’ère du Post-printemps arabe</h3>
+            <p class="mt-1 text-[13px] text-muted">with Patrice Brodeur · ISBN 978-2-343-13669-1</p>
+          </a>
+
+          <a class="cover-card group block rounded-2xl border border-line bg-ivory p-5 hover:bg-white transition-colors"
+             href="https://www.editions-harmattan.fr/livre-la_conception_de_l_etat_dans_la_pensee_egyptienne_contemporaine_continuites_et_ruptures_dans_l_interpretation_des_liens_entre_religion_et_politique_wael_saleh-9782343113531-52794.html"
+             target="_blank" rel="noopener noreferrer">
+            <div class="relative aspect-[3/4] rounded-xl overflow-hidden bg-cream mb-4">
+              <img class="cover-img w-full h-full object-cover" src="assets/images/covers/9782343113531r.jpg" alt="" loading="lazy" />
+              <div class="cover-shine"></div>
+            </div>
+            <p class="text-[11px] tracking-wider2 uppercase text-muted">L’Harmattan · 2017</p>
+            <h3 class="mt-1 font-display text-xl leading-snug text-charcoal group-hover:text-coral-700 transition-colors">La conception de l’État dans la pensée égyptienne contemporaine</h3>
+            <p class="mt-1 text-[13px] text-muted">Comprendre le Moyen-Orient · ISBN 978-2-343-11353-1</p>
+          </a>
+
+          <a class="cover-card group block rounded-2xl border border-line bg-ivory p-5 hover:bg-white transition-colors"
+             href="https://trendsresearch.org/publication/the-muslim-brotherhoods-international-power-index-mbipi-2022-2023/"
+             target="_blank" rel="noopener noreferrer">
+            <div class="relative aspect-[3/4] rounded-xl overflow-hidden bg-cream mb-4">
+              <img class="cover-img w-full h-full object-cover" src="assets/images/covers/mbipi-2022-2023.jpg" alt="" loading="lazy" />
+              <div class="cover-shine"></div>
+            </div>
+            <p class="text-[11px] tracking-wider2 uppercase text-muted">TRENDS · 2024</p>
+            <h3 class="mt-1 font-display text-xl leading-snug text-charcoal group-hover:text-coral-700 transition-colors">The Muslim Brotherhood’s International Power Index 2022, 2023</h3>
+            <p class="mt-1 text-[13px] text-muted">English and French editions</p>
+          </a>
+
+          <a class="cover-card group block rounded-2xl border border-line bg-ivory p-5 hover:bg-white transition-colors"
+             href="https://trendsresearch.org/publication/applied-islamismology-ai-toward-an-arab-epistemological-reference-framework-for-studying-political-islam/?srsltid=AfmBOorkIu6_sp5OI_I2c0QwKMrlkGOpJSJBP-41erGzcLXepKtRZ-ji"
+             target="_blank" rel="noopener noreferrer">
+            <div class="relative aspect-[3/4] rounded-xl overflow-hidden bg-cream mb-4">
+              <img class="cover-img w-full h-full object-cover" src="assets/images/covers/cover-1-1.png" alt="Applied Islamismology cover" loading="lazy" />
+              <div class="cover-shine"></div>
+            </div>
+            <p class="text-[11px] tracking-wider2 uppercase text-muted">TRENDS · 2021</p>
+            <h3 class="mt-1 font-display text-xl leading-snug text-charcoal group-hover:text-coral-700 transition-colors">Applied Islamismology</h3>
+            <p class="mt-1 text-[13px] text-muted">Toward an Arab Epistemological Reference Framework for Studying Political Islam</p>
+          </a>
+
+          <a class="cover-card group block rounded-2xl border border-line bg-ivory p-5 hover:bg-white transition-colors"
+             href="https://books.google.com/books?id=5H8K0AEACAAJ"
+             target="_blank" rel="noopener noreferrer">
+            <div class="relative aspect-[3/4] rounded-xl overflow-hidden bg-cream mb-4">
+              <img class="cover-img w-full h-full object-cover" src="assets/images/covers/side-glances.jpg" alt="" loading="lazy" />
+              <div class="cover-shine"></div>
+            </div>
+            <p class="text-[11px] tracking-wider2 uppercase text-muted">TRENDS · 2022</p>
+            <h3 class="mt-1 font-display text-xl leading-snug text-charcoal group-hover:text-coral-700 transition-colors">Muslim Brotherhood: Side Glances</h3>
+            <p class="mt-1 text-[13px] text-muted">edited with Mohamed Al-Ali, Fatouh Haikal, Leyla Ozmenekse</p>
+          </a>
+
+          <a class="cover-card group block rounded-2xl border border-line bg-ivory p-5 hover:bg-white transition-colors"
+             href="https://trendsresearch.org/publication/deconstruire-des-idees-recues-sur-lislamisme-freriste-egyptien/"
+             target="_blank" rel="noopener noreferrer">
+            <div class="relative aspect-[3/4] rounded-xl overflow-hidden bg-cream mb-4">
+              <img class="cover-img w-full h-full object-cover" src="assets/images/covers/deconstruire-freriste.png" alt="" loading="lazy" />
+              <div class="cover-shine"></div>
+            </div>
+            <p class="text-[11px] tracking-wider2 uppercase text-muted">TRENDS · 2024</p>
+            <h3 class="mt-1 font-display text-xl leading-snug text-charcoal group-hover:text-coral-700 transition-colors">Déconstruire des idées reçues sur l’islamisme frériste égyptien</h3>
+            <p class="mt-1 text-[13px] text-muted">with Patrice Brodeur</p>
+          </a>
+
+          <a class="cover-card group block rounded-2xl border border-line bg-ivory p-5 hover:bg-white transition-colors"
+             href="https://usherbrooke.scholaris.ca/items/84e1d909-d28d-432e-87a1-b4caaeefc38e"
+             target="_blank" rel="noopener noreferrer">
+            <div class="relative aspect-[3/4] rounded-xl overflow-hidden mb-4 bg-gradient-to-br from-cream via-coral-50 to-coral-200">
+              <div class="absolute inset-x-5 top-5 bottom-5 border border-charcoal/15 rounded-md p-4 flex flex-col justify-between bg-ivory/50 backdrop-blur-[1px]">
+                <span class="text-[10px] tracking-wider2 uppercase text-charcoal/60">Université de Sherbrooke · 2010</span>
+                <span class="font-display text-lg leading-tight text-charcoal">La prise de décision politique chez les Frères musulmans</span>
+              </div>
+              <div class="cover-shine"></div>
+            </div>
+            <p class="text-[11px] tracking-wider2 uppercase text-muted">Université de Sherbrooke · 2010</p>
+            <h3 class="mt-1 font-display text-xl leading-snug text-charcoal group-hover:text-coral-700 transition-colors">La prise de décision politique chez les Frères musulmans</h3>
+            <p class="mt-1 text-[13px] text-muted">Convictions idéologiques ou considérations opportunistes ? · Mémoire de maîtrise</p>
+          </a>
+
+        </div>
+
+        <!-- Peer-reviewed articles -->
+        <div class="mt-16 grid lg:grid-cols-12 gap-10">
+          <div class="lg:col-span-4 reveal-left">
+            <p class="text-[12px] tracking-wider2 uppercase text-coral-600" data-i18n="art.kicker">Peer-Reviewed</p>
+            <h3 class="mt-3 font-display text-3xl text-charcoal" data-i18n="art.title">Articles and book chapters</h3>
+            <p class="mt-3 text-muted text-[15px] leading-relaxed" data-i18n="art.intro">A selection of refereed contributions appearing in journals and edited volumes across France, Canada, and the Arab world.</p>
+
+            <a href="https://www.researchgate.net/profile/Wael-Saleh" target="_blank" rel="noopener noreferrer"
+               class="mt-6 inline-flex items-center gap-2 px-4 py-2 rounded-full border border-line bg-ivory hover:bg-cream text-[13.5px] text-charcoal transition-colors">
+              <span class="inline-flex items-center justify-center w-5 h-5 rounded bg-[#00ccbb] text-white text-[9px] font-bold">RG</span>
+              <span data-i18n="art.scholar">View on ResearchGate</span>
+              <svg class="w-3.5 h-3.5 ar-flip-x" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M9 7h8v8"/></svg>
+            </a>
+          </div>
+
+          <ul class="lg:col-span-8 divide-y divide-line reveal-stagger">
+            <li class="py-5">
+              <a href="https://journals.openedition.org/mideo/2882" target="_blank" rel="noopener noreferrer" class="group block">
+                <p class="font-display text-xl text-charcoal leading-snug group-hover:text-coral-700 transition-colors">Du droit musulman au droit humain au nom de l’islam : les apports de Saʻd al-Dīn al-Hilālī et de ʻAbd al-Jawād Yāsīn</p>
+                <p class="mt-1 text-[13.5px] text-muted">MIDÉO 34 · 2019</p>
+              </a>
+            </li>
+            <li class="py-5">
+              <a href="https://www.researchgate.net/profile/Wael-Saleh-2" target="_blank" rel="noopener noreferrer" class="group block">
+                <p class="font-display text-xl text-charcoal leading-snug group-hover:text-coral-700 transition-colors">Sommes-nous entrés dans l’ère du nécro-islamisme ?</p>
+                <p class="mt-1 text-[13.5px] text-muted">Les Cahiers de l’islam · 2017 · with Patrice Brodeur</p>
+              </a>
+            </li>
+            <li class="py-5">
+              <a href="https://www.researchgate.net/profile/Wael-Saleh-2" target="_blank" rel="noopener noreferrer" class="group block">
+                <p class="font-display text-xl text-charcoal leading-snug group-hover:text-coral-700 transition-colors">Le « printemps arabe » et ses conséquences sur les représentations de l’État-nation, de la démocratie et de l’islamisme</p>
+                <p class="mt-1 text-[13.5px] text-muted">Les Cahiers de l’islam · 2017</p>
+              </a>
+            </li>
+            <li class="py-5">
+              <a href="https://www.routledge.com/Routledge-Handbook-of-Freedom-of-Religion-or-Belief/Ferrari-Bottoni-Hill-Jamal/p/book/9780367405809" target="_blank" rel="noopener noreferrer" class="group block">
+                <p class="font-display text-xl text-charcoal leading-snug group-hover:text-coral-700 transition-colors">The right of religious freedom: Islamic Perspectives</p>
+                <p class="mt-1 text-[13.5px] text-muted">Routledge Handbook of Freedom of Religion or Belief · 2019</p>
+              </a>
+            </li>
+            <li class="py-5">
+              <a href="https://www.researchgate.net/profile/Wael-Saleh-2" target="_blank" rel="noopener noreferrer" class="group block">
+                <p class="font-display text-xl text-charcoal leading-snug group-hover:text-coral-700 transition-colors">Les élites de foi et de culture musulmane sunnite au Canada : tendances, débats et enjeux</p>
+                <p class="mt-1 text-[13.5px] text-muted">État des lieux des Musulmans canadiens · Al Mesbar Studies and Research Centre · 2019</p>
+              </a>
+            </li>
+            <li class="py-5">
+              <a href="https://www.researchgate.net/profile/Wael-Saleh-2" target="_blank" rel="noopener noreferrer" class="group block">
+                <p class="font-display text-xl text-charcoal leading-snug group-hover:text-coral-700 transition-colors">L’invincible diversité des perceptions de connaissance en sciences humaines et sociales</p>
+                <p class="mt-1 text-[13.5px] text-muted">Le religieux et le chercheur, Presses de l’Université Laval</p>
+              </a>
+            </li>
+            <li class="py-5">
+              <a href="https://www.researchgate.net/profile/Wael-Saleh-2" target="_blank" rel="noopener noreferrer" class="group block">
+                <p class="font-display text-xl text-charcoal leading-snug group-hover:text-coral-700 transition-colors">L’Égypte sous l’ère des Frères musulmans : y avait-il une place pour un État moderne ?</p>
+                <p class="mt-1 text-[13.5px] text-muted">Islam : regards en coin · Presses de l’Université Laval · 2015</p>
+              </a>
+            </li>
+            <li class="py-5">
+              <a href="https://www.researchgate.net/profile/Wael-Saleh-2" target="_blank" rel="noopener noreferrer" class="group block">
+                <p class="font-display text-xl text-charcoal leading-snug group-hover:text-coral-700 transition-colors">Pour une approche interdisciplinaire de l’étude de l’islamisme contemporain</p>
+                <p class="mt-1 text-[13.5px] text-muted">Cahiers du CÉRIUM, Université de Montréal · 2012</p>
+              </a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- TRENDS Arabic publications -->
+        <div class="mt-16 reveal-up">
+          <p class="text-[12px] tracking-wider2 uppercase text-coral-600" data-i18n="ar.kicker">Selected publications in Arabic</p>
+          <h3 class="mt-3 font-display text-3xl text-charcoal" data-i18n="ar.title">TRENDS Research and Advisory · العربية</h3>
+          <ul class="mt-6 grid sm:grid-cols-2 gap-x-10 gap-y-4 text-[15px] text-ink/85">
+            <li class="flex gap-3"><span class="mt-2 w-1.5 h-1.5 rounded-full bg-coral-400 shrink-0"></span><a class="ul-link" target="_blank" rel="noopener noreferrer" href="https://trendsresearch.org/ar/insight/applied-islamismology/">الإسلامويات التطبيقية: نحو مرجعية معرفية عربية لدراسة ظاهرة الإسلام السياسي</a></li>
+            <li class="flex gap-3"><span class="mt-2 w-1.5 h-1.5 rounded-full bg-coral-400 shrink-0"></span><a class="ul-link" target="_blank" rel="noopener noreferrer" href="https://trendsresearch.org/ar/">"الإخوان" من خلال وثائقهم: قراءة في الاستراتيجيتين السياسية والمالية</a></li>
+            <li class="flex gap-3"><span class="mt-2 w-1.5 h-1.5 rounded-full bg-coral-400 shrink-0"></span><a class="ul-link" target="_blank" rel="noopener noreferrer" href="https://trendsresearch.org/ar/">الإخوان في كندا: مؤسساتهم، رموزهم، أهدافهم، ومدى تأثيرهم</a></li>
+            <li class="flex gap-3"><span class="mt-2 w-1.5 h-1.5 rounded-full bg-coral-400 shrink-0"></span><a class="ul-link" target="_blank" rel="noopener noreferrer" href="https://trendsresearch.org/ar/">خطر جماعة الإخوان المسلمين في أوروبا: استراتيجية التغلغل وأدوات التمويل وإجراءات المواجهة</a></li>
+            <li class="flex gap-3"><span class="mt-2 w-1.5 h-1.5 rounded-full bg-coral-400 shrink-0"></span><a class="ul-link" target="_blank" rel="noopener noreferrer" href="https://trendsresearch.org/ar/">موسوعة الإخوان المسلمين: مفهوم الدولة عند جماعة الإخوان المسلمين</a></li>
+            <li class="flex gap-3"><span class="mt-2 w-1.5 h-1.5 rounded-full bg-coral-400 shrink-0"></span><a class="ul-link" target="_blank" rel="noopener noreferrer" href="https://trendsresearch.org/ar/">مآل الإسلام السياسي: ما بعد الإسلاموية، التيار البديل أم نهاية الإسلاموية ؟</a></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== RESEARCH GRANTS ===== -->
+    <section class="relative py-20 md:py-24 bg-ivory border-y border-line/70">
+      <div class="max-w-6xl mx-auto px-5">
+        <div class="reveal-up max-w-3xl">
+          <p class="text-[12px] tracking-wider2 uppercase text-coral-600" data-i18n="grant.kicker">Funded Research and Project Collaborations</p>
+          <h2 class="mt-3 font-display text-4xl md:text-5xl text-charcoal" data-i18n="grant.title">A track record of competitive funding</h2>
+          <p class="mt-4 text-muted" data-i18n="grant.intro">Selected research grants and project collaborations conducted with Patrice Brodeur, Aurélie Campana, Dominique Avon, and Saʻd al-Dīn al-Hilālī, among others.</p>
+        </div>
+
+        <div class="mt-12 grid md:grid-cols-2 gap-5 reveal-stagger">
+          <div class="rounded-2xl border border-line bg-cream p-6 hover:border-coral-300 hover:shadow-soft transition-all">
+            <div class="flex items-baseline justify-between gap-3">
+              <span class="text-[12px] tracking-wider2 uppercase text-muted">SSHRC · Savoir</span>
+              <span class="text-[12px] tracking-wider2 uppercase text-coral-700">2018</span>
+            </div>
+            <h3 class="mt-2 font-display text-2xl text-charcoal leading-snug">Études sur l’islamisme au post-«&nbsp;printemps arabe&nbsp;»</h3>
+            <p class="mt-1 text-[13.5px] text-muted">Social Sciences and Humanities Research Council of Canada</p>
+            <p class="mt-2 text-[13.5px] text-ink/75">Co-investigator with Patrice Brodeur (principal applicant).</p>
+          </div>
+          <div class="rounded-2xl border border-line bg-cream p-6 hover:border-coral-300 hover:shadow-soft transition-all">
+            <div class="flex items-baseline justify-between gap-3">
+              <span class="text-[12px] tracking-wider2 uppercase text-muted">SSHRC</span>
+              <span class="text-[12px] tracking-wider2 uppercase text-coral-700">2013</span>
+            </div>
+            <h3 class="mt-2 font-display text-2xl text-charcoal leading-snug">Freedom of Religion in Tunisia and Egypt</h3>
+            <p class="mt-1 text-[13.5px] text-muted">Social Sciences and Humanities Research Council of Canada</p>
+            <p class="mt-2 text-[13.5px] text-ink/75">Co-investigator with Patrice Brodeur (principal applicant).</p>
+          </div>
+          <div class="rounded-2xl border border-line bg-cream p-6 hover:border-coral-300 hover:shadow-soft transition-all">
+            <div class="flex items-baseline justify-between gap-3">
+              <span class="text-[12px] tracking-wider2 uppercase text-muted">BRDV · UdeM</span>
+              <span class="text-[12px] tracking-wider2 uppercase text-coral-700">2017</span>
+            </div>
+            <h3 class="mt-2 font-display text-2xl text-charcoal leading-snug">Dynamiques contemporaines de l’islamisme</h3>
+            <p class="mt-1 text-[13.5px] text-muted">Bureau Recherche-Développement-Valorisation, Université de Montréal</p>
+          </div>
+          <div class="rounded-2xl border border-line bg-cream p-6 hover:border-coral-300 hover:shadow-soft transition-all">
+            <div class="flex items-baseline justify-between gap-3">
+              <span class="text-[12px] tracking-wider2 uppercase text-muted">IER · UdeM</span>
+              <span class="text-[12px] tracking-wider2 uppercase text-coral-700">2017</span>
+            </div>
+            <h3 class="mt-2 font-display text-2xl text-charcoal leading-snug">Vers une nouvelle typologie de l’islam politique</h3>
+            <p class="mt-1 text-[13.5px] text-muted">Institute of Religious Studies, Université de Montréal</p>
+          </div>
+        </div>
+
+        <div class="mt-12 reveal-up">
+          <h3 class="font-display text-2xl text-charcoal" data-i18n="grant.collab">Project collaborations</h3>
+          <ul class="mt-5 grid md:grid-cols-2 gap-x-10 gap-y-4 text-[15px] text-ink/85 reveal-stagger">
+            <li class="flex gap-3"><span class="mt-2 w-1.5 h-1.5 rounded-full bg-coral-400 shrink-0"></span><span><span class="font-medium">Al-Azhar (2011, 2018):</span> actors, debates, dynamics, with Prof. Dominique Avon (EPHE, Chair “Sunni Islam,” Paris).</span></li>
+            <li class="flex gap-3"><span class="mt-2 w-1.5 h-1.5 rounded-full bg-coral-400 shrink-0"></span><span><span class="font-medium">Offers and agents of Islamist radicalization,</span> with Prof. Aurélie Campana (Laval University).</span></li>
+            <li class="flex gap-3"><span class="mt-2 w-1.5 h-1.5 rounded-full bg-coral-400 shrink-0"></span><span><span class="font-medium">How to live together in peace in Islam,</span> with Saʻd al-Dīn al-Hilālī (Al-Azhar University).</span></li>
+            <li class="flex gap-3"><span class="mt-2 w-1.5 h-1.5 rounded-full bg-coral-400 shrink-0"></span><span><span class="font-medium">Mapping post-Arab-Spring Islamist actors,</span> with Patrice Brodeur (Université de Montréal).</span></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== SPEAKING ===== -->
+    <section id="speaking" class="relative py-20 md:py-24">
+      <div class="max-w-6xl mx-auto px-5 grid md:grid-cols-12 gap-10">
+        <div class="md:col-span-5 reveal-left">
+          <p class="text-[12px] tracking-wider2 uppercase text-coral-600" data-i18n="spk.kicker">Conferences and Teaching</p>
+          <h2 class="mt-3 font-display text-4xl md:text-5xl text-charcoal" data-i18n="spk.title">Lectures, plenaries, and courses</h2>
+          <p class="mt-4 text-muted" data-i18n="spk.intro">Plenary addresses at PLURIEL international congresses, sessions at the Acfas annual congress, and graduate courses in Montreal.</p>
+
+          <div class="mt-8 rounded-3xl border border-line bg-ivory p-7">
+            <p class="text-[12px] tracking-wider2 uppercase text-coral-600" data-i18n="spk.taught">Courses taught</p>
+            <ul class="mt-4 space-y-3 font-display text-2xl text-charcoal leading-snug">
+              <li data-i18n="spk.c1">Geopolitics of Religions</li>
+              <li data-i18n="spk.c2">Introduction to Islam</li>
+              <li data-i18n="spk.c3">Islam and Modernity</li>
+              <li data-i18n="spk.c4">Post-2011 Arab worlds: actors, socio-political evolutions, and geopolitical issues</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="md:col-span-7 reveal-right">
+          <ol class="relative timeline-rail border-l border-line pl-6 space-y-7 reveal-stagger">
+            <li>
+              <span class="absolute timeline-dot -left-[7px] mt-1.5 w-3 h-3 rounded-full bg-coral-400 ring-4 ring-coral-50 pulse-dot"></span>
+              <p class="text-[13px] tracking-wider2 uppercase text-muted" data-i18n="spk.e1.date">February 2024 · Abu Dhabi</p>
+              <h3 class="mt-1 font-display text-xl text-charcoal" data-i18n="spk.e1.title">Co-organizer, Congress “Islam and Fraternity”</h3>
+              <p class="text-[14px] text-ink/80" data-i18n="spk.e1.body">PLURIEL and TRENDS Research and Advisory.</p>
+            </li>
+            <li>
+              <span class="absolute timeline-dot -left-[7px] mt-1.5 w-3 h-3 rounded-full bg-charcoal ring-4 ring-line/60"></span>
+              <p class="text-[13px] tracking-wider2 uppercase text-muted" data-i18n="spk.e2.date">December 2024 · Lyon, France</p>
+              <h3 class="mt-1 font-display text-xl text-charcoal">Du dialogue interreligieux au dialogue inter-Weltanschauungen</h3>
+              <p class="text-[14px] text-ink/80" data-i18n="spk.e2.body">Faculté de Théologie, Lyon, invited address.</p>
+            </li>
+            <li>
+              <span class="absolute timeline-dot -left-[7px] mt-1.5 w-3 h-3 rounded-full bg-charcoal ring-4 ring-line/60"></span>
+              <p class="text-[13px] tracking-wider2 uppercase text-muted" data-i18n="spk.e3.date">May 2022 · Université Laval</p>
+              <h3 class="mt-1 font-display text-xl text-charcoal">L’étude de l’islamisme entre l’Occident et le monde arabe</h3>
+              <p class="text-[14px] text-ink/80" data-i18n="spk.e3.body">Co-organizer, 89th Congrès de l’Acfas.</p>
+            </li>
+            <li>
+              <span class="absolute timeline-dot -left-[7px] mt-1.5 w-3 h-3 rounded-full bg-charcoal ring-4 ring-line/60"></span>
+              <p class="text-[13px] tracking-wider2 uppercase text-muted" data-i18n="spk.e4.date">June 2018 · Rome</p>
+              <h3 class="mt-1 font-display text-xl text-charcoal">Appartenance(s) et territoire(s) au prisme de la religiosité</h3>
+              <p class="text-[14px] text-ink/80" data-i18n="spk.e4.body">2nd International PLURIEL Congress, “Islam et appartenances.”</p>
+            </li>
+            <li>
+              <span class="absolute timeline-dot -left-[7px] mt-1.5 w-3 h-3 rounded-full bg-charcoal ring-4 ring-line/60"></span>
+              <p class="text-[13px] tracking-wider2 uppercase text-muted" data-i18n="spk.e5.date">March 2019 · CÉRIUM, Montréal</p>
+              <h3 class="mt-1 font-display text-xl text-charcoal">Islamisme et violence : débats et enjeux</h3>
+              <p class="text-[14px] text-ink/80" data-i18n="spk.e5.body">Co-organizer, Université de Montréal.</p>
+            </li>
+            <li>
+              <span class="absolute timeline-dot -left-[7px] mt-1.5 w-3 h-3 rounded-full bg-charcoal ring-4 ring-line/60"></span>
+              <p class="text-[13px] tracking-wider2 uppercase text-muted" data-i18n="spk.e6.date">October 2018 · Montréal</p>
+              <h3 class="mt-1 font-display text-xl text-charcoal">Aggiornamento de l’islam et penseurs de la rupture</h3>
+              <p class="text-[14px] text-ink/80" data-i18n="spk.e6.body">Festival du Monde Arabe de Montréal.</p>
+            </li>
+          </ol>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== MEMBERSHIPS ===== -->
+    <section id="memberships" class="relative py-20 md:py-24 bg-ivory border-y border-line/70">
+      <div class="max-w-6xl mx-auto px-5">
+        <div class="reveal-up text-center max-w-3xl mx-auto">
+          <p class="text-[12px] tracking-wider2 uppercase text-coral-600" data-i18n="mem.kicker">Memberships and Profiles</p>
+          <h2 class="mt-3 font-display text-4xl md:text-5xl text-charcoal" data-i18n="mem.title">Find Wael across the academic world</h2>
+        </div>
+
+        <div class="mt-12 grid sm:grid-cols-2 lg:grid-cols-3 gap-5 reveal-stagger">
+          <a href="https://ca.linkedin.com/in/wael-saleh-ph-d-593587130" target="_blank" rel="noopener noreferrer"
+             class="group rounded-2xl border border-line bg-cream p-6 hover:border-coral-300 hover:shadow-soft hover:-translate-y-0.5 transition-all">
+            <div class="flex items-center justify-between gap-3">
+              <div class="flex items-center gap-3">
+                <span class="inline-flex items-center justify-center w-9 h-9 rounded-lg bg-[#0a66c2] text-white">
+                  <svg class="w-4 h-4" viewBox="0 0 24 24" fill="currentColor"><path d="M20.45 20.45h-3.55v-5.57c0-1.33-.03-3.05-1.86-3.05-1.86 0-2.14 1.45-2.14 2.95v5.67H9.35V9h3.41v1.56h.05c.48-.9 1.64-1.86 3.38-1.86 3.62 0 4.29 2.38 4.29 5.48v6.27zM5.34 7.43a2.06 2.06 0 11.01-4.13 2.06 2.06 0 01-.01 4.13zM7.12 20.45H3.56V9h3.56v11.45zM22.23 0H1.77C.79 0 0 .77 0 1.72v20.56C0 23.23.79 24 1.77 24h20.46c.98 0 1.77-.77 1.77-1.72V1.72C24 .77 23.21 0 22.23 0z"/></svg>
+                </span>
+                <span class="font-display text-xl text-charcoal">LinkedIn</span>
+              </div>
+              <svg class="w-5 h-5 text-muted group-hover:text-coral-600 transition-colors ar-flip-x" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M9 7h8v8"/></svg>
+            </div>
+            <p class="mt-3 text-[13.5px] text-muted" data-i18n="mem.li">Professional profile and updates</p>
+          </a>
+
+          <a href="https://trendsresearch.org/expert/dr-wael-saleh/" target="_blank" rel="noopener noreferrer"
+             class="group rounded-2xl border border-line bg-cream p-6 hover:border-coral-300 hover:shadow-soft hover:-translate-y-0.5 transition-all">
+            <div class="flex items-center justify-between gap-3">
+              <div class="flex items-center gap-3">
+                <img src="assets/images/logos/trends.png" alt="" class="h-7 w-auto" />
+              </div>
+              <svg class="w-5 h-5 text-muted group-hover:text-coral-600 transition-colors ar-flip-x" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M9 7h8v8"/></svg>
+            </div>
+            <p class="mt-3 text-[13.5px] text-muted" data-i18n="mem.trends">Expert profile, Political Islam advisor</p>
+          </a>
+
+          <a href="https://dandurand.uqam.ca/chercheur/saleh-wael/" target="_blank" rel="noopener noreferrer"
+             class="group rounded-2xl border border-line bg-cream p-6 hover:border-coral-300 hover:shadow-soft hover:-translate-y-0.5 transition-all">
+            <div class="flex items-center justify-between gap-3">
+              <div class="flex items-center gap-3">
+                <img src="assets/images/logos/uqam.svg" alt="" class="h-7 w-auto" />
+                <span class="font-display text-xl text-charcoal">Dandurand</span>
+              </div>
+              <svg class="w-5 h-5 text-muted group-hover:text-coral-600 transition-colors ar-flip-x" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M9 7h8v8"/></svg>
+            </div>
+            <p class="mt-3 text-[13.5px] text-muted" data-i18n="mem.dandurand">Associate researcher, UQAM</p>
+          </a>
+
+          <a href="https://www.acfas.ca/communaute/profil/wael-saleh" target="_blank" rel="noopener noreferrer"
+             class="group rounded-2xl border border-line bg-cream p-6 hover:border-coral-300 hover:shadow-soft hover:-translate-y-0.5 transition-all">
+            <div class="flex items-center justify-between gap-3">
+              <div class="flex items-center gap-3">
+                <img src="assets/images/logos/acfas.svg" alt="" class="h-7 w-auto" />
+                <span class="font-display text-xl text-charcoal">Acfas</span>
+              </div>
+              <svg class="w-5 h-5 text-muted group-hover:text-coral-600 transition-colors ar-flip-x" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M9 7h8v8"/></svg>
+            </div>
+            <p class="mt-3 text-[13.5px] text-muted" data-i18n="mem.acfas">Francophone Association for Knowledge</p>
+          </a>
+
+          <a href="https://pluriel.fuce.eu/chercheur/saleh-wael/" target="_blank" rel="noopener noreferrer"
+             class="group rounded-2xl border border-line bg-cream p-6 hover:border-coral-300 hover:shadow-soft hover:-translate-y-0.5 transition-all">
+            <div class="flex items-center justify-between gap-3">
+              <div class="flex items-center gap-3">
+                <img src="assets/images/logos/pluriel.png" alt="" class="logo-pluriel h-7 w-auto" />
+                <span class="font-display text-xl text-charcoal">PLURIEL</span>
+              </div>
+              <svg class="w-5 h-5 text-muted group-hover:text-coral-600 transition-colors ar-flip-x" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M9 7h8v8"/></svg>
+            </div>
+            <p class="mt-3 text-[13.5px] text-muted" data-i18n="mem.pluriel">University Research Platform on Islam</p>
+          </a>
+
+          <a href="https://cerium.umontreal.ca/communaute/repertoire-departement/vue/wael-saleh/" target="_blank" rel="noopener noreferrer"
+             class="group rounded-2xl border border-line bg-cream p-6 hover:border-coral-300 hover:shadow-soft hover:-translate-y-0.5 transition-all">
+            <div class="flex items-center justify-between gap-3">
+              <div class="flex items-center gap-3">
+                <img src="assets/images/logos/udem.svg" alt="" class="h-7 w-auto" />
+                <span class="font-display text-xl text-charcoal">CÉRIUM</span>
+              </div>
+              <svg class="w-5 h-5 text-muted group-hover:text-coral-600 transition-colors ar-flip-x" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M9 7h8v8"/></svg>
+            </div>
+            <p class="mt-3 text-[13.5px] text-muted" data-i18n="mem.cerium">Université de Montréal</p>
+          </a>
+
+          <a href="https://www.researchgate.net/profile/Wael-Saleh" target="_blank" rel="noopener noreferrer"
+             class="group rounded-2xl border border-line bg-cream p-6 hover:border-coral-300 hover:shadow-soft hover:-translate-y-0.5 transition-all">
+            <div class="flex items-center justify-between gap-3">
+              <div class="flex items-center gap-3">
+                <span class="inline-flex items-center justify-center w-9 h-9 rounded-lg bg-[#00ccbb] text-white font-bold text-sm">RG</span>
+                <span class="font-display text-xl text-charcoal">ResearchGate</span>
+              </div>
+              <svg class="w-5 h-5 text-muted group-hover:text-coral-600 transition-colors ar-flip-x" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M9 7h8v8"/></svg>
+            </div>
+            <p class="mt-3 text-[13.5px] text-muted" data-i18n="mem.rg">Research profile and publications</p>
+          </a>
+
+          <a href="http://ipra.eu/fr/linstitut/presentation-de-lequipe/" target="_blank" rel="noopener noreferrer"
+             class="group rounded-2xl border border-line bg-cream p-6 hover:border-coral-300 hover:shadow-soft hover:-translate-y-0.5 transition-all">
+            <div class="flex items-center justify-between gap-3">
+              <div class="flex items-center gap-3">
+                <span class="inline-flex items-center justify-center w-9 h-9 rounded-lg border border-charcoal/30 text-charcoal text-[10px] font-bold tracking-wider">IPRA</span>
+                <span class="font-display text-xl text-charcoal">Institut du Pluralisme Religieux</span>
+              </div>
+              <svg class="w-5 h-5 text-muted group-hover:text-coral-600 transition-colors ar-flip-x" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M9 7h8v8"/></svg>
+            </div>
+            <p class="mt-3 text-[13.5px] text-muted" data-i18n="mem.ipra">France</p>
+          </a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== CONTACT ===== -->
+    <section id="contact" class="relative py-24 md:py-28 overflow-hidden">
+      <div aria-hidden="true" class="pointer-events-none absolute inset-0 dot-grid opacity-50"></div>
+      <div class="blob bg-coral-200/30 w-[280px] h-[280px] -top-12 right-0 animate-float-slow" aria-hidden="true"></div>
+      <div class="relative max-w-3xl mx-auto px-5 text-center">
+        <p class="text-[12px] tracking-wider2 uppercase text-coral-600 ornament inline-block reveal" data-i18n="ct.kicker">Get in touch</p>
+        <h2 class="mt-4 font-display text-4xl md:text-6xl text-charcoal leading-tight reveal-up" data-i18n="ct.title">For lectures, collaborations, and press inquiries</h2>
+        <p class="mt-5 text-muted text-[16px] leading-relaxed reveal-up" data-i18n="ct.body">Open to academic collaborations, advisory engagements, and invited talks. Email is the fastest way to reach me.</p>
+
+        <div class="mt-9 flex flex-col sm:flex-row items-center justify-center gap-3 reveal-up">
+          <a href="mailto:wael_saleh@hotmail.com" class="btn-coral inline-flex items-center gap-2 px-6 py-3 rounded-full text-[15px] font-medium">
+            <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M3 7l9 6 9-6M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"/></svg>
+            wael_saleh@hotmail.com
+          </a>
+          <button id="copyEmail" type="button"
+                  class="inline-flex items-center gap-2 px-5 py-3 rounded-full border border-line bg-ivory hover:bg-cream text-[14.5px] text-charcoal transition-colors"
+                  data-email="wael_saleh@hotmail.com">
+            <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="9" y="9" width="13" height="13" rx="2"/><path d="M5 15V5a2 2 0 012-2h10"/></svg>
+            <span id="copyText" data-i18n="ct.copy">Copy email address</span>
+          </button>
+        </div>
+
+        <div class="mt-12 hairline pt-8 grid sm:grid-cols-3 gap-6 text-left reveal-stagger">
+          <div>
+            <p class="text-[12px] tracking-wider2 uppercase text-muted" data-i18n="ct.based">Based in</p>
+            <p class="mt-1 font-display text-xl text-charcoal" data-i18n="ct.basedV">Montréal, Canada</p>
+          </div>
+          <div>
+            <p class="text-[12px] tracking-wider2 uppercase text-muted" data-i18n="ct.between">Working between</p>
+            <p class="mt-1 font-display text-xl text-charcoal" data-i18n="ct.betweenV">Canada · France · UAE</p>
+          </div>
+          <div>
+            <p class="text-[12px] tracking-wider2 uppercase text-muted" data-i18n="ct.langs">Languages</p>
+            <p class="mt-1 font-display text-xl text-charcoal" data-i18n="ct.langsV">Arabic · French · English</p>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="site-footer text-cream/80">
+    <div class="max-w-6xl mx-auto px-5 py-14">
+      <div class="grid md:grid-cols-12 gap-10">
+        <div class="md:col-span-6">
+          <p class="font-display text-3xl text-cream leading-tight">Wael Saleh, Ph.D.</p>
+          <p class="mt-3 text-cream/70 text-[15px] max-w-md leading-relaxed" data-i18n="ft.body">
+            Researcher of political Islam, post-Arab-Spring transformations, and the geopolitics of religion. Associate professor at IEIM (UQAM), and Political Islam Affairs Advisor at TRENDS Research and Advisory.
+          </p>
+        </div>
+        <nav class="md:col-span-3" aria-label="Footer">
+          <p class="text-[12px] tracking-wider2 uppercase text-cream/50" data-i18n="ft.sitemap">Sitemap</p>
+          <ul class="mt-4 space-y-2 text-[14.5px]">
+            <li><a class="hover:text-coral-200 transition-colors" href="#about" data-i18n="nav.about">About</a></li>
+            <li><a class="hover:text-coral-200 transition-colors" href="#expertise" data-i18n="nav.expertise">Expertise</a></li>
+            <li><a class="hover:text-coral-200 transition-colors" href="#experience" data-i18n="nav.experience">Experience</a></li>
+            <li><a class="hover:text-coral-200 transition-colors" href="#publications" data-i18n="nav.publications">Publications</a></li>
+            <li><a class="hover:text-coral-200 transition-colors" href="#speaking" data-i18n="nav.speaking">Speaking</a></li>
+            <li><a class="hover:text-coral-200 transition-colors" href="#contact" data-i18n="nav.contact">Contact</a></li>
+          </ul>
+        </nav>
+        <div class="md:col-span-3">
+          <p class="text-[12px] tracking-wider2 uppercase text-cream/50" data-i18n="ft.elsewhere">Elsewhere</p>
+          <ul class="mt-4 space-y-2 text-[14.5px]">
+            <li><a class="hover:text-coral-200 transition-colors" href="https://ca.linkedin.com/in/wael-saleh-ph-d-593587130" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+            <li><a class="hover:text-coral-200 transition-colors" href="https://trendsresearch.org/expert/dr-wael-saleh/" target="_blank" rel="noopener noreferrer">TRENDS Research</a></li>
+            <li><a class="hover:text-coral-200 transition-colors" href="https://dandurand.uqam.ca/chercheur/saleh-wael/" target="_blank" rel="noopener noreferrer">Raoul-Dandurand Chair</a></li>
+            <li><a class="hover:text-coral-200 transition-colors" href="https://www.researchgate.net/profile/Wael-Saleh" target="_blank" rel="noopener noreferrer">ResearchGate</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="mt-12 pt-6 border-t border-cream/10 flex flex-wrap items-center justify-between gap-3 text-[13px] text-cream/55">
+        <p>© <span id="year">2025</span> Wael Saleh. <span data-i18n="ft.rights">All rights reserved.</span></p>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ===== I18N + SCRIPTS ===== -->
+  <script>
+    /* ====== Translations ====== */
+    const I18N = {
+      en: {
+        skip:'Skip to content',
+        'nav.about':'About','nav.expertise':'Expertise','nav.experience':'Experience','nav.education':'Education',
+        'nav.publications':'Publications','nav.speaking':'Speaking','nav.memberships':'Memberships','nav.contact':'Contact',
+        'cta.resume':'Resume','cta.email':'Email',
+        'hero.eyebrow':'Researcher · Author · Advisor',
+        'hero.name':'Wael Saleh',
+        'hero.subtitle':'Ph.D. in Applied Human Sciences <span class="text-coral-600">·</span> Islamic Studies and Political Science',
+        'hero.intro':'Two decades of scholarship at the intersection of political Islam, post-Arab-Spring transformations, and the geopolitics of religion, translated into books, peer-reviewed studies, and advisory work for universities and international research institutes.',
+        'hero.cta1':'Know more about me','hero.cta2':'Selected publications',
+        'hero.affil':'Research Centers and Academic Memberships',
+
+        'about.kicker':'About',
+        'about.title':'A scholar of ideas, and the politics that move them.',
+        'about.p1':'Dr. Wael Saleh is an associate professor at the Institut d’études internationales de Montréal (IEIM, UQAM), and Political Islam Affairs Advisor at TRENDS Research and Advisory, where he also directs the organization’s offices in Canada and France.',
+        'about.p2':'His research traces the religio-political imagination of the contemporary Arab world: the conception of the state, the place of religiosity in public life, and the long shadow of Islamist movements before and after the Arab Spring. He is the co-founder of the Institute of Post-Arab Spring Studies and head of PLURIEL’s research group on the epistemological and methodological challenges of studying violence in the name of Islam.',
+        'about.p3':'Across five monographs, dozens of peer-reviewed chapters and articles, and frequent international media commentary, his work seeks one thing: to make the study of political Islam more rigorous, more humane, and more legible across linguistic and cultural divides.',
+        'about.stat1':'Books authored','about.stat2':'Years of research','about.stat3':'Working languages',
+
+        'exp.kicker':'Areas of Specialization','exp.title':'Where the work concentrates',
+        'exp.intro':'Four interlocking fields of inquiry, applied across academia, advisory practice, and public discourse.',
+        'exp.card1.t':'Islamic Studies','exp.card1.d':'Discourse analysis, hermeneutics, and comparative reading of contemporary Arab-Muslim thought.',
+        'exp.card2.t':'Geopolitics of Ideas','exp.card2.d':'How religio-political ideas circulate, mutate, and contend across the Arab world and its diasporas.',
+        'exp.card3.t':'Political Islam','exp.card3.d':'Islamism, post-Islamism, the Muslim Brotherhood’s international dynamics, and pathways of radicalization.',
+        'exp.card4.t':'Religion and Globalization','exp.card4.d':'Pluralism, interreligious dialogue, and the place of faith in late-modern public spheres.',
+        'exp.methods':'Methods and recurring themes',
+        'chip.1':'Discourse analysis','chip.2':'Hermeneutics','chip.3':'Comparative studies','chip.4':'State and nation','chip.5':'Civil society','chip.6':'Religious freedom','chip.7':'Radicalization','chip.8':'Religion and violence','chip.9':'Post-Arab Spring','chip.10':'Muslim Brotherhood','chip.11':'Interreligious dialogue',
+        'tt.1.title':'Discourse Analysis','tt.1.body':'Saleh employs critical discourse analysis to deconstruct the ideological narratives of Islamist movements, examining how language constructs political legitimacy and delegitimizes opponents within Sunni Islamist texts.','tt.1.ref':'Étudier l\'islamisme entre crise du savoir et fausse représentation (TRENDS, 2024); Représentations des musulmans non islamistes dans le discours islamiste sunnite (PLURIEL, 2022)',
+        'tt.2.title':'Hermeneutics','tt.2.body':'Through hermeneutical methods, Saleh interrogates how foundational Islamic texts are reinterpreted by both Islamist ideologues and contemporary reformist thinkers, revealing the gap between traditional exegesis and modern political instrumentalization of religion.','tt.2.ref':'De l\'islamologie appliquée à l\'islamismologie appliquée (with P. Brodeur, UCLy, 2021); Applied Islamismology (TRENDS, 2021)',
+        'tt.3.title':'Comparative Studies','tt.3.body':'Saleh\'s comparative approach juxtaposes different intellectual currents in modern Arab-Muslim thought — examining how Egyptian, Levantine, and North African thinkers have conceptualized the relationship between the religious and the political across distinct historical contexts.','tt.3.ref':'Le concept de l\'État dans la pensée égyptienne moderne et contemporaine (PhD thesis, UdeM, 2017); À la recherche d\'un aggiornamento de l\'islam (L\'Harmattan, 2018)',
+        'tt.4.title':'State and Nation','tt.4.body':'A central pillar of Saleh\'s doctoral research, this theme traces the continuities, evolutions, and ruptures in the conception of the State within modern and contemporary Egyptian thought, particularly at the intersection of religious authority and political sovereignty.','tt.4.ref':'Le concept de l\'État dans la pensée égyptienne moderne et contemporaine: continuités, évolutions et ruptures (PhD thesis, Université de Montréal, 2017)',
+        'tt.5.title':'Civil Society','tt.5.body':'Saleh investigates the contested space of civil society in Arab-Muslim contexts, analyzing how Islamist movements navigate, co-opt, or undermine civic institutions and how secular-religious tensions shape the public sphere in post-revolutionary settings.','tt.5.ref':'L\'islam politique à l\'ère du post-printemps arabe (with P. Brodeur, L\'Harmattan, 2017); Déconstruire des idées reçues sur l\'islamisme frériste égyptien (TRENDS, 2023)',
+        'tt.6.title':'Religious Freedom','tt.6.body':'Saleh examines how the notion of religious freedom is theorized and practiced in Muslim-majority contexts, including the tensions between full citizenship, minority rights, and the Document on Human Fraternity\'s vision of pluralism as divine wisdom.','tt.6.ref':'Conférence: Appartenance(s) et territoire(s) au prisme de la religiosité (al-tadayyun) dans la pensée arabo-musulmane actuelle (PLURIEL Congress, Rome, 2018)',
+        'tt.7.title':'Radicalization','tt.7.body':'Saleh maps the theoretical actors and epistemological stakes in studies on radicalization leading to violence in the name of Islam, questioning whether existing conceptual tools are adequate to decipher the complex discourses and practices involved.','tt.7.ref':'Les études de la radicalisation menant à la violence au nom de l\'islam: cartographier les acteurs théoriques (PLURIEL, 2021); Co-founder, Research Group on Epistemological and Methodological Issues (PLURIEL/UdeM)',
+        'tt.8.title':'Religion and Violence','tt.8.body':'This theme addresses the ideological and theological legitimation of violence within Islamist movements, asking whether inciting or justifying violence can itself be considered a violent act — a question central to Saleh\'s analytical framework.','tt.8.ref':'Les études de la radicalisation menant à la violence au nom de l\'islam (PLURIEL, 2021); Enjeux épistémologiques et méthodologiques des études sur la violence au nom de l\'islam (PLURIEL Research Group)',
+        'tt.9.title':'Post-Arab Spring','tt.9.body':'Saleh co-founded the Institute of Post-Arab Spring Studies (IEPPA) and co-authored a key volume asking whether the post-2011 era marks a \'necro-Islamism\' — a phase where Islamist movements increasingly radicalize or de-Islamize in the face of popular contestation.','tt.9.ref':'L\'islam politique à l\'ère du post-printemps arabe: sommes-nous entrés dans l\'ère du nécro-islamisme? (with P. Brodeur, L\'Harmattan, 2017)',
+        'tt.10.title':'Muslim Brotherhood','tt.10.body':'Saleh\'s extensive work on the Muslim Brotherhood deconstructs received ideas about Egyptian Brotherhoodism, analyzes their international power structures, and critically examines their intra-religious representations of non-Islamist Muslims as an internal \'Other.\'','tt.10.ref':'Déconstruire des idées reçues sur l\'islamisme frériste égyptien (TRENDS, 2023); Muslim Brotherhood: Side Glances (TRENDS, 2022); The Muslim Brotherhood\'s International Power Index 2022–2023 (TRENDS, 2024)',
+        'tt.11.title':'Interreligious Dialogue','tt.11.body':'As a member of PLURIEL\'s research group on AI-assisted interreligious dialogue and an active contributor to the Human Fraternity Document\'s intellectual milieu, Saleh explores how deconstruction of extremist ideas and support for a religiosity compatible with peaceful coexistence can strengthen Muslim-Christian relations.','tt.11.ref':'PLURIEL Congress contributions (Abu Dhabi 2024, Beirut 2022, Rome 2018); Research Group: Dialogue interreligieux assisté par l\'intelligence artificielle (PLURIEL)',
+
+        'xp.kicker':'Experience and Employment','xp.title':'A trajectory across institutions',
+        'xp.intro':'From Montreal classrooms to international advisory work, bridging academic research and applied policy analysis.',
+        'xp.j1.org':'TRENDS Research and Advisory','xp.j1.year':'2021, Present','xp.j1.role':'Political Islam Affairs Advisor; Director, Canada and France Offices',
+        'xp.j1.body':'Leading flagship publications including the Muslim Brotherhood International Power Index (MBIPI), and overseeing TRENDS’ research presence in Canada and France.',
+        'xp.j2.org':'Université du Québec à Montréal (UQAM)','xp.j2.year':'2019, 2022','xp.j2.role':'Associate Professor, Institut d’études internationales de Montréal (IEIM)',
+        'xp.j2.body':'Teaching geopolitics of religion, post-2011 Arab worlds, and Islam and modernity.',
+        'xp.j3.org':'Université de Montréal','xp.j3.year':'2017, 2022','xp.j3.role':'Researcher and Teaching Assistant, Institute of Religious Studies (IER)',
+        'xp.j3.body':'Senior research advisor on political Islam, post-Arab Spring trajectories, and contemporary Arab thought.',
+        'xp.j4.org':'Raoul-Dandurand Chair, UQAM','xp.j4.year':'2013, Present','xp.j4.role':'Associate Researcher, Observatory on the Middle East and North Africa',
+        'xp.j4.body':'Long-running affiliation with one of Canada’s premier strategic-studies chairs.',
+        'xp.j5.org':'Institute of Post-Arab Spring Studies (IEPPA)','xp.j5.year':'2017, Present','xp.j5.role':'Co-founder and Director',
+
+        'edu.kicker':'Education','edu.s1.org':'Université de Montréal','edu.s1.deg':'Ph.D., Applied Human Sciences (Islamic Studies and Political Science)',
+        'edu.s1.body':'Thesis: <em>The State’s Conception Through the Prism of the Relationship Between Religion and Politics in Modern and Contemporary Egyptian Thought (2011, 2015): Continuities, Evolutions and Ruptures.</em>',
+        'edu.s1.link':'Read on Papyrus','edu.s2.org':'Université de Sherbrooke','edu.s2.deg':'M.A., Applied Political Science (Islamic Studies)',
+        'awards.kicker':'Fellowships and Awards',
+        'awards.a1':'<strong class="font-medium">Postdoctoral Fellow</strong>, Institute of Religious Studies (IER) and CÉRIUM, Université de Montréal · 2018',
+        'awards.a2':'<strong class="font-medium">Dean’s Honor List</strong>, Faculty of Arts and Science, Université de Montréal · 2017',
+        'awards.a3':'<strong class="font-medium">Excellence Award for Mobility</strong>, Ph.D. in Applied Humanities, Université de Montréal · 2015 to 2016',
+        'lang.kicker':'Languages','lang.ar.t':'Arabic','lang.ar.l':'Native','lang.fr.t':'French','lang.fr.l':'Fluent','lang.en.t':'English','lang.en.l':'Working',
+
+        'pub.kicker':'Selected Publications','pub.title':'Books, monographs, and reports',
+        'pub.intro':'A selection from a body of work spanning monographs at L’Harmattan, peer-reviewed chapters and articles, and TRENDS research publications, in English, French, and Arabic.',
+        'art.kicker':'Peer-Reviewed','art.title':'Articles and book chapters',
+        'art.intro':'A selection of refereed contributions appearing in journals and edited volumes across France, Canada, and the Arab world.',
+        'art.scholar':'View on ResearchGate',
+        'ar.kicker':'Selected publications in Arabic','ar.title':'TRENDS Research and Advisory · العربية',
+
+        'grant.kicker':'Funded Research and Project Collaborations','grant.title':'A track record of competitive funding',
+        'grant.intro':'Selected research grants and project collaborations conducted with Patrice Brodeur, Aurélie Campana, Dominique Avon, and Saʻd al-Dīn al-Hilālī, among others.',
+        'grant.collab':'Project collaborations',
+
+        'spk.kicker':'Conferences and Teaching','spk.title':'Lectures, plenaries, and courses',
+        'spk.intro':'Plenary addresses at PLURIEL international congresses, sessions at the Acfas annual congress, and graduate courses in Montreal.',
+        'spk.taught':'Courses taught','spk.c1':'Geopolitics of Religions','spk.c2':'Introduction to Islam','spk.c3':'Islam and Modernity','spk.c4':'Post-2011 Arab worlds: actors, socio-political evolutions, and geopolitical issues',
+        'spk.e1.date':'February 2024 · Abu Dhabi','spk.e1.title':'Co-organizer, Congress “Islam and Fraternity”','spk.e1.body':'PLURIEL and TRENDS Research and Advisory.',
+        'spk.e2.date':'December 2024 · Lyon, France','spk.e2.body':'Faculté de Théologie, Lyon, invited address.',
+        'spk.e3.date':'May 2022 · Université Laval','spk.e3.body':'Co-organizer, 89th Congrès de l’Acfas.',
+        'spk.e4.date':'June 2018 · Rome','spk.e4.body':'2nd International PLURIEL Congress, “Islam et appartenances.”',
+        'spk.e5.date':'March 2019 · CÉRIUM, Montréal','spk.e5.body':'Co-organizer, Université de Montréal.',
+        'spk.e6.date':'October 2018 · Montréal','spk.e6.body':'Festival du Monde Arabe de Montréal.',
+
+        'mem.kicker':'Memberships and Profiles','mem.title':'Find Wael across the academic world',
+        'mem.li':'Professional profile and updates','mem.trends':'Expert profile, Political Islam advisor','mem.dandurand':'Associate researcher, UQAM',
+        'mem.acfas':'Francophone Association for Knowledge','mem.pluriel':'University Research Platform on Islam','mem.cerium':'Université de Montréal',
+        'mem.rg':'Research profile and publications','mem.ipra':'France',
+
+        'ct.kicker':'Get in touch','ct.title':'For lectures, collaborations, and press inquiries',
+        'ct.body':'Open to academic collaborations, advisory engagements, and invited talks. Email is the fastest way to reach me.',
+        'ct.copy':'Copy email address','ct.copied':'Copied to clipboard',
+        'ct.based':'Based in','ct.basedV':'Montréal, Canada','ct.between':'Working between','ct.betweenV':'Canada · France · UAE','ct.langs':'Languages','ct.langsV':'Arabic · French · English',
+
+        'ft.body':'Researcher of political Islam, post-Arab-Spring transformations, and the geopolitics of religion. Associate professor at IEIM (UQAM), and Political Islam Affairs Advisor at TRENDS Research and Advisory.',
+        'ft.sitemap':'Sitemap','ft.elsewhere':'Elsewhere','ft.rights':'All rights reserved.',
+      },
+
+      fr: {
+        skip:'Aller au contenu',
+        'nav.about':'À propos','nav.expertise':'Expertise','nav.experience':'Parcours','nav.education':'Formation',
+        'nav.publications':'Publications','nav.speaking':'Conférences','nav.memberships':'Affiliations','nav.contact':'Contact',
+        'cta.resume':'CV','cta.email':'Courriel',
+        'hero.eyebrow':'Chercheur · Auteur · Conseiller',
+        'hero.name':'Wael Saleh',
+        'hero.subtitle':'Doctorat en sciences humaines appliquées <span class="text-coral-600">·</span> études islamiques et science politique',
+        'hero.intro':'Deux décennies de recherche à la croisée de l’islam politique, des transformations post-printemps arabe et de la géopolitique des religions, traduites en livres, en études évaluées par les pairs et en conseil pour des universités et des instituts internationaux.',
+        'hero.cta1':'En savoir plus sur moi','hero.cta2':'Publications choisies',
+        'hero.affil':'Centres de recherche et affiliations académiques',
+
+        'about.kicker':'À propos',
+        'about.title':'Un chercheur des idées, et de la politique qui les anime.',
+        'about.p1':'Le Dr Wael Saleh est professeur associé à l’Institut d’études internationales de Montréal (IEIM, UQAM) et conseiller en affaires de l’islam politique chez TRENDS Research and Advisory, où il dirige aussi les bureaux de l’organisation au Canada et en France.',
+        'about.p2':'Ses recherches retracent l’imaginaire religio-politique du monde arabe contemporain: la conception de l’État, la place de la religiosité dans la vie publique et la longue ombre des mouvements islamistes avant et après le printemps arabe. Il est cofondateur de l’Institut d’études post-printemps arabe et responsable du groupe de recherche de PLURIEL sur les enjeux épistémologiques et méthodologiques de l’étude de la violence au nom de l’islam.',
+        'about.p3':'À travers cinq monographies, des dizaines de chapitres et d’articles évalués par les pairs et de fréquentes interventions médiatiques internationales, son travail vise une chose : rendre l’étude de l’islam politique plus rigoureuse, plus humaine et plus lisible à travers les frontières linguistiques et culturelles.',
+        'about.stat1':'Ouvrages publiés','about.stat2':'Années de recherche','about.stat3':'Langues de travail',
+
+        'exp.kicker':'Domaines de spécialisation','exp.title':'Là où le travail se concentre',
+        'exp.intro':'Quatre champs de recherche imbriqués, déployés dans l’université, le conseil et le débat public.',
+        'exp.card1.t':'Études islamiques','exp.card1.d':'Analyse de discours, herméneutique et lecture comparée de la pensée arabo-musulmane contemporaine.',
+        'exp.card2.t':'Géopolitique des idées','exp.card2.d':'Comment les idées religio-politiques circulent, mutent et s’affrontent dans le monde arabe et ses diasporas.',
+        'exp.card3.t':'Islam politique','exp.card3.d':'Islamisme, post-islamisme, dynamiques internationales des Frères musulmans et trajectoires de radicalisation.',
+        'exp.card4.t':'Religion et mondialisation','exp.card4.d':'Pluralisme, dialogue interreligieux et place du fait religieux dans les sociétés contemporaines.',
+        'exp.methods':'Méthodes et thèmes récurrents',
+        'chip.1':'Analyse de discours','chip.2':'Herméneutique','chip.3':'Études comparées','chip.4':'État et nation','chip.5':'Société civile','chip.6':'Liberté religieuse','chip.7':'Radicalisation','chip.8':'Religion et violence','chip.9':'Post-printemps arabe','chip.10':'Frères musulmans','chip.11':'Dialogue interreligieux',
+        'tt.1.title':'Analyse de discours','tt.1.body':'Saleh emploie l\'analyse critique du discours pour déconstruire les récits idéologiques des mouvements islamistes, en examinant comment le langage construit la légitimité politique et délégitimise les adversaires dans les textes islamistes sunnites.','tt.1.ref':'Étudier l\'islamisme entre crise du savoir et fausse représentation (TRENDS, 2024) ; Représentations des musulmans non islamistes dans le discours islamiste sunnite (PLURIEL, 2022)',
+        'tt.2.title':'Herméneutique','tt.2.body':'Par des méthodes herméneutiques, Saleh interroge la manière dont les textes fondateurs de l\'islam sont réinterprétés par les idéologues islamistes et les penseurs réformistes contemporains, révélant l\'écart entre l\'exégèse traditionnelle et l\'instrumentalisation politique moderne de la religion.','tt.2.ref':'De l\'islamologie appliquée à l\'islamismologie appliquée (avec P. Brodeur, UCLy, 2021) ; Applied Islamismology (TRENDS, 2021)',
+        'tt.3.title':'Études comparées','tt.3.body':'L\'approche comparative de Saleh juxtapose différents courants intellectuels de la pensée arabo-musulmane moderne — examinant comment les penseurs égyptiens, levantins et nord-africains ont conceptualisé la relation entre le religieux et le politique dans des contextes historiques distincts.','tt.3.ref':'Le concept de l\'État dans la pensée égyptienne moderne et contemporaine (thèse, UdeM, 2017) ; À la recherche d\'un aggiornamento de l\'islam (L\'Harmattan, 2018)',
+        'tt.4.title':'État et nation','tt.4.body':'Pilier central de la recherche doctorale de Saleh, ce thème retrace les continuités, évolutions et ruptures dans la conception de l\'État dans la pensée égyptienne moderne et contemporaine, en particulier à l\'intersection de l\'autorité religieuse et de la souveraineté politique.','tt.4.ref':'Le concept de l\'État dans la pensée égyptienne moderne et contemporaine : continuités, évolutions et ruptures (thèse, Université de Montréal, 2017)',
+        'tt.5.title':'Société civile','tt.5.body':'Saleh examine l\'espace contesté de la société civile dans les contextes arabo-musulmans, analysant comment les mouvements islamistes naviguent, cooptent ou sapent les institutions civiques et comment les tensions séculières-religieuses façonnent la sphère publique dans les contextes post-révolutionnaires.','tt.5.ref':'L\'islam politique à l\'ère du post-printemps arabe (avec P. Brodeur, L\'Harmattan, 2017) ; Déconstruire des idées reçues sur l\'islamisme frériste égyptien (TRENDS, 2023)',
+        'tt.6.title':'Liberté religieuse','tt.6.body':'Saleh examine comment la notion de liberté religieuse est théorisée et pratiquée dans les contextes à majorité musulmane, y compris les tensions entre citoyenneté pleine, droits des minorités et la vision du Document sur la fraternité humaine du pluralisme comme sagesse divine.','tt.6.ref':'Conférence : Appartenance(s) et territoire(s) au prisme de la religiosité (al-tadayyun) dans la pensée arabo-musulmane actuelle (Congrès PLURIEL, Rome, 2018)',
+        'tt.7.title':'Radicalisation','tt.7.body':'Saleh cartographie les acteurs théoriques et les enjeux épistémologiques des études sur la radicalisation menant à la violence au nom de l\'islam, questionnant si les outils conceptuels existants sont adéquats pour déchiffrer les discours et pratiques complexes impliqués.','tt.7.ref':'Les études de la radicalisation menant à la violence au nom de l\'islam (PLURIEL, 2021) ; Cofondateur, Groupe de recherche sur les enjeux épistémologiques et méthodologiques (PLURIEL/UdeM)',
+        'tt.8.title':'Religion et violence','tt.8.body':'Ce thème aborde la légitimation idéologique et théologique de la violence au sein des mouvements islamistes, en se demandant si l\'incitation ou la justification de la violence peut elle-même être considérée comme un acte violent — une question centrale dans le cadre analytique de Saleh.','tt.8.ref':'Les études de la radicalisation menant à la violence au nom de l\'islam (PLURIEL, 2021) ; Enjeux épistémologiques et méthodologiques des études sur la violence au nom de l\'islam (Groupe de recherche PLURIEL)',
+        'tt.9.title':'Post-printemps arabe','tt.9.body':'Saleh a cofondé l\'Institut d\'études post-printemps arabe (IEPPA) et coécrit un ouvrage clé demandant si l\'ère post-2011 marque un « nécro-islamisme » — une phase où les mouvements islamistes se radicalisent ou se désislamisent face à la contestation populaire.','tt.9.ref':'L\'islam politique à l\'ère du post-printemps arabe : sommes-nous entrés dans l\'ère du nécro-islamisme ? (avec P. Brodeur, L\'Harmattan, 2017)',
+        'tt.10.title':'Frères musulmans','tt.10.body':'Le travail approfondi de Saleh sur les Frères musulmans déconstruit les idées reçues sur l\'islamisme frériste égyptien, analyse leurs structures de pouvoir international et examine de manière critique leurs représentations intrareligieuses des musulmans non islamistes comme un « Autre » interne.','tt.10.ref':'Déconstruire des idées reçues sur l\'islamisme frériste égyptien (TRENDS, 2023) ; Muslim Brotherhood: Side Glances (TRENDS, 2022) ; The Muslim Brotherhood\'s International Power Index 2022–2023 (TRENDS, 2024)',
+        'tt.11.title':'Dialogue interreligieux','tt.11.body':'Membre du groupe de recherche de PLURIEL sur le dialogue interreligieux assisté par l\'IA et contributeur actif au milieu intellectuel du Document sur la fraternité humaine, Saleh explore comment la déconstruction des idées extrémistes et le soutien à une religiosité compatible avec la coexistence pacifique peuvent renforcer les relations islamo-chrétiennes.','tt.11.ref':'Contributions aux congrès PLURIEL (Abu Dhabi 2024, Beyrouth 2022, Rome 2018) ; Groupe de recherche : Dialogue interreligieux assisté par l\'intelligence artificielle (PLURIEL)',
+
+        'xp.kicker':'Parcours et emplois','xp.title':'Une trajectoire entre les institutions',
+        'xp.intro':'Des salles de cours montréalaises au conseil international, à la jonction de la recherche académique et de l’analyse appliquée.',
+        'xp.j1.org':'TRENDS Research and Advisory','xp.j1.year':'2021, présent','xp.j1.role':'Conseiller en affaires de l’islam politique ; directeur des bureaux Canada et France',
+        'xp.j1.body':'Direction de publications phares dont l’indice MBIPI (Muslim Brotherhood International Power Index) et supervision de la présence de TRENDS au Canada et en France.',
+        'xp.j2.org':'Université du Québec à Montréal (UQAM)','xp.j2.year':'2019, 2022','xp.j2.role':'Professeur associé, Institut d’études internationales de Montréal (IEIM)',
+        'xp.j2.body':'Enseignement de la géopolitique des religions, des mondes arabes après 2011 et des rapports entre islam et modernité.',
+        'xp.j3.org':'Université de Montréal','xp.j3.year':'2017, 2022','xp.j3.role':'Chercheur et auxiliaire d’enseignement, Institut d’études religieuses (IER)',
+        'xp.j3.body':'Conseiller principal de recherche sur l’islam politique, les trajectoires post-printemps arabe et la pensée arabe contemporaine.',
+        'xp.j4.org':'Chaire Raoul-Dandurand, UQAM','xp.j4.year':'2013, présent','xp.j4.role':'Chercheur associé, Observatoire sur le Moyen-Orient et l’Afrique du Nord',
+        'xp.j4.body':'Affiliation de longue date avec l’une des chaires d’études stratégiques les plus établies au Canada.',
+        'xp.j5.org':'Institut d’études post-printemps arabe (IEPPA)','xp.j5.year':'2017, présent','xp.j5.role':'Cofondateur et directeur',
+
+        'edu.kicker':'Formation','edu.s1.org':'Université de Montréal','edu.s1.deg':'Doctorat, sciences humaines appliquées (études islamiques et science politique)',
+        'edu.s1.body':'Thèse : <em>La conception de l’État au prisme du rapport entre religion et politique dans la pensée égyptienne moderne et contemporaine (2011, 2015) : continuités, évolutions et ruptures.</em>',
+        'edu.s1.link':'Lire sur Papyrus','edu.s2.org':'Université de Sherbrooke','edu.s2.deg':'Maîtrise, science politique appliquée (études islamiques)',
+        'awards.kicker':'Bourses et distinctions',
+        'awards.a1':'<strong class="font-medium">Boursier postdoctoral</strong>, Institut d’études religieuses (IER) et CÉRIUM, Université de Montréal · 2018',
+        'awards.a2':'<strong class="font-medium">Liste d’honneur du doyen</strong>, Faculté des arts et des sciences, Université de Montréal · 2017',
+        'awards.a3':'<strong class="font-medium">Bourse d’excellence pour la mobilité</strong>, doctorat en sciences humaines appliquées, Université de Montréal · 2015 à 2016',
+        'lang.kicker':'Langues','lang.ar.t':'Arabe','lang.ar.l':'Langue maternelle','lang.fr.t':'Français','lang.fr.l':'Couramment','lang.en.t':'Anglais','lang.en.l':'Professionnel',
+
+        'pub.kicker':'Publications choisies','pub.title':'Livres, monographies et rapports',
+        'pub.intro':'Sélection issue d’un corpus comprenant des monographies chez L’Harmattan, des chapitres et articles évalués par les pairs et des publications de recherche pour TRENDS, en français, anglais et arabe.',
+        'art.kicker':'Évalué par les pairs','art.title':'Articles et chapitres d’ouvrage',
+        'art.intro':'Sélection de contributions arbitrées parues dans des revues et ouvrages collectifs en France, au Canada et dans le monde arabe.',
+        'art.scholar':'Voir sur ResearchGate',
+        'ar.kicker':'Publications choisies en arabe','ar.title':'TRENDS Research and Advisory · العربية',
+
+        'grant.kicker':'Recherche financée et collaborations','grant.title':'Un parcours de financements compétitifs',
+        'grant.intro':'Sélection de subventions et de projets menés avec Patrice Brodeur, Aurélie Campana, Dominique Avon et Saʻd al-Dīn al-Hilālī, entre autres.',
+        'grant.collab':'Collaborations de projet',
+
+        'spk.kicker':'Conférences et enseignement','spk.title':'Communications, conférences plénières et cours',
+        'spk.intro':'Plénières aux congrès internationaux PLURIEL, sessions au congrès annuel de l’Acfas, cours universitaires à Montréal.',
+        'spk.taught':'Cours enseignés','spk.c1':'Géopolitique des religions','spk.c2':'Introduction à l’islam','spk.c3':'Islam et modernité','spk.c4':'Mondes arabes après 2011 : acteurs, évolutions sociopolitiques et enjeux géopolitiques',
+        'spk.e1.date':'Février 2024 · Abou Dabi','spk.e1.title':'Coorganisateur, congrès « Islam et fraternité »','spk.e1.body':'PLURIEL et TRENDS Research and Advisory.',
+        'spk.e2.date':'Décembre 2024 · Lyon, France','spk.e2.body':'Faculté de Théologie, Lyon, communication invitée.',
+        'spk.e3.date':'Mai 2022 · Université Laval','spk.e3.body':'Coorganisateur, 89e Congrès de l’Acfas.',
+        'spk.e4.date':'Juin 2018 · Rome','spk.e4.body':'2e congrès international PLURIEL, « Islam et appartenances ».',
+        'spk.e5.date':'Mars 2019 · CÉRIUM, Montréal','spk.e5.body':'Coorganisateur, Université de Montréal.',
+        'spk.e6.date':'Octobre 2018 · Montréal','spk.e6.body':'Festival du Monde Arabe de Montréal.',
+
+        'mem.kicker':'Affiliations et profils','mem.title':'Retrouver Wael à travers le monde académique',
+        'mem.li':'Profil professionnel et publications','mem.trends':'Profil expert, conseiller en islam politique','mem.dandurand':'Chercheur associé, UQAM',
+        'mem.acfas':'Association francophone pour le savoir','mem.pluriel':'Plateforme universitaire de recherche sur l’islam','mem.cerium':'Université de Montréal',
+        'mem.rg':'Profil de recherche et publications','mem.ipra':'France',
+
+        'ct.kicker':'Prendre contact','ct.title':'Conférences, collaborations et demandes médias',
+        'ct.body':'Disponible pour collaborations académiques, mandats de conseil et conférences invitées. Le courriel reste le moyen le plus rapide.',
+        'ct.copy':'Copier l’adresse','ct.copied':'Copié dans le presse-papier',
+        'ct.based':'Basé à','ct.basedV':'Montréal, Canada','ct.between':'Travaillant entre','ct.betweenV':'Canada · France · ÉAU','ct.langs':'Langues','ct.langsV':'Arabe · Français · Anglais',
+
+        'ft.body':'Chercheur sur l’islam politique, les transformations post-printemps arabe et la géopolitique des religions. Professeur associé à l’IEIM (UQAM) et conseiller en affaires de l’islam politique chez TRENDS Research and Advisory.',
+        'ft.sitemap':'Plan du site','ft.elsewhere':'Ailleurs','ft.rights':'Tous droits réservés.',
+      },
+
+      ar: {
+        skip:'الانتقال إلى المحتوى',
+        'nav.about':'نبذة','nav.expertise':'مجالات الخبرة','nav.experience':'المسيرة','nav.education':'التعليم',
+        'nav.publications':'الإصدارات','nav.speaking':'المحاضرات','nav.memberships':'الانتماءات','nav.contact':'التواصل',
+        'cta.resume':'السيرة الذاتية','cta.email':'البريد',
+        'hero.eyebrow':'باحث · مؤلف · مستشار',
+        'hero.name':'وائل صالح',
+        'hero.subtitle':'دكتوراه في العلوم الإنسانية التطبيقية <span class="text-coral-600">·</span> الدراسات الإسلامية والعلوم السياسية',
+        'hero.intro':'عقدان من البحث العلمي عند تقاطع الإسلام السياسي وتحولات ما بعد الربيع العربي والجغرافيا السياسية للأديان، تتجلى في كتب ودراسات محكَّمة وعملٍ استشاري لجامعات ومراكز أبحاث دولية.',
+        'hero.cta1':'تعرَّف عليّ أكثر','hero.cta2':'مختارات من الإصدارات',
+        'hero.affil':'مراكز البحث والانتماءات الأكاديمية',
+
+        'about.kicker':'نبذة',
+        'about.title':'باحث في الأفكار، وفي السياسات التي تُحرِّكها.',
+        'about.p1':'الدكتور وائل صالح أستاذ مشارك في معهد الدراسات الدولية بمونتريال (IEIM) التابع لجامعة كيبك في مونتريال (UQAM)، ومستشار شؤون الإسلام السياسي في مركز تريندز للبحوث والاستشارات، حيث يتولى أيضًا إدارة مكتبَي المركز في كندا وفرنسا.',
+        'about.p2':'تتتبَّع أبحاثه المخيال الديني-السياسي للعالم العربي المعاصر: تصوُّر الدولة، ومكانة التديُّن في الفضاء العام، والظلال الممتدَّة للحركات الإسلامية قبل الربيع العربي وبعده. وهو مؤسِّس مشارك لمعهد دراسات ما بعد الربيع العربي، ورئيس مجموعة بحث PLURIEL حول الإشكالات المعرفية والمنهجية لدراسة العنف باسم الإسلام.',
+        'about.p3':'في خمسة كتب ومئات الفصول والمقالات المحكَّمة وحضورٍ إعلامي دولي متواصل، يسعى عمله إلى هدفٍ واحد: جعل دراسة الإسلام السياسي أكثر دقَّةً وإنسانيةً، وأكثر قابليةً للقراءة عبر الحدود اللغوية والثقافية.',
+        'about.stat1':'كتاب مؤلَّف','about.stat2':'سنة من البحث','about.stat3':'لغات عمل',
+
+        'exp.kicker':'مجالات التخصص','exp.title':'حيث يتركَّز العمل',
+        'exp.intro':'أربعة حقول بحث متشابكة، تُطبَّق في الأكاديميا، والاستشارات، والنقاش العام.',
+        'exp.card1.t':'الدراسات الإسلامية','exp.card1.d':'تحليل الخطاب، والتأويل، والقراءة المقارنة للفكر العربي-الإسلامي المعاصر.',
+        'exp.card2.t':'جغرافيا الأفكار','exp.card2.d':'كيف تنتقل الأفكار الدينية-السياسية وتتحوَّل وتتنازع في العالم العربي وشتاتاته.',
+        'exp.card3.t':'الإسلام السياسي','exp.card3.d':'الإسلاموية، وما بعد الإسلاموية، والديناميات الدولية للإخوان المسلمين، ومسارات التطرف.',
+        'exp.card4.t':'الدين والعولمة','exp.card4.d':'التعدُّدية، والحوار بين الأديان، ومكانة الدين في المجال العام الحديث.',
+        'exp.methods':'مناهج وموضوعات متكرِّرة',
+        'chip.1':'تحليل الخطاب','chip.2':'التأويل','chip.3':'الدراسات المقارنة','chip.4':'الدولة والأمَّة','chip.5':'المجتمع المدني','chip.6':'الحرية الدينية','chip.7':'التطرف','chip.8':'الدين والعنف','chip.9':'ما بعد الربيع العربي','chip.10':'الإخوان المسلمون','chip.11':'الحوار بين الأديان',
+        'tt.1.title':'تحليل الخطاب','tt.1.body':'يستخدم صالح التحليل النقدي للخطاب لتفكيك السرديات الأيديولوجية للحركات الإسلامية، ودراسة كيفية بناء اللغة للشرعية السياسية ونزعها عن الخصوم في النصوص الإسلاموية السنّية.','tt.1.ref':'دراسة الإسلاموية بين أزمة المعرفة والتمثيل الزائف (تريندز، 2024)',
+        'tt.2.title':'التأويل','tt.2.body':'عبر المناهج التأويلية، يستجوب صالح كيفية إعادة تفسير النصوص الإسلامية التأسيسية من قبل المنظّرين الإسلاميين والمفكرين الإصلاحيين المعاصرين، كاشفًا الفجوة بين التفسير التقليدي والتوظيف السياسي الحديث للدين.','tt.2.ref':'من الإسلاميات التطبيقية إلى الإسلاموية التطبيقية (مع ب. برودور، UCLy، 2021)',
+        'tt.3.title':'الدراسات المقارنة','tt.3.body':'يقارن صالح بين تيارات فكرية مختلفة في الفكر العربي-الإسلامي الحديث، دارسًا كيف صاغ المفكرون المصريون والشوام والمغاربة العلاقة بين الديني والسياسي في سياقات تاريخية متمايزة.','tt.3.ref':'مفهوم الدولة في الفكر المصري الحديث والمعاصر (أطروحة دكتوراه، جامعة مونتريال، 2017)',
+        'tt.4.title':'الدولة والأمَّة','tt.4.body':'ركيزة أساسية في بحث صالح الدكتوري، يتتبّع هذا المحور الاستمراريات والتحولات والقطائع في تصوُّر الدولة في الفكر المصري الحديث والمعاصر، لا سيما عند تقاطع السلطة الدينية والسيادة السياسية.','tt.4.ref':'تصوُّر الدولة من منظور العلاقة بين الدين والسياسة في الفكر المصري (أطروحة، جامعة مونتريال، 2017)',
+        'tt.5.title':'المجتمع المدني','tt.5.body':'يبحث صالح في الفضاء المتنازع عليه للمجتمع المدني في السياقات العربية-الإسلامية، محللًا كيف تتعامل الحركات الإسلامية مع المؤسسات المدنية وكيف تُشكّل التوترات العلمانية-الدينية الفضاء العام.','tt.5.ref':'الإسلام السياسي في عصر ما بعد الربيع العربي (مع ب. برودور، لارماتان، 2017)',
+        'tt.6.title':'الحرية الدينية','tt.6.body':'يدرس صالح كيفية تنظير الحرية الدينية وممارستها في السياقات ذات الأغلبية المسلمة، بما في ذلك التوترات بين المواطنة الكاملة وحقوق الأقليات ورؤية وثيقة الأخوة الإنسانية للتعددية.','tt.6.ref':'مؤتمر: الانتماء والإقليم عبر منظور التديُّن في الفكر العربي-الإسلامي (PLURIEL، روما، 2018)',
+        'tt.7.title':'التطرف','tt.7.body':'يرسم صالح خريطة الفاعلين النظريين والرهانات المعرفية في دراسات التطرف المؤدي إلى العنف باسم الإسلام، متسائلًا عما إذا كانت الأدوات المفاهيمية القائمة كافية لفكّ شيفرة الخطابات والممارسات المعقدة.','tt.7.ref':'دراسات التطرف المؤدي إلى العنف باسم الإسلام (PLURIEL، 2021)',
+        'tt.8.title':'الدين والعنف','tt.8.body':'يتناول هذا المحور الشرعنة الأيديولوجية واللاهوتية للعنف داخل الحركات الإسلامية، مُتسائلًا عما إذا كان التحريض على العنف أو تبريره يمكن اعتباره بحد ذاته فعلًا عنيفًا.','tt.8.ref':'إشكالات معرفية ومنهجية في دراسات العنف باسم الإسلام (مجموعة بحث PLURIEL)',
+        'tt.9.title':'ما بعد الربيع العربي','tt.9.body':'شارك صالح في تأسيس معهد دراسات ما بعد الربيع العربي (IEPPA) وألّف مع زميله كتابًا مفتاحيًا يتساءل عما إذا كانت حقبة ما بعد 2011 تؤشر لـ«النيكرو-إسلاموية» — مرحلة تتطرف فيها الحركات الإسلامية أو تتخلى عن أسلمتها.','tt.9.ref':'الإسلام السياسي في عصر ما بعد الربيع العربي (مع ب. برودور، لارماتان، 2017)',
+        'tt.10.title':'الإخوان المسلمون','tt.10.body':'يُفكّك عمل صالح المستفيض حول الإخوان المسلمين الأفكار السائدة عن الإسلاموية الإخوانية المصرية، ويحلل هياكل نفوذهم الدولي ويفحص بشكل نقدي تمثيلاتهم للمسلمين غير الإسلاميين كـ«آخر» داخلي.','tt.10.ref':'تفكيك الأفكار السائدة عن الإسلاموية الإخوانية المصرية (تريندز، 2023) ؛ مؤشر النفوذ الدولي للإخوان المسلمين (تريندز، 2024)',
+        'tt.11.title':'الحوار بين الأديان','tt.11.body':'بصفته عضوًا في مجموعة بحث PLURIEL حول الحوار بين الأديان بمساعدة الذكاء الاصطناعي، يستكشف صالح كيف يمكن لتفكيك الأفكار المتطرفة ودعم تديُّن متوافق مع التعايش السلمي أن يُعزّز العلاقات الإسلامية-المسيحية.','tt.11.ref':'مساهمات في مؤتمرات PLURIEL (أبوظبي 2024، بيروت 2022، روما 2018)',
+
+        'xp.kicker':'المسيرة المهنية','xp.title':'مسارٌ بين المؤسسات',
+        'xp.intro':'من قاعات الدرس في مونتريال إلى الاستشارات الدولية، جسرٌ بين البحث الأكاديمي وتحليل السياسات التطبيقي.',
+        'xp.j1.org':'مركز تريندز للبحوث والاستشارات','xp.j1.year':'2021 — حتى الآن','xp.j1.role':'مستشار شؤون الإسلام السياسي ؛ مدير مكتبَي كندا وفرنسا',
+        'xp.j1.body':'الإشراف على إصدارات رئيسية منها مؤشر النفوذ الدولي للإخوان المسلمين (MBIPI)، والإشراف على حضور تريندز البحثي في كندا وفرنسا.',
+        'xp.j2.org':'جامعة كيبك في مونتريال (UQAM)','xp.j2.year':'2019 — 2022','xp.j2.role':'أستاذ مشارك، معهد الدراسات الدولية بمونتريال (IEIM)',
+        'xp.j2.body':'تدريس جغرافيا الأديان، والعوالم العربية بعد 2011، والإسلام والحداثة.',
+        'xp.j3.org':'جامعة مونتريال','xp.j3.year':'2017 — 2022','xp.j3.role':'باحث ومُساعد تدريس، معهد الدراسات الدينية (IER)',
+        'xp.j3.body':'مستشار بحث رئيسي حول الإسلام السياسي، ومسارات ما بعد الربيع العربي، والفكر العربي المعاصر.',
+        'xp.j4.org':'كرسي راؤول-داندوران، UQAM','xp.j4.year':'2013 — حتى الآن','xp.j4.role':'باحث مشارك، مرصد الشرق الأوسط وشمال إفريقيا',
+        'xp.j4.body':'انتماء طويل الأمد إلى أحد أبرز كراسي الدراسات الاستراتيجية في كندا.',
+        'xp.j5.org':'معهد دراسات ما بعد الربيع العربي (IEPPA)','xp.j5.year':'2017 — حتى الآن','xp.j5.role':'مؤسِّس مشارك ومدير',
+
+        'edu.kicker':'التعليم','edu.s1.org':'جامعة مونتريال','edu.s1.deg':'دكتوراه في العلوم الإنسانية التطبيقية (الدراسات الإسلامية والعلوم السياسية)',
+        'edu.s1.body':'الأطروحة: <em>تصوُّر الدولة من منظور العلاقة بين الدين والسياسة في الفكر المصري الحديث والمعاصر (2011 — 2015): استمراريات وتحولات وقطائع.</em>',
+        'edu.s1.link':'الاطلاع عبر Papyrus','edu.s2.org':'جامعة شيربروك','edu.s2.deg':'ماجستير في العلوم السياسية التطبيقية (الدراسات الإسلامية)',
+        'awards.kicker':'الزمالات والجوائز',
+        'awards.a1':'<strong class="font-medium">باحث ما بعد الدكتوراه</strong>، معهد الدراسات الدينية (IER) ومركز CÉRIUM، جامعة مونتريال · 2018',
+        'awards.a2':'<strong class="font-medium">قائمة شرف العميد</strong>، كلية الآداب والعلوم، جامعة مونتريال · 2017',
+        'awards.a3':'<strong class="font-medium">جائزة التميُّز للحراك الأكاديمي</strong>، الدكتوراه في العلوم الإنسانية التطبيقية، جامعة مونتريال · 2015 — 2016',
+        'lang.kicker':'اللغات','lang.ar.t':'العربية','lang.ar.l':'لغة أم','lang.fr.t':'الفرنسية','lang.fr.l':'إتقان تام','lang.en.t':'الإنجليزية','lang.en.l':'لغة عمل',
+
+        'pub.kicker':'مختارات من الإصدارات','pub.title':'كتب ودراسات وتقارير',
+        'pub.intro':'مختارات من إنتاج علمي واسع يضم كتبًا في دار L’Harmattan، وفصولًا ومقالات محكَّمة، وإصدارات بحثية لمركز تريندز، بالعربية والفرنسية والإنجليزية.',
+        'art.kicker':'محكَّم','art.title':'مقالات وفصول كتب',
+        'art.intro':'مختارات من الإسهامات المحكَّمة في مجلات وكتب جماعية في فرنسا وكندا والعالم العربي.',
+        'art.scholar':'الاطلاع على ResearchGate',
+        'ar.kicker':'مختارات من الإصدارات بالعربية','ar.title':'مركز تريندز للبحوث والاستشارات',
+
+        'grant.kicker':'بحوث ممولة وتعاونات','grant.title':'سجلٌّ من التمويل التنافسي',
+        'grant.intro':'مختارات من المنح وأبحاث التعاون مع الزملاء باتريس برودور وأوريلي كامبانا ودومينيك أفون وسعد الدين الهلالي وغيرهم.',
+        'grant.collab':'تعاونات بحثية',
+
+        'spk.kicker':'المحاضرات والتدريس','spk.title':'محاضرات ومداخلات وكورسات',
+        'spk.intro':'مداخلات في المؤتمرات الدولية لـ PLURIEL، وفي الكونغرس السنوي لـ Acfas، وكورسات جامعية في مونتريال.',
+        'spk.taught':'المقررات','spk.c1':'جغرافيا الأديان','spk.c2':'مدخل إلى الإسلام','spk.c3':'الإسلام والحداثة','spk.c4':'العوالم العربية بعد 2011: الفاعلون، التحولات الاجتماعية-السياسية، والقضايا الجيوسياسية',
+        'spk.e1.date':'فبراير 2024 · أبوظبي','spk.e1.title':'مُنظِّم مشارك، مؤتمر «الإسلام والأخوّة الإنسانية»','spk.e1.body':'PLURIEL ومركز تريندز للبحوث والاستشارات.',
+        'spk.e2.date':'ديسمبر 2024 · ليون، فرنسا','spk.e2.body':'كلية اللاهوت، ليون، مداخلة بدعوة.',
+        'spk.e3.date':'مايو 2022 · جامعة لافال','spk.e3.body':'مُنظِّم مشارك، الكونغرس 89 لـ Acfas.',
+        'spk.e4.date':'يونيو 2018 · روما','spk.e4.body':'المؤتمر الدولي الثاني لـ PLURIEL، «الإسلام والانتماءات».',
+        'spk.e5.date':'مارس 2019 · CÉRIUM، مونتريال','spk.e5.body':'مُنظِّم مشارك، جامعة مونتريال.',
+        'spk.e6.date':'أكتوبر 2018 · مونتريال','spk.e6.body':'مهرجان العالم العربي بمونتريال.',
+
+        'mem.kicker':'الانتماءات والملفات','mem.title':'تابِع وائل في العالم الأكاديمي',
+        'mem.li':'ملف مهني وتحديثات','mem.trends':'ملف خبير، مستشار للإسلام السياسي','mem.dandurand':'باحث مشارك، UQAM',
+        'mem.acfas':'الجمعية الفرنكوفونية للمعرفة','mem.pluriel':'منصَّة جامعية للبحث في الإسلام','mem.cerium':'جامعة مونتريال',
+        'mem.rg':'ملف بحثي وإصدارات','mem.ipra':'فرنسا',
+
+        'ct.kicker':'تواصل معي','ct.title':'للمحاضرات والتعاونات والاستفسارات الإعلامية',
+        'ct.body':'مرحَّبٌ بالتعاونات الأكاديمية والمهام الاستشارية والدعوات للمحاضرات. البريد هو أسرع وسيلة للوصول إليّ.',
+        'ct.copy':'نسخ عنوان البريد','ct.copied':'تم النسخ',
+        'ct.based':'مقرّ الإقامة','ct.basedV':'مونتريال، كندا','ct.between':'العمل بين','ct.betweenV':'كندا · فرنسا · الإمارات','ct.langs':'اللغات','ct.langsV':'العربية · الفرنسية · الإنجليزية',
+
+        'ft.body':'باحث في الإسلام السياسي وتحولات ما بعد الربيع العربي والجغرافيا السياسية للأديان. أستاذ مشارك في IEIM (UQAM)، ومستشار شؤون الإسلام السياسي في مركز تريندز للبحوث والاستشارات.',
+        'ft.sitemap':'خريطة الموقع','ft.elsewhere':'في أماكن أخرى','ft.rights':'جميع الحقوق محفوظة.',
+      }
+    };
+
+    /* ====== State / DOM helpers ====== */
+    const html = document.documentElement;
+    const body = document.body;
+    let currentLang = localStorage.getItem('ws_lang') || 'en';
+
+    /* ====== Theme (light / dark) ====== */
+    const prefersDark = window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches;
+    const savedTheme  = localStorage.getItem('ws_theme');
+    let currentTheme  = savedTheme || (prefersDark ? 'dark' : 'light');
+    function applyTheme(t){
+      currentTheme = t;
+      if (t === 'dark') html.setAttribute('data-theme','dark');
+      else html.removeAttribute('data-theme');
+      localStorage.setItem('ws_theme', t);
+      const btn = document.getElementById('themeBtn');
+      if (btn) btn.setAttribute('aria-label', t === 'dark' ? 'Switch to light mode' : 'Switch to dark mode');
+    }
+    applyTheme(currentTheme);
+
+    function setLang(lang){
+      if (!I18N[lang]) return;
+      currentLang = lang;
+      localStorage.setItem('ws_lang', lang);
+      const dict = I18N[lang];
+      html.lang = lang;
+      html.dir  = (lang === 'ar') ? 'rtl' : 'ltr';
+      // text replacements
+      document.querySelectorAll('[data-i18n]').forEach(el => { const k = el.getAttribute('data-i18n'); if (dict[k] !== undefined) el.textContent = dict[k]; });
+      document.querySelectorAll('[data-i18n-html]').forEach(el => { const k = el.getAttribute('data-i18n-html'); if (dict[k] !== undefined) el.innerHTML = dict[k]; });
+      // hero name (split into letters with stagger)
+      renderHeroName(dict['hero.name'] || 'Wael Saleh');
+      // copy-email button copy state
+      const cText = document.getElementById('copyText'); if (cText) cText.textContent = dict['ct.copy'];
+      // language switcher pressed states
+      document.querySelectorAll('[data-lang]').forEach(b => b.setAttribute('aria-pressed', String(b.getAttribute('data-lang') === lang)));
+    }
+
+    function renderHeroName(name){
+      const root = document.querySelector('#heroName > span');
+      if (!root) return;
+      root.innerHTML = '';
+      const words = name.split(' ');
+      words.forEach((w, i) => {
+        const wrap = document.createElement('span');
+        wrap.className = 'word';
+        wrap.style.transitionDelay = (0.18 + i*0.18) + 's';
+        wrap.textContent = w;
+        root.appendChild(wrap);
+        if (i < words.length - 1) root.appendChild(document.createTextNode(' '));
+      });
+      // play after lang change
+      requestAnimationFrame(() => requestAnimationFrame(() => {
+        document.querySelectorAll('#heroName .word').forEach(el => el.classList.add('in'));
+      }));
+    }
+
+    /* ====== Initial language ====== */
+    setLang(currentLang);
+
+    /* ====== Year ====== */
+    document.getElementById('year').textContent = new Date().getFullYear();
+
+    /* ====== Mobile menu ====== */
+    const btn  = document.getElementById('menuBtn');
+    const menu = document.getElementById('mobileMenu');
+    const mIcon = document.getElementById('mIcon');
+    const open  = () => { menu.hidden = false; btn.setAttribute('aria-expanded','true');  mIcon.setAttribute('d','M6 6l12 12M6 18L18 6'); };
+    const close = () => { menu.hidden = true;  btn.setAttribute('aria-expanded','false'); mIcon.setAttribute('d','M4 7h16M4 12h16M4 17h16'); };
+    btn?.addEventListener('click', () => menu.hidden ? open() : close());
+    menu?.querySelectorAll('a').forEach(a => a.addEventListener('click', close));
+
+    /* ====== Language switcher ====== */
+    document.querySelectorAll('[data-lang]').forEach(b => {
+      b.addEventListener('click', () => setLang(b.getAttribute('data-lang')));
+    });
+
+    /* ====== Theme toggle ====== */
+    document.getElementById('themeBtn')?.addEventListener('click', () => {
+      applyTheme(currentTheme === 'dark' ? 'light' : 'dark');
+    });
+
+    /* ====== Scroll-triggered reveals ====== */
+    const reveals = document.querySelectorAll('.reveal,.reveal-up,.reveal-left,.reveal-right,.reveal-fade,.reveal-stagger');
+    const io = new IntersectionObserver((entries) => {
+      entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('in'); io.unobserve(e.target); } });
+    }, { rootMargin: '0px 0px -8% 0px', threshold: 0.06 });
+    reveals.forEach(el => io.observe(el));
+
+    /* ====== Hero blob parallax ====== */
+    const blobs = document.querySelectorAll('.blob');
+    let rafScroll = null;
+    window.addEventListener('scroll', () => {
+      if (rafScroll) return;
+      rafScroll = requestAnimationFrame(() => {
+        const y = window.scrollY;
+        blobs.forEach((b, i) => {
+          const speed = (i % 2 === 0) ? 0.18 : 0.10;
+          b.style.transform = `translate3d(0, ${y * speed * -1}px, 0)`;
+        });
+        rafScroll = null;
+      });
+    }, { passive: true });
+
+    /* ====== Copy email ====== */
+    const copyBtn  = document.getElementById('copyEmail');
+    const copyText = document.getElementById('copyText');
+    copyBtn?.addEventListener('click', async () => {
+      try {
+        await navigator.clipboard.writeText(copyBtn.dataset.email);
+        const original = copyText.textContent;
+        copyText.textContent = (I18N[currentLang] && I18N[currentLang]['ct.copied']) || 'Copied to clipboard';
+        copyBtn.classList.add('text-coral-700');
+        setTimeout(() => { copyText.textContent = original; copyBtn.classList.remove('text-coral-700'); }, 1800);
+      } catch {
+        copyText.textContent = 'Ctrl+C to copy';
+      }
+    });
+
+    /* ====== Chip Tooltips ====== */
+    (function(){
+      const tooltip = document.createElement('div');
+      tooltip.className = 'chip-tooltip';
+      document.body.appendChild(tooltip);
+
+      let activeChip = null;
+      let hideTimeout = null;
+
+      function showTooltip(chip) {
+        clearTimeout(hideTimeout);
+        // Determine chip index (1-based) from its position in #chipRow
+        const chips = Array.from(document.querySelectorAll('#chipRow .chip'));
+        const idx = chips.indexOf(chip) + 1;
+        const dict = I18N[currentLang] || I18N.en;
+        const title = (dict['tt.'+idx+'.title']) || chip.getAttribute('data-tooltip-title') || '';
+        const body  = (dict['tt.'+idx+'.body'])  || chip.getAttribute('data-tooltip')       || '';
+        const ref   = (dict['tt.'+idx+'.ref'])   || chip.getAttribute('data-tooltip-ref')   || '';
+        if (!body) return;
+        tooltip.innerHTML =
+          (title ? '<span class="tt-title">' + title + '</span>' : '') +
+          body +
+          (ref ? '<span class="tt-ref">— ' + ref + '</span>' : '');
+        tooltip.style.display = 'block';
+        // Position above the chip
+        const r = chip.getBoundingClientRect();
+        const tw = tooltip.offsetWidth;
+        const th = tooltip.offsetHeight;
+        let left = r.left + r.width/2 - tw/2;
+        let top  = r.top - th - 10;
+        // Clamp to viewport
+        if (left < 8) left = 8;
+        if (left + tw > window.innerWidth - 8) left = window.innerWidth - tw - 8;
+        if (top < 8) { top = r.bottom + 10; }  // flip below if no room above
+        tooltip.style.left = left + 'px';
+        tooltip.style.top  = top  + 'px';
+        requestAnimationFrame(() => tooltip.classList.add('visible'));
+        activeChip = chip;
+      }
+
+      function hideTooltip() {
+        hideTimeout = setTimeout(() => {
+          tooltip.classList.remove('visible');
+          activeChip = null;
+          setTimeout(() => { if (!tooltip.classList.contains('visible')) tooltip.style.display = 'none'; }, 250);
+        }, 120);
+      }
+
+      document.querySelectorAll('#chipRow .chip').forEach(chip => {
+        chip.addEventListener('mouseenter', () => showTooltip(chip));
+        chip.addEventListener('mouseleave', hideTooltip);
+        chip.addEventListener('focus', () => showTooltip(chip));
+        chip.addEventListener('blur', hideTooltip);
+        // Make focusable for keyboard
+        if (!chip.hasAttribute('tabindex')) chip.setAttribute('tabindex', '0');
+      });
+
+      // Keep tooltip visible when hovering it directly
+      tooltip.addEventListener('mouseenter', () => clearTimeout(hideTimeout));
+      tooltip.addEventListener('mouseleave', hideTooltip);
+    })();
+  </script>
+</body>
+</html>

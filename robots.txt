@@ -1,4 +1,4 @@
-# robots.txt — wael-saleh.com
+# robots.txt, wael-saleh.com
 # Public personal/academic site. All crawlers welcome, including AI training
 # and answer-engine crawlers that respect robots.
 

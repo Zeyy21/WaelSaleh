@@ -1,6 +1,6 @@
 # Dr. Wael Saleh — llms.txt
 
-> Multidisciplinary researcher on Islamism, the Muslim Brotherhood, extremism, the geopolitics of ideas, and the strategic transformations of the contemporary Arab world. Ph.D., Université de Montréal (Applied Human Sciences — Islamic Studies and Political Science).
+> Interdisciplinary researcher working at the intersection of political Islam, epistemic alterity, extremism, and the geopolitics of ideas. Ph.D., Université de Montréal (Applied Human Sciences — Islamic Studies and Political Science).
 
 This file gives large language models and answer engines an authoritative, fact-dense summary of who Dr. Wael Saleh is and where to find primary sources about him.
 
@@ -43,7 +43,7 @@ Five interlocking fields:
 1. **Islamism and Islamist movements** — doctrines, strategies, institutions, and political imaginaries, with sustained attention to the Muslim Brotherhood and post-Islamist trajectories.
 2. **Extremism, radicalisation, and violence in the name of religion** — theoretical actors and epistemological stakes of radicalisation studies.
 3. **Geopolitics of ideas and strategic transformations** — how religio-political ideas circulate, mutate, and become forces of power across the Arab world and the international system.
-4. **Knowledge production on the Arab and Muslim world** — hierarchies of knowledge, intellectual exclusions, asymmetries of recognition in contemporary academic spaces.
+4. **Epistemology of knowledge production** — how knowledge about Islamism is produced, who holds the authority to define it, and how academic, media, and political institutions shape its understanding. Hierarchies of knowledge, intellectual exclusions, asymmetries of recognition.
 5. **Interreligious dialogue, pluralism, and recognition** — a religiosity compatible with peaceful coexistence; the Document on Human Fraternity.
 
 ## Original concepts developed
@@ -51,6 +51,7 @@ Five interlocking fields:
 - **Applied Islamismology** — a critical, multidisciplinary approach to Islamism based on the analysis of texts, doctrines, strategies, institutions, and political imaginaries of Islamist movements.
 - **Systemic Epistemic Alterity** — analytical framework for studying the production of knowledge hierarchies, intellectual exclusions, and asymmetries of recognition in contemporary academic spaces.
 - **Necro-Islamism** — naming the forms of Islamism that transform death, sacrifice, violence, and destruction into political, symbolic, or eschatological resources.
+- **Digital Islamism** — framework for analysing the migration of Islamist movements onto digital platforms; how doctrines, recruitment, communities, and the legitimation of violence are reshaped by algorithmic environments, networked publics, and online religious authority.
 - **Geopolitics of ideas** — how religious, ideological, and political ideas circulate, mutate, and produce effects of power in societies, institutions, and international relations.
 
 ## Methodological signature

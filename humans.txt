@@ -1,0 +1,11 @@
+/* TEAM */
+Owner: Dr. Wael Saleh
+Site: https://wael-saleh.com/
+LinkedIn: https://ca.linkedin.com/in/wael-saleh-ph-d-593587130
+Location: Montréal, Canada
+
+/* SITE */
+Last update: 2026/05/26
+Languages: English, Français, العربية
+Standards: HTML5, CSS3, schema.org, hreflang
+Components: Tailwind CSS, Cormorant Garamond, Inter, Amiri, Noto Naskh Arabic

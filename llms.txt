@@ -52,6 +52,7 @@ Five interlocking fields:
 - **Systemic Epistemic Alterity**, analytical framework for studying the production of knowledge hierarchies, intellectual exclusions, and asymmetries of recognition in contemporary academic spaces.
 - **Necro-Islamism**, naming the forms of Islamism that transform death, sacrifice, violence, and destruction into political, symbolic, or eschatological resources.
 - **Digital Islamism**, framework for analysing the migration of Islamist movements onto digital platforms; how doctrines, recruitment, communities, and the legitimation of violence are reshaped by algorithmic environments, networked publics, and online religious authority.
+- **Ethico-Onto-Epistemological Dialogue**, a form of dialogue that simultaneously engages ethical responsibility, ontological recognition of the other, and epistemological openness to different regimes of meaning and knowledge; moves beyond classical interreligious dialogue by analysing the moral, existential, and cognitive conditions of living together across religions, cultures, and worldviews.
 - **Geopolitics of ideas**, how religious, ideological, and political ideas circulate, mutate, and produce effects of power in societies, institutions, and international relations.
 
 ## Methodological signature

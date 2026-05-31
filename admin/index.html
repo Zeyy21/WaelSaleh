@@ -5,9 +5,13 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="robots" content="noindex" />
   <title>Ideas to Share — Editor</title>
+  <!-- Pin the config to an ABSOLUTE path. Without this, Decap resolves
+       "config.yml" relative to the page URL; visiting /admin (no trailing
+       slash) makes it request /config.yml at the site root → 404. -->
+  <link href="/admin/config.yml" type="text/yaml" rel="cms-config-url" />
 </head>
 <body>
-  <!-- Decap CMS (formerly Netlify CMS). Loads config from ./config.yml -->
+  <!-- Decap CMS (formerly Netlify CMS). Loads config from the link above. -->
   <script src="https://unpkg.com/decap-cms@^3.5.0/dist/decap-cms.js"></script>
 </body>
 </html>

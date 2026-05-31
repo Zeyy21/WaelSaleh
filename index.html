@@ -2258,7 +2258,7 @@
     <!-- Reading modal for a full post -->
     <div id="ideasModal" hidden class="fixed inset-0 z-[70]">
       <div id="ideasModalScrim" class="absolute inset-0 bg-charcoal/55 backdrop-blur-sm" aria-hidden="true"></div>
-      <div class="absolute inset-0 overflow-y-auto p-4 sm:p-6 md:p-10">
+      <div id="ideasModalOverlay" class="absolute inset-0 overflow-y-auto p-4 sm:p-6 md:p-10">
         <div role="dialog" aria-modal="true" aria-labelledby="ideasModalTitle"
              class="relative mx-auto max-w-2xl rounded-3xl border border-line bg-ivory shadow-lifted">
           <button id="ideasModalClose" type="button" data-i18n-aria="ideas.close" aria-label="Close"
@@ -2981,22 +2981,42 @@
         catch { return iso; }
       }
 
-      /* ---------- front matter ---------- */
+      /* ---------- front matter ----------
+         Handles YAML as emitted by Decap, including multi-line FOLDED scalars
+         (a long quoted title/excerpt wrapped onto several indented lines).
+         Such continuation lines are joined with a single space — matching YAML
+         folding — so titles of any length are never cut off. */
+      function coerce(v){
+        v = v.trim();
+        if ((v.startsWith('"') && v.endsWith('"')) || (v.startsWith("'") && v.endsWith("'"))) v = v.slice(1, -1);
+        if (v === 'true') return true;
+        if (v === 'false') return false;
+        if (/^\[.*\]$/.test(v)) {
+          return v.slice(1, -1).split(',').map(s => s.trim().replace(/^["']|["']$/g, '')).filter(Boolean);
+        }
+        return v;
+      }
       function parseFrontMatter(raw){
+        raw = raw.replace(/\r\n/g, '\n').replace(/\r/g, '\n'); // normalize CRLF/CR
         const m = /^﻿?---\s*\n([\s\S]*?)\n---\s*\n?([\s\S]*)$/.exec(raw);
         if (!m) return { data:{}, body: raw };
         const data = {};
-        m[1].split('\n').forEach(line => {
-          const mm = /^([A-Za-z0-9_]+)\s*:\s*(.*)$/.exec(line.trim());
-          if (!mm) return;
-          let v = mm[2].trim();
-          if ((v.startsWith('"') && v.endsWith('"')) || (v.startsWith("'") && v.endsWith("'"))) v = v.slice(1,-1);
-          if (v === 'true') v = true; else if (v === 'false') v = false;
-          if (/^\[.*\]$/.test(v)) {
-            v = v.slice(1,-1).split(',').map(s => s.trim().replace(/^["']|["']$/g,'')).filter(Boolean);
+        const lines = m[1].split('\n');
+        let curKey = null, curVal = '';
+        const flush = () => { if (curKey !== null) data[curKey] = coerce(curVal); curKey = null; curVal = ''; };
+        for (const line of lines){
+          // A new "key: value" only when the colon comes after an unindented key.
+          const kv = /^([A-Za-z0-9_]+)\s*:\s*(.*)$/.exec(line);
+          if (kv && !/^\s/.test(line)){
+            flush();
+            curKey = kv[1];
+            curVal = kv[2];
+          } else if (curKey !== null && line.trim()){
+            // Continuation (folded) line — append with a single space.
+            curVal += ' ' + line.trim();
           }
-          data[mm[1]] = v;
-        });
+        }
+        flush();
         return { data, body: m[2] };
       }
 
@@ -3165,6 +3185,10 @@
       }
       closeBtn?.addEventListener('click', closeModal);
       scrim?.addEventListener('click', closeModal);
+      // Click anywhere OUTSIDE the post card (on the scrim / surrounding overlay
+      // padding) closes the reading view. Clicks inside the dialog do not.
+      const overlay = document.getElementById('ideasModalOverlay');
+      overlay?.addEventListener('click', e => { if (e.target === overlay) closeModal(); });
       document.addEventListener('keydown', e => { if (e.key === 'Escape' && !modal.hidden) closeModal(); });
 
       /* ---------- init ---------- */

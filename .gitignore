@@ -1,1 +1,5 @@
 .vercel
+node_modules
+
+# Generated at build time by scripts/build-ideas.js — do not commit.
+/ideas/

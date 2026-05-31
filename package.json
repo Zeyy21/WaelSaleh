@@ -1,0 +1,9 @@
+{
+  "name": "wael-saleh-site",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Static site for Dr. Wael Saleh, with a pre-built Ideas to Share blog.",
+  "scripts": {
+    "build": "node scripts/build-ideas.js"
+  }
+}

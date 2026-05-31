@@ -601,12 +601,13 @@
     html[dir="rtl"] .timeline-dot  { left:auto; right:-19px; }
     html[dir="rtl"] .ar-flip-x { transform: scaleX(-1); }
 
-    /* ===== Ideas to Share (blog) ===== */
+    /* ===== Ideas to Share (blog cards) ===== */
     .ideas-skeleton { animation: ideasPulse 1.5s ease-in-out infinite; }
     @keyframes ideasPulse { 0%,100% { opacity:.55; } 50% { opacity:.9; } }
     @media (prefers-reduced-motion: reduce) { .ideas-skeleton { animation:none; } }
 
-    .ideas-card { cursor:pointer; text-align:start; display:flex; flex-direction:column; }
+    /* Cards are links to each article's own page. */
+    .ideas-card { cursor:pointer; text-align:start; display:flex; flex-direction:column; text-decoration:none; }
     /* Titles are NEVER truncated, at any length. Long unbroken strings/URLs wrap
        instead of overflowing the card. */
     .ideas-card-title { overflow-wrap:anywhere; word-break:break-word; }
@@ -616,44 +617,10 @@
     }
     /* A post's own direction/font applies even when the site UI is a different language. */
     .ideas-card[dir="rtl"] { text-align:right; }
-    .ideas-card[lang="ar"], .ideas-card[lang="ar"] .font-display,
-    article[lang="ar"] #ideasModalTitle, article[lang="ar"] .ideas-prose {
+    .ideas-card[lang="ar"], .ideas-card[lang="ar"] .font-display {
       font-family:'Noto Naskh Arabic','Amiri', serif;
     }
-    article[lang="ar"] #ideasModalTitle { font-family:'Amiri','Noto Naskh Arabic', serif; }
-    /* Modal title also wraps fully, no truncation. */
-    #ideasModalTitle { overflow-wrap:anywhere; word-break:break-word; }
-
-    /* Rendered post body — matches the academic body type and rhythm of the site */
-    .ideas-prose { font-size:16px; line-height:1.7; }
-    .ideas-prose > * + * { margin-top:1.1em; }
-    .ideas-prose h1, .ideas-prose h2, .ideas-prose h3 {
-      font-family:'Cormorant Garamond', Georgia, serif; color: rgb(var(--c-charcoal)); line-height:1.2; margin-top:1.4em;
-    }
-    .ideas-prose h1 { font-size:1.9rem; }
-    .ideas-prose h2 { font-size:1.55rem; }
-    .ideas-prose h3 { font-size:1.3rem; }
-    .ideas-prose a { color:#D94518; text-decoration:underline; text-underline-offset:2px; }
-    .ideas-prose a:hover { color:#A8330F; }
-    .ideas-prose strong { font-weight:600; color: rgb(var(--c-charcoal)); }
-    .ideas-prose em { font-style:italic; }
-    .ideas-prose ul, .ideas-prose ol { padding-inline-start:1.4em; }
-    .ideas-prose ul { list-style:disc; }
-    .ideas-prose ol { list-style:decimal; }
-    .ideas-prose li + li { margin-top:.4em; }
-    .ideas-prose blockquote {
-      border-inline-start:2px solid #FF8E6A; padding-inline-start:1.1rem;
-      font-family:'Cormorant Garamond', Georgia, serif; font-size:1.25rem; font-style:italic; color: rgb(var(--c-charcoal) / .9);
-    }
-    .ideas-prose code {
-      font-family:ui-monospace, SFMono-Regular, Menlo, monospace; font-size:.9em;
-      background: rgb(var(--c-line) / .5); padding:.12em .4em; border-radius:.3em;
-    }
-    /* Modal prose follows the post's own direction (set on the <article>). */
-    article[dir="rtl"] .ideas-prose { text-align:right; }
-    article[dir="rtl"] .ideas-prose blockquote { font-family:'Amiri','Noto Naskh Arabic', serif; }
-    /* Card grid: ensure the grid container itself stays LTR-flowing so mixed-language
-       cards line up consistently regardless of the selected site language. */
+    /* Card grid stays LTR-flowing so mixed-language cards line up consistently. */
     #ideasGrid { direction:ltr; }
 
     /* Lang switcher */
@@ -2255,25 +2222,6 @@
       </div>
     </section>
 
-    <!-- Reading modal for a full post -->
-    <div id="ideasModal" hidden class="fixed inset-0 z-[70]">
-      <div id="ideasModalScrim" class="absolute inset-0 bg-charcoal/55 backdrop-blur-sm" aria-hidden="true"></div>
-      <div id="ideasModalOverlay" class="absolute inset-0 overflow-y-auto p-4 sm:p-6 md:p-10">
-        <div role="dialog" aria-modal="true" aria-labelledby="ideasModalTitle"
-             class="relative mx-auto max-w-2xl rounded-3xl border border-line bg-ivory shadow-lifted">
-          <button id="ideasModalClose" type="button" data-i18n-aria="ideas.close" aria-label="Close"
-                  class="absolute top-4 end-4 inline-flex items-center justify-center w-9 h-9 rounded-full border border-line bg-cream hover:bg-line/40 text-charcoal transition-colors">
-            <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 6l12 12M6 18L18 6"/></svg>
-          </button>
-          <article class="px-6 sm:px-10 py-10 sm:py-12">
-            <p id="ideasModalDate" class="text-[12px] tracking-wider2 uppercase text-coral-600"></p>
-            <h3 id="ideasModalTitle" class="mt-3 font-display text-3xl md:text-4xl text-charcoal leading-tight"></h3>
-            <div id="ideasModalBody" class="ideas-prose mt-6 text-ink/90"></div>
-          </article>
-        </div>
-      </div>
-    </div>
-
     <!-- ===== CONTACT ===== -->
     <section id="contact" class="relative py-24 md:py-28 overflow-hidden">
       <div aria-hidden="true" class="pointer-events-none absolute inset-0 dot-grid opacity-50"></div>
@@ -2952,25 +2900,22 @@
     })();
 
     /* ======================================================================
-       IDEAS TO SHARE — runtime blog
-       - Discovers posts via /api/posts (Vercel function), falling back to a
-         static /content/posts/index.json manifest for local/static hosting.
-       - Each post is a Markdown file with YAML-ish front matter; tagged with a
-         single `lang` (en|fr|ar). The grid shows only posts in the current
-         site language. No build step, no auto-translation.
-       - Dependency-free, XSS-safe Markdown rendering.
+       IDEAS TO SHARE — homepage index
+       - Reads the pre-built /ideas/posts.json index (written at build time by
+         scripts/build-ideas.js). Each card LINKS to that article's own full
+         page at /ideas/<slug>/ (a real URL with per-article social meta),
+         instead of opening a modal.
+       - All posts shown to everyone regardless of UI language; each card is
+         labelled and rendered in its own language/direction.
        ====================================================================== */
     (function(){
-      const POSTS_DIR = 'content/posts/';
       const grid  = document.getElementById('ideasGrid');
       const empty = document.getElementById('ideasEmpty');
       if (!grid) return;
 
-      let allPosts = null;          // cached parsed posts (lang-agnostic)
-      let lastFocused = null;
+      let allPosts = null;
 
-      /* ---------- helpers ---------- */
-      const esc = s => String(s).replace(/[&<>"']/g, c =>
+      const esc = s => String(s == null ? '' : s).replace(/[&<>"']/g, c =>
         ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
 
       function fmtDate(iso, lang){
@@ -2981,143 +2926,27 @@
         catch { return iso; }
       }
 
-      /* ---------- front matter ----------
-         Handles YAML as emitted by Decap, including multi-line FOLDED scalars
-         (a long quoted title/excerpt wrapped onto several indented lines).
-         Such continuation lines are joined with a single space — matching YAML
-         folding — so titles of any length are never cut off. */
-      function coerce(v){
-        v = v.trim();
-        if ((v.startsWith('"') && v.endsWith('"')) || (v.startsWith("'") && v.endsWith("'"))) v = v.slice(1, -1);
-        if (v === 'true') return true;
-        if (v === 'false') return false;
-        if (/^\[.*\]$/.test(v)) {
-          return v.slice(1, -1).split(',').map(s => s.trim().replace(/^["']|["']$/g, '')).filter(Boolean);
-        }
-        return v;
-      }
-      function parseFrontMatter(raw){
-        raw = raw.replace(/\r\n/g, '\n').replace(/\r/g, '\n'); // normalize CRLF/CR
-        const m = /^﻿?---\s*\n([\s\S]*?)\n---\s*\n?([\s\S]*)$/.exec(raw);
-        if (!m) return { data:{}, body: raw };
-        const data = {};
-        const lines = m[1].split('\n');
-        let curKey = null, curVal = '';
-        const flush = () => { if (curKey !== null) data[curKey] = coerce(curVal); curKey = null; curVal = ''; };
-        for (const line of lines){
-          // A new "key: value" only when the colon comes after an unindented key.
-          const kv = /^([A-Za-z0-9_]+)\s*:\s*(.*)$/.exec(line);
-          if (kv && !/^\s/.test(line)){
-            flush();
-            curKey = kv[1];
-            curVal = kv[2];
-          } else if (curKey !== null && line.trim()){
-            // Continuation (folded) line — append with a single space.
-            curVal += ' ' + line.trim();
-          }
-        }
-        flush();
-        return { data, body: m[2] };
-      }
-
-      /* ---------- minimal, safe Markdown → HTML ---------- */
-      function inline(t){
-        t = esc(t);
-        t = t.replace(/`([^`]+)`/g, (_,c) => '<code>'+c+'</code>');
-        t = t.replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>');
-        t = t.replace(/(^|[^*])\*([^*]+)\*/g, '$1<em>$2</em>');
-        t = t.replace(/\[([^\]]+)\]\((https?:\/\/[^\s)]+)\)/g,
-          (_,txt,href) => '<a href="'+esc(href)+'" target="_blank" rel="noopener noreferrer">'+txt+'</a>');
-        return t;
-      }
-      function mdToHtml(md){
-        const lines = md.replace(/\r\n/g,'\n').split('\n');
-        let html = '', i = 0;
-        while (i < lines.length){
-          let line = lines[i];
-          if (!line.trim()) { i++; continue; }
-          let h = /^(#{1,3})\s+(.*)$/.exec(line);
-          if (h){ const lvl = h[1].length; html += '<h'+lvl+'>'+inline(h[2])+'</h'+lvl+'>'; i++; continue; }
-          if (/^>\s?/.test(line)){
-            let buf = [];
-            while (i < lines.length && /^>\s?/.test(lines[i])) { buf.push(lines[i].replace(/^>\s?/,'')); i++; }
-            html += '<blockquote>'+inline(buf.join(' '))+'</blockquote>'; continue;
-          }
-          if (/^[-*]\s+/.test(line)){
-            let buf = [];
-            while (i < lines.length && /^[-*]\s+/.test(lines[i])) { buf.push('<li>'+inline(lines[i].replace(/^[-*]\s+/,''))+'</li>'); i++; }
-            html += '<ul>'+buf.join('')+'</ul>'; continue;
-          }
-          if (/^\d+\.\s+/.test(line)){
-            let buf = [];
-            while (i < lines.length && /^\d+\.\s+/.test(lines[i])) { buf.push('<li>'+inline(lines[i].replace(/^\d+\.\s+/,''))+'</li>'); i++; }
-            html += '<ol>'+buf.join('')+'</ol>'; continue;
-          }
-          let buf = [];
-          while (i < lines.length && lines[i].trim() && !/^(#{1,3}\s|>|[-*]\s|\d+\.\s)/.test(lines[i])) { buf.push(lines[i]); i++; }
-          html += '<p>'+inline(buf.join(' '))+'</p>';
-        }
-        return html;
-      }
-
-      /* ---------- discovery ---------- */
-      async function discover(){
-        // Preferred: serverless directory listing
-        try {
-          const r = await fetch('/api/posts', { headers:{ 'Accept':'application/json' } });
-          if (r.ok){
-            const j = await r.json();
-            if (Array.isArray(j.files)) return j.files;
-          }
-        } catch {}
-        // Fallback: static manifest committed alongside posts
-        try {
-          const r = await fetch(POSTS_DIR + 'index.json', { cache:'no-cache' });
-          if (r.ok){
-            const j = await r.json();
-            if (Array.isArray(j)) return j;
-            if (Array.isArray(j.files)) return j.files;
-          }
-        } catch {}
-        return [];
-      }
-
       async function loadAll(){
         if (allPosts) return allPosts;
-        const files = (await discover()).filter(f => /\.md$/i.test(f));
-        const posts = await Promise.all(files.map(async name => {
-          try {
-            const r = await fetch(POSTS_DIR + name, { cache:'no-cache' });
-            if (!r.ok) return null;
-            const { data, body } = parseFrontMatter(await r.text());
-            if (data.draft === true) return null;
-            return {
-              slug: name.replace(/\.md$/i,''),
-              title: data.title || '(untitled)',
-              lang: (data.lang || 'en').toLowerCase(),
-              date: data.date || '',
-              excerpt: data.excerpt || '',
-              bodyHtml: mdToHtml(body)
-            };
-          } catch { return null; }
-        }));
-        allPosts = posts.filter(Boolean).sort((a,b) => new Date(b.date) - new Date(a.date));
+        try {
+          const r = await fetch('/ideas/posts.json', { cache:'no-cache' });
+          if (r.ok){
+            const j = await r.json();
+            allPosts = (Array.isArray(j.posts) ? j.posts : [])
+              .sort((a,b) => new Date(b.date) - new Date(a.date));
+            return allPosts;
+          }
+        } catch {}
+        allPosts = [];
         return allPosts;
       }
 
-      /* ---------- rendering ---------- */
       function dict(){ return (typeof I18N !== 'undefined' && (I18N[currentLang] || I18N.en)) || {}; }
-
       const LANG_LABEL = { en:'EN', fr:'FR', ar:'AR' };
 
       function renderCards(posts){
-        const uiLang = currentLang || 'en';
-        // Show ALL posts to everyone, regardless of the selected site language.
-        // Readers can translate externally; each card is labelled with its own
-        // language and rendered with the correct direction/font.
-        const visible = posts.slice();
         grid.innerHTML = '';
-        if (!visible.length){
+        if (!posts.length){
           empty.hidden = false;
           grid.style.display = 'none';
           return;
@@ -3125,14 +2954,13 @@
         empty.hidden = true;
         grid.style.display = '';
         const d = dict();
-        visible.forEach(p => {
+        posts.forEach(p => {
           const postLang = (p.lang || 'en').toLowerCase();
           const isRtl = postLang === 'ar';
-          const card = document.createElement('button');
-          card.type = 'button';
+          // Each card is now a LINK to the article's full page.
+          const card = document.createElement('a');
+          card.href = p.url || ('/ideas/' + p.slug + '/');
           card.className = 'ideas-card group rounded-2xl border border-line bg-ivory p-6 hover:border-coral-300 hover:shadow-soft hover:-translate-y-0.5 transition-all';
-          // Each card carries its OWN language direction so an Arabic post reads
-          // RTL even while the site UI is in English, and vice versa.
           card.setAttribute('lang', postLang);
           card.setAttribute('dir', isRtl ? 'rtl' : 'ltr');
           card.innerHTML =
@@ -3146,50 +2974,13 @@
               esc(d['ideas.readmore']||'Read')+
               '<svg class="w-3.5 h-3.5 ar-flip-x shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M9 7h8v8"/></svg>'+
             '</span>';
-          card.addEventListener('click', () => openModal(p));
           grid.appendChild(card);
         });
-        // animate in if observer already passed
         grid.classList.add('in');
       }
 
       function render(){ if (allPosts) renderCards(allPosts); }
       window.renderIdeas = render;
-
-      /* ---------- modal ---------- */
-      const modal = document.getElementById('ideasModal');
-      const scrim = document.getElementById('ideasModalScrim');
-      const closeBtn = document.getElementById('ideasModalClose');
-      const mDate = document.getElementById('ideasModalDate');
-      const mTitle = document.getElementById('ideasModalTitle');
-      const mBody = document.getElementById('ideasModalBody');
-
-      function openModal(p){
-        const postLang = (p.lang || 'en').toLowerCase();
-        const isRtl = postLang === 'ar';
-        lastFocused = document.activeElement;
-        mDate.textContent = fmtDate(p.date, postLang);
-        mTitle.textContent = p.title;
-        mBody.innerHTML = p.bodyHtml;
-        // The post reads in its OWN language/direction, independent of the site UI.
-        const article = mTitle.closest('article');
-        if (article){ article.setAttribute('lang', postLang); article.setAttribute('dir', isRtl ? 'rtl' : 'ltr'); }
-        modal.hidden = false;
-        document.body.style.overflow = 'hidden';
-        closeBtn.focus();
-      }
-      function closeModal(){
-        modal.hidden = true;
-        document.body.style.overflow = '';
-        if (lastFocused && lastFocused.focus) lastFocused.focus();
-      }
-      closeBtn?.addEventListener('click', closeModal);
-      scrim?.addEventListener('click', closeModal);
-      // Click anywhere OUTSIDE the post card (on the scrim / surrounding overlay
-      // padding) closes the reading view. Clicks inside the dialog do not.
-      const overlay = document.getElementById('ideasModalOverlay');
-      overlay?.addEventListener('click', e => { if (e.target === overlay) closeModal(); });
-      document.addEventListener('keydown', e => { if (e.key === 'Escape' && !modal.hidden) closeModal(); });
 
       /* ---------- init ---------- */
       loadAll().then(render).catch(() => { empty.hidden = false; grid.style.display = 'none'; });

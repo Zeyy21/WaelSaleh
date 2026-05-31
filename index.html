@@ -607,9 +607,22 @@
     @media (prefers-reduced-motion: reduce) { .ideas-skeleton { animation:none; } }
 
     .ideas-card { cursor:pointer; text-align:start; display:flex; flex-direction:column; }
+    /* Titles are NEVER truncated, at any length. Long unbroken strings/URLs wrap
+       instead of overflowing the card. */
+    .ideas-card-title { overflow-wrap:anywhere; word-break:break-word; }
+    /* The excerpt is a short standfirst; clamp it for tidy cards. Titles are not clamped. */
     .ideas-card .ideas-excerpt {
       display:-webkit-box; -webkit-line-clamp:3; line-clamp:3; -webkit-box-orient:vertical; overflow:hidden;
     }
+    /* A post's own direction/font applies even when the site UI is a different language. */
+    .ideas-card[dir="rtl"] { text-align:right; }
+    .ideas-card[lang="ar"], .ideas-card[lang="ar"] .font-display,
+    article[lang="ar"] #ideasModalTitle, article[lang="ar"] .ideas-prose {
+      font-family:'Noto Naskh Arabic','Amiri', serif;
+    }
+    article[lang="ar"] #ideasModalTitle { font-family:'Amiri','Noto Naskh Arabic', serif; }
+    /* Modal title also wraps fully, no truncation. */
+    #ideasModalTitle { overflow-wrap:anywhere; word-break:break-word; }
 
     /* Rendered post body — matches the academic body type and rhythm of the site */
     .ideas-prose { font-size:16px; line-height:1.7; }
@@ -636,8 +649,12 @@
       font-family:ui-monospace, SFMono-Regular, Menlo, monospace; font-size:.9em;
       background: rgb(var(--c-line) / .5); padding:.12em .4em; border-radius:.3em;
     }
-    html[dir="rtl"] .ideas-prose, html[dir="rtl"] .ideas-card { text-align:right; }
-    html[dir="rtl"] .ideas-prose blockquote { font-family:'Amiri','Noto Naskh Arabic', serif; }
+    /* Modal prose follows the post's own direction (set on the <article>). */
+    article[dir="rtl"] .ideas-prose { text-align:right; }
+    article[dir="rtl"] .ideas-prose blockquote { font-family:'Amiri','Noto Naskh Arabic', serif; }
+    /* Card grid: ensure the grid container itself stays LTR-flowing so mixed-language
+       cards line up consistently regardless of the selected site language. */
+    #ideasGrid { direction:ltr; }
 
     /* Lang switcher */
     .lang-btn { transition: background-color .2s, color .2s; }
@@ -3071,9 +3088,14 @@
       /* ---------- rendering ---------- */
       function dict(){ return (typeof I18N !== 'undefined' && (I18N[currentLang] || I18N.en)) || {}; }
 
+      const LANG_LABEL = { en:'EN', fr:'FR', ar:'AR' };
+
       function renderCards(posts){
-        const lang = currentLang || 'en';
-        const visible = posts.filter(p => p.lang === lang);
+        const uiLang = currentLang || 'en';
+        // Show ALL posts to everyone, regardless of the selected site language.
+        // Readers can translate externally; each card is labelled with its own
+        // language and rendered with the correct direction/font.
+        const visible = posts.slice();
         grid.innerHTML = '';
         if (!visible.length){
           empty.hidden = false;
@@ -3084,17 +3106,26 @@
         grid.style.display = '';
         const d = dict();
         visible.forEach(p => {
+          const postLang = (p.lang || 'en').toLowerCase();
+          const isRtl = postLang === 'ar';
           const card = document.createElement('button');
           card.type = 'button';
           card.className = 'ideas-card group rounded-2xl border border-line bg-ivory p-6 hover:border-coral-300 hover:shadow-soft hover:-translate-y-0.5 transition-all';
+          // Each card carries its OWN language direction so an Arabic post reads
+          // RTL even while the site UI is in English, and vice versa.
+          card.setAttribute('lang', postLang);
+          card.setAttribute('dir', isRtl ? 'rtl' : 'ltr');
           card.innerHTML =
             '<div class="flex items-center justify-between gap-3">' +
-              '<p class="text-[12px] tracking-wider2 uppercase text-muted">'+esc(fmtDate(p.date, lang))+'</p>' +
-              '<svg class="w-4 h-4 text-muted group-hover:text-coral-600 transition-colors ar-flip-x shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M9 7h8v8"/></svg>' +
+              '<p class="text-[12px] tracking-wider2 uppercase text-muted">'+esc(fmtDate(p.date, postLang))+'</p>' +
+              '<span class="ideas-badge text-[11px] tracking-wider2 font-medium text-coral-700 bg-coral-50 border border-coral-100 rounded-full px-2 py-0.5">'+esc(LANG_LABEL[postLang]||postLang.toUpperCase())+'</span>' +
             '</div>' +
-            '<h3 class="mt-4 font-display text-xl text-charcoal leading-snug">'+esc(p.title)+'</h3>' +
+            '<h3 class="ideas-card-title mt-4 font-display text-xl text-charcoal leading-snug">'+esc(p.title)+'</h3>' +
             (p.excerpt ? '<p class="ideas-excerpt mt-3 text-[14.5px] text-muted leading-relaxed">'+esc(p.excerpt)+'</p>' : '') +
-            '<span class="mt-5 inline-flex items-center gap-1.5 text-[13.5px] text-coral-700">'+esc(d['ideas.readmore']||'Read')+'</span>';
+            '<span class="mt-5 inline-flex items-center gap-1.5 text-[13.5px] text-coral-700">'+
+              esc(d['ideas.readmore']||'Read')+
+              '<svg class="w-3.5 h-3.5 ar-flip-x shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M9 7h8v8"/></svg>'+
+            '</span>';
           card.addEventListener('click', () => openModal(p));
           grid.appendChild(card);
         });
@@ -3114,10 +3145,15 @@
       const mBody = document.getElementById('ideasModalBody');
 
       function openModal(p){
+        const postLang = (p.lang || 'en').toLowerCase();
+        const isRtl = postLang === 'ar';
         lastFocused = document.activeElement;
-        mDate.textContent = fmtDate(p.date, currentLang || 'en');
+        mDate.textContent = fmtDate(p.date, postLang);
         mTitle.textContent = p.title;
         mBody.innerHTML = p.bodyHtml;
+        // The post reads in its OWN language/direction, independent of the site UI.
+        const article = mTitle.closest('article');
+        if (article){ article.setAttribute('lang', postLang); article.setAttribute('dir', isRtl ? 'rtl' : 'ltr'); }
         modal.hidden = false;
         document.body.style.overflow = 'hidden';
         closeBtn.focus();

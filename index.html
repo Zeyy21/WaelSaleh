@@ -601,6 +601,44 @@
     html[dir="rtl"] .timeline-dot  { left:auto; right:-19px; }
     html[dir="rtl"] .ar-flip-x { transform: scaleX(-1); }
 
+    /* ===== Ideas to Share (blog) ===== */
+    .ideas-skeleton { animation: ideasPulse 1.5s ease-in-out infinite; }
+    @keyframes ideasPulse { 0%,100% { opacity:.55; } 50% { opacity:.9; } }
+    @media (prefers-reduced-motion: reduce) { .ideas-skeleton { animation:none; } }
+
+    .ideas-card { cursor:pointer; text-align:start; display:flex; flex-direction:column; }
+    .ideas-card .ideas-excerpt {
+      display:-webkit-box; -webkit-line-clamp:3; line-clamp:3; -webkit-box-orient:vertical; overflow:hidden;
+    }
+
+    /* Rendered post body — matches the academic body type and rhythm of the site */
+    .ideas-prose { font-size:16px; line-height:1.7; }
+    .ideas-prose > * + * { margin-top:1.1em; }
+    .ideas-prose h1, .ideas-prose h2, .ideas-prose h3 {
+      font-family:'Cormorant Garamond', Georgia, serif; color: rgb(var(--c-charcoal)); line-height:1.2; margin-top:1.4em;
+    }
+    .ideas-prose h1 { font-size:1.9rem; }
+    .ideas-prose h2 { font-size:1.55rem; }
+    .ideas-prose h3 { font-size:1.3rem; }
+    .ideas-prose a { color:#D94518; text-decoration:underline; text-underline-offset:2px; }
+    .ideas-prose a:hover { color:#A8330F; }
+    .ideas-prose strong { font-weight:600; color: rgb(var(--c-charcoal)); }
+    .ideas-prose em { font-style:italic; }
+    .ideas-prose ul, .ideas-prose ol { padding-inline-start:1.4em; }
+    .ideas-prose ul { list-style:disc; }
+    .ideas-prose ol { list-style:decimal; }
+    .ideas-prose li + li { margin-top:.4em; }
+    .ideas-prose blockquote {
+      border-inline-start:2px solid #FF8E6A; padding-inline-start:1.1rem;
+      font-family:'Cormorant Garamond', Georgia, serif; font-size:1.25rem; font-style:italic; color: rgb(var(--c-charcoal) / .9);
+    }
+    .ideas-prose code {
+      font-family:ui-monospace, SFMono-Regular, Menlo, monospace; font-size:.9em;
+      background: rgb(var(--c-line) / .5); padding:.12em .4em; border-radius:.3em;
+    }
+    html[dir="rtl"] .ideas-prose, html[dir="rtl"] .ideas-card { text-align:right; }
+    html[dir="rtl"] .ideas-prose blockquote { font-family:'Amiri','Noto Naskh Arabic', serif; }
+
     /* Lang switcher */
     .lang-btn { transition: background-color .2s, color .2s; }
     .lang-btn[aria-pressed="true"] { background: rgb(var(--c-charcoal)); color: rgb(var(--c-cream)); }
@@ -1211,6 +1249,7 @@
         <a class="px-2.5 py-1.5 rounded-full hover:bg-cream transition-colors" href="#experience" data-i18n="nav.experience">Experience</a>
         <a class="px-2.5 py-1.5 rounded-full hover:bg-cream transition-colors" href="#publications" data-i18n="nav.publications">Publications</a>
         <a class="px-2.5 py-1.5 rounded-full hover:bg-cream transition-colors" href="#speaking" data-i18n="nav.speaking">Speaking</a>
+        <a class="px-2.5 py-1.5 rounded-full hover:bg-cream transition-colors" href="#ideas" data-i18n="nav.ideas">Ideas</a>
         <a class="px-2.5 py-1.5 rounded-full hover:bg-cream transition-colors" href="#contact" data-i18n="nav.contact">Contact</a>
       </nav>
 
@@ -1260,6 +1299,7 @@
         <a class="px-3 py-2.5 rounded-xl hover:bg-cream" href="#publications" data-i18n="nav.publications">Publications</a>
         <a class="px-3 py-2.5 rounded-xl hover:bg-cream" href="#speaking"     data-i18n="nav.speaking">Speaking</a>
         <a class="px-3 py-2.5 rounded-xl hover:bg-cream" href="#memberships"  data-i18n="nav.memberships">Memberships</a>
+        <a class="px-3 py-2.5 rounded-xl hover:bg-cream" href="#ideas"        data-i18n="nav.ideas">Ideas</a>
         <a class="px-3 py-2.5 rounded-xl hover:bg-cream" href="#contact"      data-i18n="nav.contact">Contact</a>
       </nav>
       <div class="hairline mt-3 pt-3 grid grid-cols-3 gap-2 text-[13px]">
@@ -2161,6 +2201,62 @@
       </div>
     </section>
 
+    <!-- ===== IDEAS TO SHARE (BLOG) ===== -->
+    <section id="ideas" class="relative py-20 md:py-24">
+      <div class="max-w-6xl mx-auto px-5">
+        <div class="reveal-up text-center max-w-3xl mx-auto">
+          <p class="text-[12px] tracking-wider2 uppercase text-coral-600" data-i18n="ideas.kicker">Writing and Commentary</p>
+          <h2 class="mt-3 font-display text-4xl md:text-5xl text-charcoal" data-i18n="ideas.title">Ideas to Share</h2>
+          <p class="mt-4 text-muted" data-i18n="ideas.intro">Essays, notes, and commentary on political Islam, epistemic alterity, and the geopolitics of ideas, published as they take shape.</p>
+        </div>
+
+        <!-- Posts grid -->
+        <div id="ideasGrid" class="mt-12 grid sm:grid-cols-2 lg:grid-cols-3 gap-5 reveal-stagger" aria-live="polite">
+          <!-- Loading skeletons (replaced by JS) -->
+          <div class="ideas-skeleton rounded-2xl border border-line bg-ivory p-6">
+            <div class="h-3 w-24 rounded bg-line/70"></div>
+            <div class="mt-4 h-5 w-3/4 rounded bg-line/70"></div>
+            <div class="mt-3 h-3 w-full rounded bg-line/50"></div>
+            <div class="mt-2 h-3 w-5/6 rounded bg-line/50"></div>
+          </div>
+          <div class="ideas-skeleton rounded-2xl border border-line bg-ivory p-6">
+            <div class="h-3 w-24 rounded bg-line/70"></div>
+            <div class="mt-4 h-5 w-3/4 rounded bg-line/70"></div>
+            <div class="mt-3 h-3 w-full rounded bg-line/50"></div>
+            <div class="mt-2 h-3 w-5/6 rounded bg-line/50"></div>
+          </div>
+          <div class="ideas-skeleton rounded-2xl border border-line bg-ivory p-6">
+            <div class="h-3 w-24 rounded bg-line/70"></div>
+            <div class="mt-4 h-5 w-3/4 rounded bg-line/70"></div>
+            <div class="mt-3 h-3 w-full rounded bg-line/50"></div>
+            <div class="mt-2 h-3 w-5/6 rounded bg-line/50"></div>
+          </div>
+        </div>
+
+        <!-- Empty state (hidden by default) -->
+        <p id="ideasEmpty" hidden class="mt-12 text-center text-muted" data-i18n="ideas.empty">No entries yet, new writing will appear here soon.</p>
+      </div>
+    </section>
+
+    <!-- Reading modal for a full post -->
+    <div id="ideasModal" hidden class="fixed inset-0 z-[70]">
+      <div id="ideasModalScrim" class="absolute inset-0 bg-charcoal/55 backdrop-blur-sm" aria-hidden="true"></div>
+      <div class="absolute inset-0 overflow-y-auto p-4 sm:p-6 md:p-10">
+        <div role="dialog" aria-modal="true" aria-labelledby="ideasModalTitle"
+             class="relative mx-auto max-w-2xl rounded-3xl border border-line bg-ivory shadow-lifted">
+          <button id="ideasModalClose" type="button" data-i18n-aria="ideas.close" aria-label="Close"
+                  class="absolute top-4 end-4 inline-flex items-center justify-center w-9 h-9 rounded-full border border-line bg-cream hover:bg-line/40 text-charcoal transition-colors">
+            <svg class="w-4 h-4" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M6 6l12 12M6 18L18 6"/></svg>
+          </button>
+          <article class="px-6 sm:px-10 py-10 sm:py-12">
+            <p id="ideasModalDate" class="text-[12px] tracking-wider2 uppercase text-coral-600"></p>
+            <h3 id="ideasModalTitle" class="mt-3 font-display text-3xl md:text-4xl text-charcoal leading-tight"></h3>
+            <div id="ideasModalBody" class="ideas-prose mt-6 text-ink/90"></div>
+          </article>
+        </div>
+      </div>
+    </div>
+
     <!-- ===== CONTACT ===== -->
     <section id="contact" class="relative py-24 md:py-28 overflow-hidden">
       <div aria-hidden="true" class="pointer-events-none absolute inset-0 dot-grid opacity-50"></div>
@@ -2221,6 +2317,7 @@
             <li><a class="hover:text-coral-200 transition-colors" href="#experience" data-i18n="nav.experience">Experience</a></li>
             <li><a class="hover:text-coral-200 transition-colors" href="#publications" data-i18n="nav.publications">Publications</a></li>
             <li><a class="hover:text-coral-200 transition-colors" href="#speaking" data-i18n="nav.speaking">Speaking</a></li>
+            <li><a class="hover:text-coral-200 transition-colors" href="#ideas" data-i18n="nav.ideas">Ideas</a></li>
             <li><a class="hover:text-coral-200 transition-colors" href="#contact" data-i18n="nav.contact">Contact</a></li>
           </ul>
         </nav>
@@ -2253,7 +2350,7 @@
       en: {
         skip:'Skip to content',
         'nav.about':'About','nav.concepts':'Concepts','nav.expertise':'Expertise','nav.experience':'Experience','nav.education':'Education',
-        'nav.publications':'Publications','nav.speaking':'Speaking','nav.memberships':'Memberships','nav.contact':'Contact',
+        'nav.publications':'Publications','nav.speaking':'Speaking','nav.memberships':'Memberships','nav.ideas':'Ideas','nav.contact':'Contact',
         'cta.resume':'Resume','cta.email':'Email',
         'hero.eyebrow':'Researcher · Author · Advisor',
         'hero.name':'Wael Saleh',
@@ -2358,6 +2455,11 @@
         'mem.acfas':'Francophone Association for Knowledge','mem.pluriel':'University Research Platform on Islam',
         'mem.rg':'Research profile and publications','mem.ipra':'France',
 
+        'ideas.kicker':'Writing and Commentary','ideas.title':'Ideas to Share',
+        'ideas.intro':'Essays, working notes, and commentary on political Islam, epistemic alterity, and the geopolitics of ideas, published as they take shape.',
+        'ideas.empty':'No entries yet. New writing will appear here soon.',
+        'ideas.readmore':'Read','ideas.close':'Close','ideas.back':'Back to all entries',
+
         'ct.kicker':'Get in touch','ct.title':'For lectures, collaborations, and press inquiries',
         'ct.body':'Open to academic collaborations, advisory engagements, and invited talks. Email is the fastest way to reach me.',
         'ct.availability':'Available for lectures, expert briefings, media commentary, and research collaborations.',
@@ -2371,7 +2473,7 @@
       fr: {
         skip:'Aller au contenu',
         'nav.about':'À propos','nav.concepts':'Concepts','nav.expertise':'Expertise','nav.experience':'Parcours','nav.education':'Formation',
-        'nav.publications':'Publications','nav.speaking':'Conférences','nav.memberships':'Affiliations','nav.contact':'Contact',
+        'nav.publications':'Publications','nav.speaking':'Conférences','nav.memberships':'Affiliations','nav.ideas':'Idées','nav.contact':'Contact',
         'cta.resume':'CV','cta.email':'Courriel',
         'hero.eyebrow':'Chercheur · Auteur · Conseiller',
         'hero.name':'Wael Saleh',
@@ -2476,6 +2578,11 @@
         'mem.acfas':'Association francophone pour le savoir','mem.pluriel':'Plateforme universitaire de recherche sur l’islam',
         'mem.rg':'Profil de recherche et publications','mem.ipra':'France',
 
+        'ideas.kicker':'Écrits et analyses','ideas.title':'Idées à partager',
+        'ideas.intro':'Essais, notes de travail et analyses sur l’islam politique, l’altérité épistémique et la géopolitique des idées, publiés au fil de leur élaboration.',
+        'ideas.empty':'Aucune entrée pour l’instant. De nouveaux écrits paraîtront bientôt ici.',
+        'ideas.readmore':'Lire','ideas.close':'Fermer','ideas.back':'Retour à toutes les entrées',
+
         'ct.kicker':'Prise de contact','ct.title':'Conférences, collaborations et sollicitations médias',
         'ct.body':'Le Dr Saleh est ouvert aux collaborations académiques, aux mandats de conseil et aux invitations à intervenir. Le courriel demeure la voie la plus directe.',
         'ct.availability':'Disponible pour des conférences, des briefings d’expertise, des interventions médiatiques et des collaborations de recherche.',
@@ -2489,7 +2596,7 @@
       ar: {
         skip:'الانتقال إلى المحتوى',
         'nav.about':'نبذة','nav.concepts':'مفاهيم','nav.expertise':'مجالات الخبرة','nav.experience':'المسيرة','nav.education':'التعليم',
-        'nav.publications':'الإصدارات','nav.speaking':'المحاضرات','nav.memberships':'الانتماءات','nav.contact':'التواصل',
+        'nav.publications':'الإصدارات','nav.speaking':'المحاضرات','nav.memberships':'الانتماءات','nav.ideas':'أفكار','nav.contact':'التواصل',
         'cta.resume':'السيرة الذاتية','cta.email':'البريد',
         'hero.eyebrow':'باحث · مؤلِّف · مستشار',
         'hero.name':'وائل صالح',
@@ -2595,6 +2702,11 @@
         'mem.acfas':'الجمعية الفرنكوفونية للمعرفة','mem.pluriel':'منصّةٌ جامعيةٌ للبحث في الإسلام',
         'mem.rg':'الملفُّ البحثي والإصدارات','mem.ipra':'فرنسا',
 
+        'ideas.kicker':'كتابات وتحليلات','ideas.title':'أفكار للمشاركة',
+        'ideas.intro':'مقالات وملاحظات وتحليلات حول الإسلام السياسي والمغايَرة المعرفية والجغرافيا السياسية للأفكار، تُنشَر تباعًا مع تبلوُرها.',
+        'ideas.empty':'لا توجد مُدخلات بعد. ستظهر الكتابات الجديدة هنا قريبًا.',
+        'ideas.readmore':'اقرأ','ideas.close':'إغلاق','ideas.back':'العودة إلى جميع المُدخلات',
+
         'ct.kicker':'سُبُل التواصل','ct.title':'للمحاضرات، والتعاونات، والاستفسارات الإعلامية',
         'ct.body':'الدكتور صالح منفتحٌ على التعاونات الأكاديمية، والمهام الاستشارية، والدعوات للمحاضرات. ويبقى البريد الإلكتروني السبيل الأنجع للتواصل.',
         'ct.availability':'متاحٌ لإلقاء المحاضرات، وتقديم إحاطاتٍ خبيرة، والإسهام الإعلامي، والمشاركة في التعاونات البحثية.',
@@ -2635,8 +2747,11 @@
       // text replacements
       document.querySelectorAll('[data-i18n]').forEach(el => { const k = el.getAttribute('data-i18n'); if (dict[k] !== undefined) el.textContent = dict[k]; });
       document.querySelectorAll('[data-i18n-html]').forEach(el => { const k = el.getAttribute('data-i18n-html'); if (dict[k] !== undefined) el.innerHTML = dict[k]; });
+      document.querySelectorAll('[data-i18n-aria]').forEach(el => { const k = el.getAttribute('data-i18n-aria'); if (dict[k] !== undefined) el.setAttribute('aria-label', dict[k]); });
       // hero name (split into letters with stagger)
       renderHeroName(dict['hero.name'] || 'Wael Saleh');
+      // re-render the Ideas blog for the new language
+      if (window.renderIdeas) window.renderIdeas();
       // copy-email button copy state
       const cText = document.getElementById('copyText'); if (cText) cText.textContent = dict['ct.copy'];
       // language switcher pressed states
@@ -2817,6 +2932,207 @@
       // Keep tooltip visible when hovering it directly
       tooltip.addEventListener('mouseenter', () => clearTimeout(hideTimeout));
       tooltip.addEventListener('mouseleave', hideTooltip);
+    })();
+
+    /* ======================================================================
+       IDEAS TO SHARE — runtime blog
+       - Discovers posts via /api/posts (Vercel function), falling back to a
+         static /content/posts/index.json manifest for local/static hosting.
+       - Each post is a Markdown file with YAML-ish front matter; tagged with a
+         single `lang` (en|fr|ar). The grid shows only posts in the current
+         site language. No build step, no auto-translation.
+       - Dependency-free, XSS-safe Markdown rendering.
+       ====================================================================== */
+    (function(){
+      const POSTS_DIR = 'content/posts/';
+      const grid  = document.getElementById('ideasGrid');
+      const empty = document.getElementById('ideasEmpty');
+      if (!grid) return;
+
+      let allPosts = null;          // cached parsed posts (lang-agnostic)
+      let lastFocused = null;
+
+      /* ---------- helpers ---------- */
+      const esc = s => String(s).replace(/[&<>"']/g, c =>
+        ({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+
+      function fmtDate(iso, lang){
+        const d = new Date(iso);
+        if (isNaN(d)) return iso || '';
+        const locale = lang === 'ar' ? 'ar' : (lang === 'fr' ? 'fr-FR' : 'en-US');
+        try { return d.toLocaleDateString(locale, { year:'numeric', month:'long', day:'numeric' }); }
+        catch { return iso; }
+      }
+
+      /* ---------- front matter ---------- */
+      function parseFrontMatter(raw){
+        const m = /^﻿?---\s*\n([\s\S]*?)\n---\s*\n?([\s\S]*)$/.exec(raw);
+        if (!m) return { data:{}, body: raw };
+        const data = {};
+        m[1].split('\n').forEach(line => {
+          const mm = /^([A-Za-z0-9_]+)\s*:\s*(.*)$/.exec(line.trim());
+          if (!mm) return;
+          let v = mm[2].trim();
+          if ((v.startsWith('"') && v.endsWith('"')) || (v.startsWith("'") && v.endsWith("'"))) v = v.slice(1,-1);
+          if (v === 'true') v = true; else if (v === 'false') v = false;
+          if (/^\[.*\]$/.test(v)) {
+            v = v.slice(1,-1).split(',').map(s => s.trim().replace(/^["']|["']$/g,'')).filter(Boolean);
+          }
+          data[mm[1]] = v;
+        });
+        return { data, body: m[2] };
+      }
+
+      /* ---------- minimal, safe Markdown → HTML ---------- */
+      function inline(t){
+        t = esc(t);
+        t = t.replace(/`([^`]+)`/g, (_,c) => '<code>'+c+'</code>');
+        t = t.replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>');
+        t = t.replace(/(^|[^*])\*([^*]+)\*/g, '$1<em>$2</em>');
+        t = t.replace(/\[([^\]]+)\]\((https?:\/\/[^\s)]+)\)/g,
+          (_,txt,href) => '<a href="'+esc(href)+'" target="_blank" rel="noopener noreferrer">'+txt+'</a>');
+        return t;
+      }
+      function mdToHtml(md){
+        const lines = md.replace(/\r\n/g,'\n').split('\n');
+        let html = '', i = 0;
+        while (i < lines.length){
+          let line = lines[i];
+          if (!line.trim()) { i++; continue; }
+          let h = /^(#{1,3})\s+(.*)$/.exec(line);
+          if (h){ const lvl = h[1].length; html += '<h'+lvl+'>'+inline(h[2])+'</h'+lvl+'>'; i++; continue; }
+          if (/^>\s?/.test(line)){
+            let buf = [];
+            while (i < lines.length && /^>\s?/.test(lines[i])) { buf.push(lines[i].replace(/^>\s?/,'')); i++; }
+            html += '<blockquote>'+inline(buf.join(' '))+'</blockquote>'; continue;
+          }
+          if (/^[-*]\s+/.test(line)){
+            let buf = [];
+            while (i < lines.length && /^[-*]\s+/.test(lines[i])) { buf.push('<li>'+inline(lines[i].replace(/^[-*]\s+/,''))+'</li>'); i++; }
+            html += '<ul>'+buf.join('')+'</ul>'; continue;
+          }
+          if (/^\d+\.\s+/.test(line)){
+            let buf = [];
+            while (i < lines.length && /^\d+\.\s+/.test(lines[i])) { buf.push('<li>'+inline(lines[i].replace(/^\d+\.\s+/,''))+'</li>'); i++; }
+            html += '<ol>'+buf.join('')+'</ol>'; continue;
+          }
+          let buf = [];
+          while (i < lines.length && lines[i].trim() && !/^(#{1,3}\s|>|[-*]\s|\d+\.\s)/.test(lines[i])) { buf.push(lines[i]); i++; }
+          html += '<p>'+inline(buf.join(' '))+'</p>';
+        }
+        return html;
+      }
+
+      /* ---------- discovery ---------- */
+      async function discover(){
+        // Preferred: serverless directory listing
+        try {
+          const r = await fetch('/api/posts', { headers:{ 'Accept':'application/json' } });
+          if (r.ok){
+            const j = await r.json();
+            if (Array.isArray(j.files)) return j.files;
+          }
+        } catch {}
+        // Fallback: static manifest committed alongside posts
+        try {
+          const r = await fetch(POSTS_DIR + 'index.json', { cache:'no-cache' });
+          if (r.ok){
+            const j = await r.json();
+            if (Array.isArray(j)) return j;
+            if (Array.isArray(j.files)) return j.files;
+          }
+        } catch {}
+        return [];
+      }
+
+      async function loadAll(){
+        if (allPosts) return allPosts;
+        const files = (await discover()).filter(f => /\.md$/i.test(f));
+        const posts = await Promise.all(files.map(async name => {
+          try {
+            const r = await fetch(POSTS_DIR + name, { cache:'no-cache' });
+            if (!r.ok) return null;
+            const { data, body } = parseFrontMatter(await r.text());
+            if (data.draft === true) return null;
+            return {
+              slug: name.replace(/\.md$/i,''),
+              title: data.title || '(untitled)',
+              lang: (data.lang || 'en').toLowerCase(),
+              date: data.date || '',
+              excerpt: data.excerpt || '',
+              bodyHtml: mdToHtml(body)
+            };
+          } catch { return null; }
+        }));
+        allPosts = posts.filter(Boolean).sort((a,b) => new Date(b.date) - new Date(a.date));
+        return allPosts;
+      }
+
+      /* ---------- rendering ---------- */
+      function dict(){ return (typeof I18N !== 'undefined' && (I18N[currentLang] || I18N.en)) || {}; }
+
+      function renderCards(posts){
+        const lang = currentLang || 'en';
+        const visible = posts.filter(p => p.lang === lang);
+        grid.innerHTML = '';
+        if (!visible.length){
+          empty.hidden = false;
+          grid.style.display = 'none';
+          return;
+        }
+        empty.hidden = true;
+        grid.style.display = '';
+        const d = dict();
+        visible.forEach(p => {
+          const card = document.createElement('button');
+          card.type = 'button';
+          card.className = 'ideas-card group rounded-2xl border border-line bg-ivory p-6 hover:border-coral-300 hover:shadow-soft hover:-translate-y-0.5 transition-all';
+          card.innerHTML =
+            '<div class="flex items-center justify-between gap-3">' +
+              '<p class="text-[12px] tracking-wider2 uppercase text-muted">'+esc(fmtDate(p.date, lang))+'</p>' +
+              '<svg class="w-4 h-4 text-muted group-hover:text-coral-600 transition-colors ar-flip-x shrink-0" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 17L17 7M9 7h8v8"/></svg>' +
+            '</div>' +
+            '<h3 class="mt-4 font-display text-xl text-charcoal leading-snug">'+esc(p.title)+'</h3>' +
+            (p.excerpt ? '<p class="ideas-excerpt mt-3 text-[14.5px] text-muted leading-relaxed">'+esc(p.excerpt)+'</p>' : '') +
+            '<span class="mt-5 inline-flex items-center gap-1.5 text-[13.5px] text-coral-700">'+esc(d['ideas.readmore']||'Read')+'</span>';
+          card.addEventListener('click', () => openModal(p));
+          grid.appendChild(card);
+        });
+        // animate in if observer already passed
+        grid.classList.add('in');
+      }
+
+      function render(){ if (allPosts) renderCards(allPosts); }
+      window.renderIdeas = render;
+
+      /* ---------- modal ---------- */
+      const modal = document.getElementById('ideasModal');
+      const scrim = document.getElementById('ideasModalScrim');
+      const closeBtn = document.getElementById('ideasModalClose');
+      const mDate = document.getElementById('ideasModalDate');
+      const mTitle = document.getElementById('ideasModalTitle');
+      const mBody = document.getElementById('ideasModalBody');
+
+      function openModal(p){
+        lastFocused = document.activeElement;
+        mDate.textContent = fmtDate(p.date, currentLang || 'en');
+        mTitle.textContent = p.title;
+        mBody.innerHTML = p.bodyHtml;
+        modal.hidden = false;
+        document.body.style.overflow = 'hidden';
+        closeBtn.focus();
+      }
+      function closeModal(){
+        modal.hidden = true;
+        document.body.style.overflow = '';
+        if (lastFocused && lastFocused.focus) lastFocused.focus();
+      }
+      closeBtn?.addEventListener('click', closeModal);
+      scrim?.addEventListener('click', closeModal);
+      document.addEventListener('keydown', e => { if (e.key === 'Escape' && !modal.hidden) closeModal(); });
+
+      /* ---------- init ---------- */
+      loadAll().then(render).catch(() => { empty.hidden = false; grid.style.display = 'none'; });
     })();
   </script>
 </body>

@@ -1,0 +1,58 @@
+# Decap CMS configuration for Wael Saleh — "Ideas to Share"
+#
+# Auth: GitHub OAuth, brokered by the Vercel functions in /api.
+# Only GitHub accounts with write access to the repo can publish.
+
+backend:
+  name: github
+  repo: Zeyy21/WaelSaleh
+  branch: master
+  base_url: https://wael-saleh.com   # host of the OAuth functions (Vercel)
+  auth_endpoint: /api/auth
+
+# Each save commits straight to `master` (simple workflow). Switch to
+# `editorial_workflow` later if you want draft → review → publish via PRs.
+publish_mode: simple
+
+# Where uploaded images go, and how the CMS references them in Markdown.
+media_folder: "assets/images/blog"
+public_folder: "/assets/images/blog"
+
+# Friendlier locale for the admin UI itself.
+locale: "en"
+
+collections:
+  - name: "posts"
+    label: "Ideas to Share — Posts"
+    label_singular: "Post"
+    folder: "content/posts"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    summary: "{{title}}  ·  {{fields.lang}}  ·  {{date}}"
+    sortable_fields: ["date", "title", "lang"]
+    view_filters:
+      - label: "English"
+        field: lang
+        pattern: "en"
+      - label: "Français"
+        field: lang
+        pattern: "fr"
+      - label: "العربية"
+        field: lang
+        pattern: "ar"
+    fields:
+      - { name: "title", label: "Title", widget: "string" }
+      - name: "lang"
+        label: "Language"
+        widget: "select"
+        hint: "The single language this post is written in. It shows on the site only when that language is selected."
+        options:
+          - { label: "English", value: "en" }
+          - { label: "Français", value: "fr" }
+          - { label: "العربية (Arabic)", value: "ar" }
+        default: "en"
+      - { name: "date", label: "Date", widget: "datetime", date_format: "YYYY-MM-DD", time_format: false, format: "YYYY-MM-DD" }
+      - { name: "excerpt", label: "Excerpt / standfirst", widget: "text", required: false, hint: "1–2 sentences shown on the card." }
+      - { name: "tags", label: "Tags", widget: "list", required: false }
+      - { name: "draft", label: "Draft (hide from site)", widget: "boolean", default: false }
+      - { name: "body", label: "Body", widget: "markdown" }

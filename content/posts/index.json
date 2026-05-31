@@ -1,0 +1,8 @@
+{
+  "_comment": "Fallback manifest for hosts without the /api/posts serverless function (e.g. local static preview). On Vercel, /api/posts lists the folder automatically and this file is ignored. If you ever host statically, add each new post's filename here.",
+  "files": [
+    "2026-05-20-essentialising-without-relativising-en.md",
+    "2026-05-12-alterite-epistemique-fr.md",
+    "2026-05-05-naqd-bila-tajhir-ar.md"
+  ]
+}

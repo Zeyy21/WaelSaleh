@@ -140,6 +140,11 @@ function renderPage(post) {
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
+  <!-- Apply the saved site theme before paint (same mechanism as the homepage:
+       localStorage 'ws_theme' + data-theme on <html>) so articles match the
+       site's manual light/dark toggle and never flash. -->
+  <script>(function(){try{var t=localStorage.getItem('ws_theme');if(!t)t=(window.matchMedia&&window.matchMedia('(prefers-color-scheme: dark)').matches)?'dark':'light';if(t==='dark')document.documentElement.setAttribute('data-theme','dark');}catch(e){}})();</script>
+
   <title>${esc(title)} — Wael Saleh</title>
   <meta name="description" content="${esc(desc)}" />
   <meta name="author" content="Wael Saleh" />
@@ -179,12 +184,10 @@ function renderPage(post) {
       --c-ink:45 40 32; --c-muted:107 98 86; --c-line:232 223 211;
       --coral-600:#D94518; --coral-700:#A8330F; --coral-400:#FF6F44;
     }
-    @media (prefers-color-scheme: dark){
-      :root{
-        --c-cream:14 16 22; --c-ivory:22 25 34; --c-charcoal:244 235 222;
-        --c-ink:214 206 192; --c-muted:138 138 152; --c-line:40 44 56;
-        --coral-600:#FF8C5A; --coral-700:#FFA26E; --coral-400:#FF8C5A;
-      }
+    [data-theme="dark"]{
+      --c-cream:14 16 22; --c-ivory:22 25 34; --c-charcoal:244 235 222;
+      --c-ink:214 206 192; --c-muted:138 138 152; --c-line:40 44 56;
+      --coral-600:#FF8C5A; --coral-700:#FFA26E; --coral-400:#FF8C5A;
     }
     *{box-sizing:border-box;}
     html,body{margin:0;background:rgb(var(--c-cream));color:rgb(var(--c-charcoal));}
@@ -199,6 +202,15 @@ function renderPage(post) {
     .back:hover{color:var(--coral-600);}
     .back svg{width:15px;height:15px;}
     [dir="rtl"] .back svg{transform:scaleX(-1);}
+    .topbar .right{display:flex;align-items:center;gap:14px;}
+    .theme-btn{display:inline-flex;align-items:center;justify-content:center;width:34px;height:34px;
+      border:1px solid rgb(var(--c-line));border-radius:999px;background:rgb(var(--c-ivory));
+      color:rgb(var(--c-charcoal));cursor:pointer;transition:background-color .2s,border-color .2s;}
+    .theme-btn:hover{border-color:var(--coral-400);}
+    .theme-btn svg{width:16px;height:16px;}
+    .theme-btn .icon-sun{display:none;} .theme-btn .icon-moon{display:block;}
+    [data-theme="dark"] .theme-btn .icon-sun{display:block;}
+    [data-theme="dark"] .theme-btn .icon-moon{display:none;}
     article{padding:48px 0 80px;}
     .eyebrow{font-size:12px;letter-spacing:.18em;text-transform:uppercase;color:var(--coral-600);margin:0 0 14px;}
     h1{font-family:'Cormorant Garamond',Georgia,serif;font-weight:600;font-size:clamp(2rem,5vw,3rem);line-height:1.12;color:rgb(var(--c-charcoal));margin:0 0 8px;overflow-wrap:anywhere;}
@@ -224,10 +236,16 @@ function renderPage(post) {
   <header class="topbar">
     <div class="wrap">
       <a class="brand" href="/">Wael Saleh</a>
-      <a class="back" href="/#ideas">
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
-        ${esc(back)}
-      </a>
+      <div class="right">
+        <a class="back" href="/#ideas">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M12 19l-7-7 7-7"/></svg>
+          ${esc(back)}
+        </a>
+        <button id="themeBtn" type="button" class="theme-btn" aria-label="Toggle light/dark theme">
+          <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21 12.79A9 9 0 1111.21 3 7 7 0 0021 12.79z"/></svg>
+          <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M2 12h2M20 12h2M5 5l1.5 1.5M17.5 17.5L19 19M19 5l-1.5 1.5M6.5 17.5L5 19"/></svg>
+        </button>
+      </div>
     </div>
   </header>
 
@@ -243,7 +261,16 @@ function renderPage(post) {
   <footer class="footer">
     <div class="wrap">© <span id="y"></span> Wael Saleh · <a href="/#ideas">${esc(back)}</a></div>
   </footer>
-  <script>document.getElementById('y').textContent=new Date().getFullYear();</script>
+  <script>
+    document.getElementById('y').textContent=new Date().getFullYear();
+    // Theme toggle — writes the SAME localStorage key as the homepage, so the
+    // choice carries across the whole site in both directions.
+    document.getElementById('themeBtn').addEventListener('click',function(){
+      var dark=document.documentElement.getAttribute('data-theme')==='dark';
+      if(dark){document.documentElement.removeAttribute('data-theme');try{localStorage.setItem('ws_theme','light');}catch(e){}}
+      else{document.documentElement.setAttribute('data-theme','dark');try{localStorage.setItem('ws_theme','dark');}catch(e){}}
+    });
+  </script>
 </body>
 </html>`;
 }

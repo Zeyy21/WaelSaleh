@@ -1,26 +1,27 @@
 ---
-title: Protracted, Intermittent, and Inconclusive War
-lang: en
+title: La guerre prolongée, intermittente et indécise
+lang: fr
 date: 2026-06-11
-excerpt: War in the twenty-first century, as revealed by theRusso-Ukrainian war
-  and as manifested in the confrontation between the UnitedStates and Israel on
-  one side, and Iran and its axis on the other, is no longerwar in the classical
-  sense known to the twentieth century. It is characterizedby its long duration,
-  yet it does not follow a continuous upward line ofescalation. Rather, it
-  consists of successive waves of escalation andde-escalation, bombardment and
-  negotiation, deterrence and retreat, militarystrikes and political messages.
-  It is a war that does not always seek to becomea major war, yet cannot fully
-  return to peace either. It inhabits a grey zonebetween war and peace, where
-  ceasefires become part of the war, andnegotiations become an extension of
-  battle by other means.
+excerpt: La guerre au XXIᵉ siècle, telle que la révèle la guerre
+  russo-ukrainienne et telle qu’elle apparaît dans la guerre opposant les
+  États-Unis et Israël, d’une part, à l’Iran et à son axe, d’autre part, n’est
+  plus une guerre au sens classique que le XXᵉ siècle avait connu. Elle se
+  caractérise par sa longue durée, sans pour autant suivre une ligne d’escalade
+  continue. Elle se compose plutôt de vagues successives d’escalade et
+  d’apaisement, de bombardements et de négociations, de dissuasion et de repli,
+  de frappes militaires et de messages politiques. C’est une guerre qui ne veut
+  pas toujours se transformer en guerre majeure, mais qui ne parvient pas non
+  plus à revenir à une paix complète. Elle s’installe dans une zone grise entre
+  guerre et paix, où la trêve devient une partie de la guerre, et où les
+  négociations deviennent le prolongement de la bataille par d’autres moyens.
 draft: false
 ---
-War in the twenty-first century, as revealed by theRusso-Ukrainian war and as manifested in the confrontation between the UnitedStates and Israel on one side, and Iran and its axis on the other, is no longerwar in the classical sense known to the twentieth century. It is characterizedby its long duration, yet it does not follow a continuous upward line ofescalation. Rather, it consists of successive waves of escalation andde-escalation, bombardment and negotiation, deterrence and retreat, militarystrikes and political messages. It is a war that does not always seek to becomea major war, yet cannot fully return to peace either. It inhabits a grey zonebetween war and peace, where ceasefires become part of the war, andnegotiations become an extension of battle by other means.
+La guerre au XXIᵉ siècle, telle que la révèle la guerrerusso-ukrainienne et telle qu’elle apparaît dans la guerre opposant lesÉtats-Unis et Israël, d’une part, à l’Iran et à son axe, d’autre part, n’estplus une guerre au sens classique que le XXᵉ siècle avait connu. Elle se caractérise par sa longuedurée, sans pour autant suivre une ligne d’escalade continue. Elle se composeplutôt de vagues successives d’escalade et d’apaisement, de bombardements et denégociations, de dissuasion et de repli, de frappes militaires et de messagespolitiques. C’est une guerre qui ne veut pas toujours se transformer en guerremajeure, mais qui ne parvient pas non plus à revenir à une paix complète. Elles’installe dans une zone grise entre guerre et paix, où la trêve devient unepartie de la guerre, et où les négociations deviennent le prolongement de labataille par d’autres moyens.
 
-In this pattern, the objective is not always tooverthrow the adversary or occupy its territory entirely, but rather to manageits erosion, exhaustion, encirclement, or strategic behavioral adjustment. Warhere does not necessarily seek decisive victory, but the production of arenewable balance of pressure. This is why it appears as a war without closure:a war that is managed more than resolved, suspended more than ended, andresumed whenever deterrence conditions shift or the rules of engagement breakdown.
+Dans ce modèle, l’objectif n’estpas toujours de renverser l’adversaire ou d’occuper entièrement son territoire,mais plutôt de gérer son érosion, son épuisement, son encerclement ou lamodification de son comportement stratégique. La guerre ne vise donc pasnécessairement la décision finale, mais la production d’un équilibre depression renouvelable. C’est pourquoi elle apparaît comme une guerre sansclôture : une guerre que l’on administre plus qu’on ne la tranche, que l’onsuspend plus qu’on ne l’achève, et que l’on reprend chaque fois que lesconditions de la dissuasion changent ou que les règles d’engagement sedérèglent.
 
-Philosophically, this war reveals a profoundtransformation in the meaning of strategic time. Wartime is no longer anexceptional time separated from political, economic, and media life; it hasbecome embedded within them. War is no longer a sudden event that interruptspeace, but a continuous structure reintroduced in successive doses. It is not atotal world war, but it is a war of globalized effects: sometimes local in itsfront lines, yet global in its repercussions on energy, markets, maritime routes,food security, defense industries, and supply chains.
+Philosophiquement, cette guerrerévèle une transformation profonde du sens du temps stratégique. Le temps deguerre n’est plus un temps exceptionnel séparé de la vie politique, économiqueet médiatique ; il devient un temps installé en elle. La guerre n’est plus unévénement soudain qui interrompt la paix, mais une structure continue,réinjectée par doses successives. Elle n’est pas une guerre mondiale totale,mais elle est une guerre aux effets mondialisés : parfois locale par son front,mais globale par ses répercussions sur l’énergie, les marchés, les voiesmaritimes, la sécurité alimentaire, les industries de défense et les chaînesd’approvisionnement.
 
-Thus, its nature is not measured only by the scale ofdirect destruction, but also by its capacity to normalize uncertainty. It makessocieties, states, and markets live in a permanent state of expectation: thenext strike, the next ceasefire, or the next round of negotiations. It is a warthat does not abolish politics, but empties it of certainty; that does notabolish diplomacy, but turns it into part of the engineering of pressure; thatdoes not abolish peace, but transforms it into a temporary pause within alonger war.
+Dès lors, sa nature ne se mesurepas seulement à l’ampleur des destructions directes, mais aussi à sa capacitéde normaliser l’incertitude. Elle place les sociétés, les États et les marchésdans une attente permanente de la prochaine frappe, de la prochaine trêve oudes prochaines négociations. C’est une guerre qui n’abolit pas la politique,mais qui la vide de ses certitudes ; qui n’abolit pas la diplomatie, mais quien fait une partie de l’ingénierie de la pression ; qui n’abolit pas la paix,mais qui la transforme en pause provisoire au sein d’une guerre plus longue.
 
-In thissense, protracted, intermittent, and inconclusive war represents one of themost significant forms of conflict in the twenty-first century: a war that maysometimes be low- or medium-intensity, yet is always high-impact; a war thatdoes not declare itself as a world war, but slowly reshapes the global order; awar that does not end with a definitive peace agreement, but with temporarybalances liable to collapse; and a war that is measured not only by itsmilitary victories, but also by the long-term psychological, economic,cognitive, and political exhaustion it imposes.
+En ce sens, la guerre prolongée, intermittente et indécise représente l’unedes formes majeures du conflit au XXIᵉsiècle : une guerre parfois de basse ou de moyenne intensité, mais toujours àfort impact ; une guerre qui ne se déclare pas comme guerre mondiale, mais quireconfigure lentement l’ordre mondial ; une guerre qui ne se termine pas par unaccord de paix définitif, mais par des équilibres provisoires susceptibles des’effondrer ; une guerre qui ne se mesure pas seulement à ses victoiresmilitaires, mais aussi à l’usure psychologique, économique, cognitive etpolitique de longue durée qu’elle impose.
